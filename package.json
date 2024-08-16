@@ -25,6 +25,7 @@
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "var_dump": "^1.0.6"
   }
 }

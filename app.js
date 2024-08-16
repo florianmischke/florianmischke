@@ -20,8 +20,23 @@ app.get('/', function(req, res) {
     res.render('index.html');
 });
 
-app.get('/blog', function(req, res) {
-    res.render('blog.html');
+app.get('/blog/*', function(req, res) {
+    var requestedURL = req.originalUrl;
+    const regex = /\/blog\/(.*)/gm;
+    const matches = [];
+    while ((m = regex.exec(requestedURL)) !== null) {
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex.lastIndex) {
+            regex.lastIndex++;
+        }
+        
+        // The result can be accessed through the `m`-variable.
+        m.forEach((match, groupIndex) => {
+            console.log(`Found match, group ${groupIndex}: ${match}`);
+            matches[groupIndex] = match;
+        });
+    }
+    res.render('blog.html',{ home_url : 'http://localhost:3000', requestedURL : matches });
 });
 
 app.use((req, res) => {
