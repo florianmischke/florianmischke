@@ -1,0 +1,254 @@
+{% extends "index.html" %}
+
+{% block canonical %}
+{% endblock %}
+
+{% block title %}
+<title>Curriculum Vitae | FlorianMischke.de</title>
+{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+<li class="breadcrumb-item" aria-current="page">Curriculum Vitae</li>
+{% endblock %}
+
+{% block content %}
+<h1>Curriculum Vitae</h1>
+
+<div class="accordion accordion-flush" id="accordionCV">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <i class="bi bi-tools"></i> &nbsp;  Berufliche Laufbahn
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse ">
+        <div class="accordion-body">
+            <table id="schools" class="table table-borderless border-left table-time">
+                <tbody>
+                    <tr>
+                        <th>seit 05.2020</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Rettungssanitäter</p>
+                            <p>ASB Rettungsdienst Hamburg GmbH, Hamburg</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>02.2015 – 12.2017</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Softwareentwickler in Selbständigkeit</p>
+                            <p>Florian Mischke Softwareentwicklung, Osnabrück</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>01.2012 – 01.2015</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Softwareentwickler und Projektmanager im Bereich Websites und Onlineshops</p>
+                            <p>ehemals webfrisch, einscommerce, jetzt Projekteins GmbH, Osnabrück</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>08.2009 – 04.2010</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Zivildienstleistender – Fahrdienst, Kranken- und Behindertentransporte, Essen auf Rädern</p>
+                                <p>
+                                  Malteser Hilfsdienst e.V. Alfhausen</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <i class="bi bi-mortarboard-fill"></i> &nbsp;  Akademische Laufbahn
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <table id="schools" class="table table-borderless border-left table-time">
+                <tbody>
+                    <tr>
+                        <th>seit 10.2023</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Studium der Biologie an der Universität Hamburg</p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <ul>
+                                        <li>Wahlbereich: Geschichte der Naturwissenschaft</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>10.2010 – 04.2012</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Studium der Chemie an der Universität Münster (ehemals Westfälische Wilhelms-Universität)</p>
+                            <ul class="list-unstyled">
+                                <li>Abschluss: keiner
+                                    <ul>
+                                        <li>Organisch- und anorganisch-chemisches Praktikum, Laborsicherheit</li>
+                                        <li>Studentische Hilfskraft (Bereich Online/IT)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="bi bi-backpack2-fill"></i> &nbsp;  sonstige Ausbildung
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <table id="schools" class="table table-borderless border-left table-time">
+                <tbody>
+                    <tr>
+                        <th>05.2019 &ndash; 05.2020</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Angestellter zum Zwecke der Ausbildung zum Rettungssanitäter</p>
+                            <p>ASB Rettungsdienst Hamburg GmbH, Hamburg</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>05.2019 – 08.2019</th>
+                        <td>
+                        <p class="h5 font-weight-bold m-0 p-0">Rettungssanitäter-Lehrgang an der mebino Rettungsdienstschule Bremen GmbH</p>
+                      <ul class="list-unstyled">
+                              <li>Abschluss: Qualifikation zum Rettungssanitäter, Note 1</li>
+                        <li>
+                        <ul>
+                          <li>Rettungssanitäter-Abschlusslehrgang an der Falck-Wache Bramfeld-Steilshoop</li>
+                          <li>Praktikum in der Paracelsus-Klinik Osnabrück (80 Stunden auf der Intensivstation, 80 Stunden in der Anästhesie)</li>
+                          <li>Praktikum an der Lehrrettungswache Niendorf der ASB Rettungsdienst Hamburg GmbH (160 Stunden in der Notfallrettung)</li>
+                          <li>Rettungssanitäter-Grundlehrgang an der Falck-Wache Bramfeld-Steilshoop</li>
+                        </h6>
+                          </li>
+                        </ul>
+                      
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>09.2002 – 06.2009</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Greselius-Gymnasium Bramsche</p>
+                            <p>Abschluss: Allgemeine Hochschulreife</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <i class="bi bi-trophy-fill"></i> &nbsp;  Auszeichnungen / Zertifikate
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <table id="schools" class="table table-borderless border-left table-time">
+                <tbody>
+                    <tr>
+                        <th>09.2023</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0"><abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>® - Baustein IV</p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Bildungswerk Köln &ndash; <abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>-Bundesvereinigung</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>07.2023</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0"><abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>® - Baustein III</p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Bildungswerk Köln &ndash; <abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>-Bundesvereinigung</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>01.2023</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0"><abbr title="Advanced Medical Life Support">AMLS</abbr> Provider Kurs</p>
+                            <p><abbr title="Advanced Medical Life Support">AMLS</abbr> Deutschland &ndash; <abbr title="Deutscher Berufsverband Rettungsdienst">DBRD</abbr> Akademie GmbH</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>02.2022</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Suizid und Suizidalität</p>
+                            <p>Psychosoziale Notfallversorgung - Vertiefungsseminar - <abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Bildungswerk Köln</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>10.2021</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0"><abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>® - Baustein II</p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Bildungswerk Köln &ndash; <abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>-Bundesvereinigung</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>07.2021</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0"><abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>® - Baustein I</p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Bildungswerk Köln &ndash; <abbr title="Stressbearbeitung nach belastenden Ereignissen">SbE</abbr>-Bundesvereinigung</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <i class="bi bi-balloon-heart"></i> &nbsp;  Ehrenamtliche Tätigkeiten
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <table id="schools" class="table table-borderless border-left table-time">
+                <tbody>
+                    <tr>
+                        <th>seit 01.2020</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Psychosoziale Notfallversorgung für Einsatzkräfte (PSNV-E)</p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Landesverband Hamburg</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>01.2022 &ndash; 12.2022</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Teamleitung <abbr title="Psychosoziale Notfallversorgung für Einsatzkräfte">PSNV-E</abbr></p>
+                            <p><abbr title="Arbeiter-Samariter-Bund">ASB</abbr> Landesverband Hamburg</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>seit 06.2016</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Kreis der Männer – ManKind Project Deutschland e.V.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>seit 2016</th>
+                        <td>
+                            <p class="h5 font-weight-bold m-0 p-0">Boys to Men Mentoring Netzwerk Deutschland e.V.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+{% endblock %}

@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% block canonical %}
+{% if singlepost and singlepost !== undefined %}
+{% else %}
+<link rel="canonical" href="https://www.florianmischke.de" />
+{% endif %}
+{% endblock%}
+
 {% block title %}
 <title>Blog > {{ category.name }} | FlorianMischke.de</title>
 {% endblock %}
@@ -7,16 +14,19 @@
 {% block breadcrumb_items %}
 <li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
 <li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+{% if category.child == true and category.parent != "" %}
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog/{{ category.parent }}">{{ category.parent|capitalize }}</a></li>
+{% endif %}
 <li class="breadcrumb-item" aria-current="page">{{ category.name }}</li>
 {% endblock %}
 
 {% block content %}
-<h1><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+<h1 class="display-1"><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
 {% if children and children|length > 0  %}
 <p class="h6 mb-0"><i class="bi bi-tags-fill"></i> Unterkategorien:</p>
-<ul>    
+<ul class="nav nav-underline">
     {% for child in children %}
-    <li><a href="{{ home_url }}/blog/{{ child.id }}"><i class="{{ child.icon }}"></i> {{ child.name }}</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ home_url }}/blog/{{ child.id }}"><i class="{{ child.icon }}"></i> {{ child.name }}</a></li>
     {% endfor %}
 </ul>
 {% endif %}
@@ -25,17 +35,26 @@
 <ul class="list-unstyled">
     {% for mypost in myposts %}
     <li class="">
-        <div class="card mb-3">
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body">
-                <h2 class="h5 card-title">{{ mypost.name }}</h2>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">weiterlesen</a>
-            </div>
-        </div>
+        <div class="card mb-3">            
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://placehold.co/400" class="img-fluid rounded-start" alt="https://placehold.co/" title="https://placehold.co/">
+                </div>
+            
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class=" card-title">{{ mypost.name }}</h2>
+                        <p class="card-text">{{ mypost.description }}</p>
+                        <a href="{{ home_url }}/blog/{{ mypost.url }}" class="btn btn-lg btn-primary">Beitrag lesen</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
     </li>
     {% endfor %}
 </ul>
+{% else %}
+<p>Keine Beiträge.</p>
 {% endif %}
 
 {% endblock %}

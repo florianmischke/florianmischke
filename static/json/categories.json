@@ -21,6 +21,13 @@
         "parent":"wissenschaft"
     },
     {
+        "id":"geschichte-der-naturwissenschaft",
+        "name":"Geschichte der Naturwissenschaft",
+        "icon":"bi bi-hourglass-split",
+        "child":true,
+        "parent":"wissenschaft"
+    },
+    {
         "id":"erste-hilfe",
         "name":"Erste Hilfe",
         "icon":"bi bi-bandaid",

@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block canonical %}
+{% if singlepost %}
+<link rel="canonical" href="{{ home_url }}/blog/{{ singlepost.url }}" />
+{% else %}
+<link rel="canonical" href="{{ home_url }}" />
+{% endif %}
+{% endblock%}
+
+{% block title %}
+<title>Blog > {{ category.name }} | FlorianMischke.de</title>
+{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog/{{ category.id }}">{{ category.name }}</a></li>
+<li class="breadcrumb-item" aria-current="page">{{ singlepost.name }}</li>
+{% endblock %}
+
+{% block content %}
+<h1>{{ singlepost.name }}</h1>
+
+{{ singlepost.file }}
+
+<div class="ratio ratio-16x9">
+<embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
+</div>
+
+{% endblock %}

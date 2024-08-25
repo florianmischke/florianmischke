@@ -1,0 +1,847 @@
+<style type="text/css">    
+/* start css.sty */
+.cmr-10{font-size:83%;}
+.cmr-17x-x-120{font-size:170%;}
+.cmtt-12{font-family: monospace,monospace;}
+.cmtt-12{font-family: monospace,monospace;}
+.cmr-10x-x-109{font-size:90%;}
+.cmti-12{ font-style: italic;}
+.cmcsc-10{font-size:83%;}
+.cmtt-10{font-size:83%;font-family: monospace,monospace;}
+.cmtt-10{font-family: monospace,monospace;}
+.cmbx-12{ font-weight: bold;}
+.gartemisiarg6a-x-x-111{font-size:92%;}
+.gartemisiarg6a-x-x-93{font-size:77%;}
+.small-caps{font-variant: small-caps; }
+p{margin-top:0;margin-bottom:0}
+p.indent{text-indent:0;}
+p + p{margin-top:1em;}
+p + div, p + pre {margin-top:1em;}
+div + p, pre + p {margin-top:1em;}
+a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
+@media print {div.crosslinks {visibility:hidden;}}
+table.tabular{border-collapse: collapse; border-spacing: 0;}
+a img { border-top: 0; border-left: 0; border-right: 0; }
+center { margin-top:1em; margin-bottom:1em; }
+td center { margin-top:0em; margin-bottom:0em; }
+.Canvas { position:relative; }
+img.math{vertical-align:middle;}
+div.par-math-display, div.math-display{text-align:center;}
+h1,h2,h3,h4,h5 { line-height:1.2; }
+@media print{ body{ max-width:none } }
+.partHead, .likepartHead { font-size: 2em; }
+.chapterHead, .likechapterHead { font-size: 1.7411em; }
+.sectionHead, .likesectionHead { font-size: 1.5157em; }
+.subsectionHead, .likesubsectionHead { font-size: 1.3195em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1.1487em; }
+ @media (prefers-color-scheme: dark) { img[src^="Hausarbeit-GdN-I"]{filter: invert(1); } } 
+li p.indent { text-indent: 0em }
+li p:first-child{ margin-top:0em; }
+li p:last-child, li div:last-child { margin-bottom:0.5em; }
+li p:first-child{ margin-bottom:0; }
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+.enumerate1 {list-style-type:decimal;}
+.enumerate2 {list-style-type:lower-alpha;}
+.enumerate3 {list-style-type:lower-roman;}
+.enumerate4 {list-style-type:upper-alpha;}
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+div.newtheorem .head{font-weight: bold;}
+.obeylines-h,.obeylines-v {white-space: nowrap; }
+div.obeylines-v p { margin-top:0; margin-bottom:0; }
+.overline{ text-decoration:overline; }
+.overline img{ border-top: 1px solid black; }
+td.displaylines {text-align:center; white-space:nowrap;}
+.centerline {text-align:center;}
+.rightline {text-align:right;}
+pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.fbox {display:table}
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.minipage{width:100%;}
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+div.center div {text-align: left;}
+div.flushright, div.flushright div.flushright {text-align: right;}
+div.flushright div {text-align: left;}
+div.flushleft {text-align: left;}
+.underline{ text-decoration:underline; }
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+.framebox-c {text-align:center;}
+.framebox-l {text-align:left;}
+.framebox-r {text-align:right;}
+span.thank-mark{ vertical-align: super }
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 0px; margin:0px; }
+.hline td, .cline td{ padding: 0; }
+.hline hr, .cline hr{border:none;border-top:1px solid black;}
+.hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+.hline:first-child{border-bottom:1px solid black;border-top:none;}
+.tabbing-right {text-align:right;}
+div.float, div.figure {margin-left: auto; margin-right: auto;}
+div.float img {text-align:center;}
+div.figure img {text-align:center;}
+.marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+.marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+.reversemarginpar{float:left;}
+table.equation {width:100%;}
+.equation td{text-align:center; }
+td.equation { margin-top:1em; margin-bottom:1em; } 
+td.equation-label { width:5%; text-align:center; }
+td.eqnarray4 { width:5%; white-space: normal; }
+td.eqnarray2 { width:5%; }
+table.eqnarray-star, table.eqnarray {width:100%;}
+div.eqnarray{text-align:center;}
+div.array {text-align:center;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.pmatrix img{vertical-align:middle;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.bar-css {text-decoration:overline;}
+img.cdots{vertical-align:middle;}
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.index-item, .index-subitem, .index-subsubitem {display:block}
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+div.caption span.id{font-weight: bold; white-space: nowrap; }
+h1.partHead{text-align: center}
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1em; }
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+.verse{white-space:nowrap; margin-left:2em}
+div.maketitle {text-align:center;}
+h2.titleHead{text-align:center;}
+div.maketitle{ margin-bottom: 2em; }
+div.author, div.date {text-align:center;}
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+div.author{white-space: nowrap;}
+div.abstract p {margin-left:5%; margin-right:5%;}
+div.abstract {width:100%;}
+.abstracttitle{text-align:center;margin-bottom:1em;}
+.subsectionToc, .likesubsectionToc {margin-left:1em;}
+.subsubsectionToc, .likesubsubsectionToc {margin-left:2em;}
+.paragraphToc, .likeparagraphToc {margin-left:3em;}
+.subparagraphToc, .likesubparagraphToc {margin-left:4em;}
+figure.float, div.figure {margin-left: auto; margin-right: auto;}
+figure.figure {text-align:center;}
+figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
+figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
+p + figcaption, img + figcaption{margin-top: 1em;}
+.abstract{margin:1em;}
+.rotatebox{display: inline-block;}
+div.subfigure {text-align:center;display:inline-block; max-width:45%;}
+dt.printshorthands{float:left; clear:left; margin-right:1em;}
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 0px; margin:0px; }
+.hline td, .cline td{ padding: 0; }
+.hline hr, .cline hr{border:none;border-top:1px solid black;}
+.hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+.hline:first-child{border-bottom:1px solid black;border-top:none;}
+div.array {text-align:center;}
+/* end css.sty */
+</style>
+
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+
+<div class='maketitle'>
+Hausarbeit im Seminar zur Vorlesung „Allgemeine Naturwissenschafts- und
+Technikgeschichte I (Frühe Hochkulturen und Antike)“<br />
+– Universität Hamburg –<br />
+Fakultät: Mathematik, Informatik und Naturwissenschaften
+<div class='author'><span class='cmr-17x-x-120'>Florian Mischke</span></div>
+B.Sc. Biologie – 2. FS<br />
+<div class='date'>SoSe 2024</div>
+   </div>
+<!-- l. 34 --><p class='indent'>
+                                                                          
+
+                                                                          
+</p>
+   <h3 class='likesectionHead'><a id='x1-1000'></a>Inhaltsverzeichnis</h3>
+   <div class='tableofcontents'>
+   <span class='sectionToc'>1 <a href='#x1-20001' id='QQ2-1-2'>Einleitung</a></span>
+<br />   <span class='sectionToc'>2 <a href='#x1-30002' id='QQ2-1-3'>Ursprung und Grundlagen</a></span>
+<br />   <span class='subsectionToc'>2.1 <a href='#x1-40002.1' id='QQ2-1-4'>Die Pflanze Schlafmohn</a></span>
+<br />   <span class='subsectionToc'>2.2 <a href='#x1-50002.2' id='QQ2-1-6'>Das Rohopium und dessen Herstellung</a></span>
+<br />   <span class='subsectionToc'>2.3 <a href='#x1-70002.3' id='QQ2-1-10'>Wortherkunft</a></span>
+<br />   <span class='subsectionToc'>2.4 <a href='#x1-80002.4' id='QQ2-1-11'>Opioidrezeptoren und Opiod-Pharmakologie</a></span>
+<br />   <span class='sectionToc'>3 <a href='#x1-110003' id='QQ2-1-16'>Verwendung von Schlafmohn und Opium in der Antike</a></span>
+<br />   <span class='subsectionToc'>3.1 <a href='#x1-120003.1' id='QQ2-1-17'>Schlafmohn als Lebensmittel</a></span>
+<br />   <span class='subsectionToc'>3.2 <a href='#x1-130003.2' id='QQ2-1-18'>Schlafmohn als Schlaf- und Beruhigungsmittel</a></span>
+<br />   <span class='subsectionToc'>3.3 <a href='#x1-140003.3' id='QQ2-1-19'>Opium als Schmerz-/Narkosemittel</a></span>
+<br />   <span class='subsectionToc'>3.4 <a href='#x1-150003.4' id='QQ2-1-20'>Opium als Rauschmittel/Droge</a></span>
+<br />   <span class='subsectionToc'>3.5 <a href='#x1-160003.5' id='QQ2-1-21'>Weitere Anwendungen</a></span>
+<br />   <span class='subsectionToc'>3.6 <a href='#x1-210003.6' id='QQ2-1-26'>Zeittabelle</a></span>
+<br />   <span class='sectionToc'>4 <a href='#x1-220004' id='QQ2-1-28'>Fazit</a></span>
+<br />   <span class='sectionToc'><a href='#x1-25000' id='QQ2-1-31'>Literaturverzeichnis</a></span>
+   </div>
+<!-- l. 38 --><p class='indent'>
+                                                                          
+
+                                                                          
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>1   </span> <a id='x1-20001'></a>Einleitung</h3>
+<!-- l. 42 --><p class='noindent'>
+      </p><blockquote class='quote'>
+      <!-- l. 43 --><p class='noindent'>„In the Odyssey one reads of a drug that ‘quiets all pains and
+      quarrels’, a beneficial drug that comes from Egypt, where the
+      land brings forth many [drugs], both good and ill ‘when they are
+      mixed.’ […] The beneficial drug from Egypt is probably the opium
+      poppy, mentioned in the Iliad as a plant that ‘bows its head to
+      one side [and] in a garden is heavy with its fruit and the spring
+      rains.’ Fruit appears to be poetic license for the ‘poppy juice’ as
+      it drips from the head when harvested by slitting, and the ripe
+      opium poppies are indeed slit for their valuable exudations in the
+      spring.“<span class='footnote-mark'><a href='Hausarbeit-GdN-I2.html#fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-2001f1'></a> </p></blockquote>
+<!-- l. 46 --><p class='noindent'>Laut Faraone und Obbink ist in der Homers Odyssee die Rede von einer
+„vorteilhaften“ Droge aus Ägypten, die alle Schmerzen und Streitigkeiten
+(oder Leiden) beenden soll. Diese sei wahrscheinlich der Schlafmohn
+(<span class='cmti-12'>Papaver somniferum</span> <a href='#l'>L.</a>) oder ein Vorläufer dessen. Wahrscheinlich
+stammt der Schlafmohn eher aus Kleinasien, eine Zuordnung zu
+Ägypten scheint für Homer mehr „medizinisches Gewicht“ getragen zu
+haben<span class='footnote-mark'><a href='Hausarbeit-GdN-I3.html#fn2x0'><sup class='textsuperscript'>2</sup></a></span><a id='x1-2004f2'></a> .
+      </p><blockquote class='quote'>
+      <!-- l. 49 --><p class='noindent'>„In  Homers  Odyssee  reicht  Helena  dem  Telemach  und  seinen
+      Freunden einen Wein ‚ein Mittel gegen Kummer und Schmerz
+      und aller Leiden Gedächtnis‘. Wie weiter berichtet wird, stammt
+      das Rezept aus Ägypten, wo es die Gattin des Menealos als Geschenk
+                                                                          
+
+                                                                          
+      von der Gemahlin Thons erhalten hatte. Bei diesem ‚pharmakon
+      nepenthes‘ hat es sich vermutlich um Opiumsaft gehandelt.“<span class='footnote-mark'><a href='Hausarbeit-GdN-I4.html#fn3x0'><sup class='textsuperscript'>3</sup></a></span><a id='x1-2007f3'></a> </p></blockquote>
+<!-- l. 52 --><p class='indent'>   Umstrittenen Aussagen zufolge, ist das aus dem Schlafmohn
+gewonnene Opium bereits im alten Ägypten (um 1550 <a href='#vChr'>v. Chr.</a>)
+als Narkotikum im Einsatz gewesen. Als Beleg gilt der Papyrus
+Ebers.<span class='footnote-mark'><a href='Hausarbeit-GdN-I5.html#fn4x0'><sup class='textsuperscript'>4</sup></a></span><a id='x1-2010f4'></a> <br class='newline' />Hier ist in der deutschen Übersetzung stets von <span class='cmti-12'>Seter </span>die Rede, wie
+es zu diesem Schluss kam, ist nicht nachvollziehbar. Einer logisch
+nachvollziehbaren Quelle zufolge fuße die Schlussfolgerung, es handle
+sich um Opium bzw Schlafmohn, ausschließlich auf Vermutungen und
+Verdächten.<span class='footnote-mark'><a href='Hausarbeit-GdN-I6.html#fn5x0'><sup class='textsuperscript'>5</sup></a></span><a id='x1-2013f5'></a> 
+</p><!-- l. 55 --><p class='indent'>   Noch heute sind die Opiate Morphin (Schmerzmittel <a href='#zB'>z.B.</a> bei Herzinfarkt) und Codein
+(Antitussivum<span class='footnote-mark'><a href='Hausarbeit-GdN-I7.html#fn6x0'><sup class='textsuperscript'>6</sup></a></span><a id='x1-2016f6'></a> ),
+welche direkt aus dem Schlafmohn gewonnen werden, als Arzneimittel im
+Einsatz. Andere Opioide wie Naloxon (Antidot bei Opioid-Überdosis)
+und Oxycodon (Schmerzmittel) werden aus Thebain hergestellt, das
+auch im Schlafmohn vorkommt, aber mit bis zu 26 % noch mehr im
+Arznei-Mohn<span class='footnote-mark'><a href='Hausarbeit-GdN-I8.html#fn7x0'><sup class='textsuperscript'>7</sup></a></span><a id='x1-2018f7'></a> 
+(<span class='cmti-12'>Papaver bracteatum</span> <a href='#lindl'>Lindl.</a>), auf den hier nur am Rande eingegangen werden
+soll.
+</p><!-- l. 57 --><p class='indent'>   Wegen der langen Geschichte, dem geschichtlich gesehen sehr frühen Einsatz
+                                                                          
+
+                                                                          
+dieser pflanzlichen Arznei und der Tatsache, dass Opioide noch heute eine große
+Rolle in der Medizin spielen, gebe ich hier einen Überblick über Opium und den
+Schlafmohn.
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>2   </span> <a id='x1-30002'></a>Ursprung und Grundlagen</h3>
+<!-- l. 60 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.1   </span> <a id='x1-40002.1'></a>Die Pflanze Schlafmohn</h4>
+<!-- l. 61 --><p class='noindent'>Der Schlafmohn (<span class='cmti-12'>Papaver somniferum</span> <a href='#l'>L.</a>) ist der vielleicht berüchtigste
+Vertreter der Familie der Mohngewächse (Papaveraceae). Erstens sind seine
+reifen Samen als Würzmittel oder Backzutat bekannt, zweitens liefert er
+das bekannte Opium <a href='#bzw'>bzw.</a> die Opiate, die in der Medizin Verwendung
+finden.
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 66 --><p class='noindent'><img alt='PIC' src='http://localhost:3000/img/papaver-somniferum-photo.jpg' /> <a id='x1-4001r1'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 1:         </span><span class='content'>Samenkapsel         von         <span class='cmti-12'>Papaver        somniferum</span>
+<a href='#l'>L.</a>,       angeritzt       mit       austretendem       Milchsaft,       gemeinfrei,
+<a class='url' href='https://de.wikipedia.org/wiki/Datei:Opium_pod_cut_to_demonstrate_fluid_extraction1.jpg'><span class='cmtt-12'>https://de.wikipedia.org/wiki/Datei:Opium_pod_cut_to_demonstrate_fluid_extraction1.jpg</span></a></span></figcaption><!-- tex4ht:label?: x1-4001r1  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 71 --><p class='indent'>   Durch seinen Wildwuchs ist auch der Klatschmohn (<span class='cmti-12'>Papaver rhoeas</span> <a href='#l'>L.</a>)
+bekannt, jedoch ist seine kulturelle Bedeutung deutlich geringer — er wird auch
+als Unkraut bezeichnet. <br class='newline' />Der Arznei-Mohn ist trotz seiner pharmazeutisch-industriellen Bedeutung in der
+Bevölkerung ebenfalls weniger bekannt.
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.2   </span> <a id='x1-50002.2'></a>Das Rohopium und dessen Herstellung</h4>
+<!-- l. 76 --><p class='noindent'>Um Rohopium herzustellen wird der weiße Milchsaft von unreifen Samenkapseln
+des Schlafmohns <span class='cmti-12'>Papaver somniferum</span> <a href='#l'>L.</a> geerntet und an der Luft
+getrocknet. Die Ernte des Milchsafts geschieht durch leichtes Anritzen der
+Samenkapsel<span class='footnote-mark'><a href='Hausarbeit-GdN-I9.html#fn8x0'><sup class='textsuperscript'>8</sup></a></span><a id='x1-5001f8'></a> 
+(siehe auch Abbildung <a href='#x1-4001r1'>1<!-- tex4ht:ref: fig:papaver-somniferum-photo  --></a>).
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 80 --><p class='noindent'><img alt='PIC' src='http://localhost:3000/img/rohopium.jpg' /> <a id='x1-5004r2'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 2:                           </span><span class='content'>Rohopium,                           gemeinfrei,
+<a class='url' href='https://commons.wikimedia.org/wiki/File:Raw_opium.jpg'><span class='cmtt-12'>https://commons.wikimedia.org/wiki/File:Raw_opium.jpg</span></a>            </span></figcaption><!-- tex4ht:label?: x1-5004r2  -->
+                                                                          
+
+                                                                          
+   </figure>
+   <h5 class='likesubsubsectionHead'><a id='x1-6000'></a>Inhaltsstoffe</h5>
+<!-- l. 87 --><p class='noindent'>Im Rohopium (Abbildung <a href='#x1-5004r2'>2<!-- tex4ht:ref: fig:rohopium  --></a>) befinden sich <a href='#ca'>ca.</a> 40 verschiedene Alkaloide,
+dabei mindestens 9,5 % (12 % der Alkaloide) Morphin. Auch heute noch
+wird das in der Medizin verwendete Morphin aus dem Schlafmohn
+gewonnen.<span class='footnote-mark'><a href='Hausarbeit-GdN-I10.html#fn9x0'><sup class='textsuperscript'>9</sup></a></span><a id='x1-6001f9'></a> 
+<br class='newline' />Abbildung <a href='#x1-6009r3'>3<!-- tex4ht:ref: fig:strukturformeln  --></a> zeigt vier natürlich im Schlafmohn vorkommende Opiate (Morphin,
+Codein, Thebain (Paramorphin) und Narcotin (Noscapin)) und zum Vergleich zu
+Morphin, wegen der Ähnlichkeit der Moleküle, Heroin, ein halbsynthetisches
+Opioid, das ursprünglich als Medikament und noch immer als Droge Verwendung
+findet.
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<div class='subfigure'>
+<!-- l. 93 --><p class='noindent'></p><!-- l. 94 --><p class='noindent'><img alt='PIC' height='97' src='http://localhost:3000/img/morphin.png' width='117' /> <a id='x1-6004r1'></a></p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(a) </span></span><span class='content'><span class='cmr-10x-x-109'>Morphin</span>
+</span></div>                      </div>   <div class='subfigure'>
+<!-- l. 99 --><p class='noindent'></p><!-- l. 100 --><p class='noindent'><img alt='PIC' height='84' src='http://localhost:3000/img/codein.png' width='117' /> <a id='x1-6005r2'></a></p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(b) </span></span><span class='content'><span class='cmr-10x-x-109'>Codein</span>
+</span></div>                      </div>   <div class='subfigure'>
+<!-- l. 105 --><p class='noindent'></p><!-- l. 106 --><p class='noindent'><img alt='PIC' height='89' src='http://localhost:3000/img/thebain.png' width='117' /> <a id='x1-6006r3'></a></p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(c) </span></span><span class='content'><span class='cmr-10x-x-109'>Thebain</span>
+</span></div>                      </div>   <div class='subfigure'>
+<!-- l. 111 --><p class='noindent'></p><!-- l. 112 --><p class='noindent'><img alt='PIC' height='107' src='http://localhost:3000/img/narcotin.png' width='117' /> <a id='x1-6007r4'></a></p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(d) </span></span><span class='content'><span class='cmr-10x-x-109'>Narcotin</span>
+</span></div>                      </div>   <div class='subfigure'>
+<!-- l. 117 --><p class='noindent'></p><!-- l. 118 --><p class='noindent'><img alt='PIC' height='78' src='http://localhost:3000/img/heroin.png' width='117' /> <a id='x1-6008r5'></a></p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(e) </span></span><span class='content'><span class='cmr-10x-x-109'>Heroin</span>
+</span></div>                      </div> <a id='x1-6009r3'></a>
+<div class='caption'><span class='id'>Abbildung 3:  </span><span class='content'>Strukturformeln  von  (a)  Morphin,  dem  Hauptalkaloid  im
+Rohopium,  (b)  Codein,  heute  hauptsächlich  verwendet  in  Hustensaft,
+als  solcher  auch  in  Verwendung  als  Szenedroge,  (c)  Thebain,  einem
+Alkaloid aus dem in der pharmazeutischen Industrie Opiate (z.B. Naloxon,
+Oxycodon)  hergestellt  werden,  (d)  (-)-<span class='gartemisiarg6a-x-x-111'>a</span>-Narcotin  (auch  Noscapin),  ein
+weiteres Hauptalkaloid des Opiums, heute Arzneistoff zur Hustenstillung und
+(e) Heroin, einer acetylierten Form von Morphin (zum Vergleich); eigene
+Werke
+</span></div>
+                                                                          
+
+                                                                          
+   </figure>
+   <h4 class='subsectionHead'><span class='titlemark'>2.3   </span> <a id='x1-70002.3'></a>Wortherkunft</h4>
+<!-- l. 126 --><p class='noindent'>Das Wort Opium entstammt dem Griechischen Wort <span class='gartemisiarg6a-x-x-111'> poc </span>(= Saft) oder <span class='gartemisiarg6a-x-x-111'> pion </span>(=
+Mohnsaft). Der Schlafmohn ist sicherlich nach seinen schlaffördernden
+Eigenschaften <a href='#bzw'>bzw.</a> denen des Opiums benannt. Der Begriff Mohn stammt
+möglicherweise von dem der Region Mekone (siehe Kapitel <a href='#x1-140003.3'>3.3<!-- tex4ht:ref: opium-als-schmerz-narkosemittel  --></a>).
+</p><!-- l. 130 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>2.4   </span> <a id='x1-80002.4'></a>Opioidrezeptoren und Opiod-Pharmakologie</h4>
+<!-- l. 131 --><p class='noindent'>In der Physiologie werden drei Opioidrezeptoren unterschieden: <span class='tcrm-1200'>µ</span>- (MOR), <span class='gartemisiarg6a-x-x-111'>k</span>-
+(KOR) und <span class='gartemisiarg6a-x-x-111'>d</span>-Opioidrezeptoren (DOR). Für diese Arbeit soll eine Vereinfachung
+auf „die Opioidrezeptoren“ ausreichen, da eher die Geschichte des
+Schlafmohngebrauchs denn die Wirkungsweise von Opioiden dargestellt werden
+soll.
+</p><!-- l. 133 --><p class='indent'>   Für einen Überblick soll hier die Wirkungsweise vorgestellt werden:<br class='newline' />Die Stimulation der Opioidrezeptoren durch natürlich vorkommende,
+halbsynthetische, synthetische Opiode oder gar körpereigene Endorphine bewirkt
+Analgesie (Schmerzlinderung), Sedierung (Beruhigung), Atemdepression (bis hin
+zum Atemstillstand), Miosis (Engstellung der Pupillen), Bradykardie (niedrige
+Herzfrequenz), Hypothermie (niedrige Körpertemperatur), Antitussis
+(Hustenstillung), spastische Darmlähmung (Konstipation) und Euphorie oder
+auch Dysphorie. Regelmäßige Stimulation kann zu Toleranzentwicklung und
+Abhängigkeit führen. Die unterschiedliche Wirkung verschiedener Opioide (siehe
+Tabelle <a href='#x1-8004r1'>1<!-- tex4ht:ref: table:opioide  --></a>) ist auch auf die unterschiedliche Affinität zu den verschiedenen Rezeptoren
+zurückzuführen.<span class='footnote-mark'><a href='Hausarbeit-GdN-I11.html#fn10x0'><sup class='textsuperscript'>10</sup></a></span><a id='x1-8001f10'></a> 
+</p>
+   <div class='table'>
+                                                                          
+
+                                                                          
+<!-- l. 135 --><p class='indent'>   </p><figure class='float'>
+                                                                          
+
+                                                                          
+<a id='x1-8004r1'></a>
+<figcaption class='caption'><span class='id'>Tabelle 1: </span><span class='content'>Einige Opioide, kategorisiert nach Stärke und Agonist/Antagonist
+sowie primärer Nutzen
+</span></figcaption><!-- tex4ht:label?: x1-8004r1  -->
+ <table class='tabular' id='TBL-1'><colgroup id='TBL-1-1g'><col id='TBL-1-1' /><col id='TBL-1-2' /><col id='TBL-1-3' /><col id='TBL-1-4' /></colgroup><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-1-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-1-1' style='white-space:nowrap; text-align:left;'><span class='cmbx-12'>Kategorie           </span></td><td class='td11' id='TBL-1-1-2' style='white-space:nowrap; text-align:left;'> <span class='cmbx-12'>Opioid          </span></td><td class='td11' id='TBL-1-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmbx-12'>Primärer Nutzen            </span></td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-1-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-2-1' style='white-space:nowrap; text-align:left;'>Starke Agonisten      </td><td class='td11' id='TBL-1-2-2' style='white-space:nowrap; text-align:left;'> Morphin          </td><td class='td11' id='TBL-1-2-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-3-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-3-2' style='white-space:nowrap; text-align:left;'> Hydromorphon  </td><td class='td11' id='TBL-1-3-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-4-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-4-2' style='white-space:nowrap; text-align:left;'> Oxymorphon    </td><td class='td11' id='TBL-1-4-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-5-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-5-2' style='white-space:nowrap; text-align:left;'> Oxycodon        </td><td class='td11' id='TBL-1-5-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-6-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-6-2' style='white-space:nowrap; text-align:left;'> Methadon*       </td><td class='td11' id='TBL-1-6-3' style='white-space:nowrap; text-align:left;'> Opioid-Substitution              </td>
+</tr><tr id='TBL-1-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-7-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-7-2' style='white-space:nowrap; text-align:left;'> Fentanyl*         </td><td class='td11' id='TBL-1-7-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-8-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-8-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-8-2' style='white-space:nowrap; text-align:left;'> Sufentanil*       </td><td class='td11' id='TBL-1-8-3' style='white-space:nowrap; text-align:left;'> Anästhetikum                     </td>
+</tr><tr id='TBL-1-9-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-9-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-9-2' style='white-space:nowrap; text-align:left;'> Loperamid       </td><td class='td11' id='TBL-1-9-3' style='white-space:nowrap; text-align:left;'> Gegen Diarrhoe                   </td>
+</tr><tr id='TBL-1-10-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-10-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-10-2' style='white-space:nowrap; text-align:left;'>               </td><td class='td11' id='TBL-1-10-3' style='white-space:nowrap; text-align:left;'> (als Imodium<sup class='textsuperscript'><span class='cmr-10x-x-109'>®</span></sup>bekannt)         </td>
+</tr><tr id='TBL-1-12-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-12-1' style='white-space:nowrap; text-align:left;'>Schwache Agonisten  </td><td class='td11' id='TBL-1-12-2' style='white-space:nowrap; text-align:left;'> Codein            </td><td class='td11' id='TBL-1-12-3' style='white-space:nowrap; text-align:left;'> Hustenblocker                     </td>
+</tr><tr id='TBL-1-13-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-13-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-13-2' style='white-space:nowrap; text-align:left;'> Hydrocodon     </td><td class='td11' id='TBL-1-13-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-14-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-14-1' style='white-space:nowrap; text-align:left;'>                  </td><td class='td11' id='TBL-1-14-2' style='white-space:nowrap; text-align:left;'> Tramadol*       </td><td class='td11' id='TBL-1-14-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel                     </td>
+</tr><tr id='TBL-1-16-' style='vertical-align:baseline;'><td class='td01' id='TBL-1-16-1' style='white-space:nowrap; text-align:left;'>Antagonist              </td><td class='td11' id='TBL-1-16-2' style='white-space:nowrap; text-align:left;'> Naloxon           </td><td class='td11' id='TBL-1-16-3' style='white-space:nowrap; text-align:left;'> Antidot bei Opioid-Überdosis  </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr></table>
+                                                                          
+
+                                                                          
+   </figure>
+   </div>
+<!-- l. 161 --><p class='indent'>   * rein synthetische Opioide<br class='newline' />Alle anderen sind natürliche (Morphin, Codein) oder halbsynthetische Opioide
+(Derivate natürlich vorkommender Opiate)<br class='newline' />Quelle<span class='footnote-mark'><a href='Hausarbeit-GdN-I12.html#fn11x0'><sup class='textsuperscript'>11</sup></a></span><a id='x1-8005f11'></a> 
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-9000'></a>Gefahren durch Überdosierung / Vergiftung</h5>
+<!-- l. 167 --><p class='noindent'>Fünf  (nach  anderen  Quellen  sechs)
+Toxidrome<span class='footnote-mark'><a href='Hausarbeit-GdN-I13.html#fn12x0'><sup class='textsuperscript'>12</sup></a></span><a id='x1-9001f12'></a> 
+werden unterschieden (Abbildung <a href='#x1-9003r4'>4<!-- tex4ht:ref: fig:toxidrome  --></a>). Das opioide Toxidrom (= Vergiftung mit
+Opioiden oder Opioid-Überdosis) zeichnet sich durch gleichbleibende bis
+verlangsamte Herzfrequenz, Atemdepression, gleichbleibende bis leicht verringerte
+Körpertemperatur, Miosis und somnolenten (schläfrigen) bis komatösen (tief
+bewusstlosen) neurologischen Status aus.
+</p>
+   <figure class='figure'> 
+
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+<!-- l. 171 --><p class='noindent'><img alt='PIC' height='390' src='http://localhost:3000/img/toxidrome.jpg' /> <a id='x1-9003r4'></a>
+</p>
+<figcaption class='caption'><span class='id'>Abbildung 4:        </span><span class='content'>Toxidrome,        eigenes        Werk,        Daten        von
+<a class='url' href='https://foam-rd.health.blog/2020/05/27/toxidrome/'><span class='cmtt-12'>https://foam-rd.health.blog/2020/05/27/toxidrome/</span></a>,   Symbole   von
+<a class='url' href='https://fontawesome.com/'><span class='cmtt-12'>https://fontawesome.com/</span></a>                                              </span></figcaption><!-- tex4ht:label?: x1-9003r4  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 176 --><p class='indent'>   Im Hellenismus seien die Gefahren des Schlafmohns bzw. einer Überdosierung mit
+Opium bekannt gewesen. Nikandros von Kolophon beschrieb das tödliche Toxidrom recht
+genau.<span class='footnote-mark'><a href='Hausarbeit-GdN-I14.html#fn13x0'><sup class='textsuperscript'>13</sup></a></span><a id='x1-9004f13'></a> <br class='newline' />Auch Dioscorides seien die Gefahren bekannt gewesen, doch überwiegten
+die Vorteile für ihn und für den sicheren Anwender seien die Gefahren
+vernachlässigbar.<span class='footnote-mark'><a href='Hausarbeit-GdN-I15.html#fn14x0'><sup class='textsuperscript'>14</sup></a></span><a id='x1-9007f14'></a> 
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-10000'></a>Toxidrom nach damaliger Beschreibung</h5>
+      <ul class='itemize1'>
+      <li class='itemize'>Kaltschweißigkeit [Schockzeichen<span class='footnote-mark'><a href='Hausarbeit-GdN-I16.html#fn15x0'><sup class='textsuperscript'>15</sup></a></span><a id='x1-10001f15'></a> ]
+      </li>
+      <li class='itemize'>Schwacher, schneller Puls [Schockzeichen]
+      </li>
+      <li class='itemize'>Zyanose<span class='footnote-mark'><a href='Hausarbeit-GdN-I17.html#fn16x0'><sup class='textsuperscript'>16</sup></a></span><a id='x1-10003f16'></a> 
+      [als Folge der Atemdepression]</li></ul>
+                                                                          
+
+                                                                          
+<!-- l. 186 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>3   </span> <a id='x1-110003'></a>Verwendung von Schlafmohn und Opium in der Antike</h3>
+<!-- l. 187 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.1   </span> <a id='x1-120003.1'></a>Schlafmohn als Lebensmittel</h4>
+<!-- l. 188 --><p class='noindent'>Reife Mohnsamen seien laut Porter und Teich von Dioscorides „Ernährungsexperten“ (<a href='#engl'>engl.</a>
+dietetic experts)<span class='footnote-mark'><a href='Hausarbeit-GdN-I18.html#fn17x0'><sup class='textsuperscript'>17</sup></a></span><a id='x1-12001f17'></a> 
+als Backzutat empfohlen. Die Autoren führen dies auf den hohen Lecithingehalt
+zurück.
+      </p><blockquote class='quote'>
+      <!-- l. 190 --><p class='noindent'>„Dioscorides’ dietetic experts also knew how ‚health-inducing‘
+      were the seeds, and modern food chemists have found goodly
+      amounts of lecithin in poppy seed meal.“<span class='footnote-mark'><a href='Hausarbeit-GdN-I19.html#fn18x0'><sup class='textsuperscript'>18</sup></a></span><a id='x1-12003f18'></a> </p></blockquote>
+<!-- l. 193 --><p class='indent'>   In der klassischen Antike mischte man den Mohn mit Honig und streute ihn auf Brot
+analog zu der Art und Weise, wie auch heute noch Mohnbrötchen und Mohnkuchen verzehrt
+werden.<span class='footnote-mark'><a href='Hausarbeit-GdN-I20.html#fn19x0'><sup class='textsuperscript'>19</sup></a></span><a id='x1-12006f19'></a> 
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.2   </span> <a id='x1-130003.2'></a>Schlafmohn als Schlaf- und Beruhigungsmittel</h4>
+                                                                          
+
+                                                                          
+<!-- l. 196 --><p class='noindent'>Der Schlafmohn tauche bereits um 2700 <a href='#vChr'>v. Chr.</a> auf einer mesopotamischen
+Tontafel (Ninive) auf, gemeinsam mit weiteren assyrischen/sumerischen
+Heilpflanzen. Auf einem weiteren Stück mesopotamischer Geschichte, einem
+Basrelief aus dem 9. <a href='#jhd'>Jhd.</a> <a href='#vChr'>v. Chr.</a> aus Ninive sei ein Priester zu sehen, der sich mit
+Mohnkapseln in der Hand über einen Schläfer beuge. Eine sumerische Tafel aus
+Nippur (etwa 3000 <a href='#vChr'>v. Chr.</a>) beschreibe das Sammeln des Milchsafts aus Mohn
+auf die gleiche Weise wie eine assyrische Keilschrifttafel aus dem 7. <a href='#jhd'>Jhd.</a>
+<a href='#vChr'>v. Chr.</a><span class='footnote-mark'><a href='Hausarbeit-GdN-I21.html#fn20x0'><sup class='textsuperscript'>20</sup></a></span><a id='x1-13001f20'></a>
+Einer anderen Quelle zufolge, seien sich Experten generell einig, dass in
+Mesopotamiem bereits um 3400 <a href='#vChr'>v. Chr.</a> Schlafmohn kultiviert und Opium
+genutzt wurde. Die Pflanze soll <span class='cmti-12'>Hul Gil </span>(„Freudenpflanze“) genannt worden
+sein.<span class='footnote-mark'><a href='Hausarbeit-GdN-I22.html#fn21x0'><sup class='textsuperscript'>21</sup></a></span><a id='x1-13003f21'></a> <br class='newline' />Wie auch beim alten Ägypten sind diese angeblichen Belege infrage zu
+stellen. Andrea Sinclair ist der Auffassung, die Meinungen seien Folge eines
+„Stille-Post-Spiels“ und hätten ihre Ursache in Fehlinterpretationen und
+Vermutungen. Tatsächliche Belege oder gar Beweise für einen Einsatz von
+Opium bzw. Schlafmohn in der frühen mesopotamischen Hochkultur gebe es
+nicht.<span class='footnote-mark'><a href='Hausarbeit-GdN-I23.html#fn22x0'><sup class='textsuperscript'>22</sup></a></span><a id='x1-13006f22'></a> 
+</p><!-- l. 203 --><p class='indent'>   Ein Papyrus (der Name wird von Grammatikopoulos nicht genannt) um 1600 <a href='#vChr'>v. Chr.</a>
+erwähne einen Arzt, der Opium als „Heilmittel zum Vertreiben übermäßigen Kindergeschreis“
+empfehle.<span class='footnote-mark'><a href='Hausarbeit-GdN-I24.html#fn23x0'><sup class='textsuperscript'>23</sup></a></span><a id='x1-13009f23'></a> 
+</p><!-- l. 205 --><p class='indent'>   In Galens Texten findet sich ein Rezept von Dioscorides: Extrakt
+aus dem Schlafmohn (Kapseln und Blätter) könne getrunken
+werden, um einzuschlafen oder gar Schlafstörungen/-losigkeit zu
+                                                                          
+
+                                                                          
+behandeln.<span class='footnote-mark'><a href='Hausarbeit-GdN-I25.html#fn24x0'><sup class='textsuperscript'>24</sup></a></span><a id='x1-13012f24'></a> 
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.3   </span> <a id='x1-140003.3'></a>Opium als Schmerz-/Narkosemittel</h4>
+<!-- l. 209 --><p class='noindent'>Im <span class='cmti-12'>Papyrus Ebers </span>(<a href='#ca'>ca.</a> 1550 <a href='#vChr'>v. Chr.</a>) wird das Opium (in
+Ebers Übersetzung als <span class='cmti-12'>Seter </span>bezeichnet) als Schmerzmittel
+erwähnt.<span class='footnote-mark'><a href='Hausarbeit-GdN-I26.html#fn25x0'><sup class='textsuperscript'>25</sup></a></span><a id='x1-14001f25'></a> <br class='newline' />Im nach Hippokrates (<a href='#ca'>ca.</a> 460 – 370
+<a href='#vChr'>v. Chr.</a><span class='footnote-mark'><a href='Hausarbeit-GdN-I27.html#fn26x0'><sup class='textsuperscript'>26</sup></a></span><a id='x1-14004f26'></a>),
+dem griechischen Arzt, der als Begründer der Medizin gilt, benannten
+Sammelwerk <span class='cmti-12'>Corpus Hippocraticum </span>(um 400 <a href='#vChr'>v. Chr.</a>, mehrere
+Verfasser<span class='footnote-mark'><a href='Hausarbeit-GdN-I28.html#fn27x0'><sup class='textsuperscript'>27</sup></a></span><a id='x1-14007f27'></a> ) wird
+das <span class='cmti-12'>Mekonium</span><span class='footnote-mark'><a href='Hausarbeit-GdN-I29.html#fn28x0'><sup class='textsuperscript'>28</sup></a></span><a id='x1-14009f28'></a> 
+erwähnt, das durch Auspressen von Mohn gewonnen wird und wegen
+seiner Wirkung als Schmerz- und/oder Narkosemittel empfohlen
+wird.<span class='footnote-mark'><a href='Hausarbeit-GdN-I30.html#fn29x0'><sup class='textsuperscript'>29</sup></a></span><a id='x1-14012f29'></a> <br class='newline' />Es gebe 13 Erwähnungen vom Schlafmohn im <span class='cmti-12'>Corpus Hippocraticum</span>,
+                                                                          
+
+                                                                          
+davon neun im gynäkologischen Teil. Porter und Teich schließen
+daraus, dass dieser mehr von Hebammen als von Ärzten eingesetzt
+wurde.<span class='footnote-mark'><a href='Hausarbeit-GdN-I31.html#fn30x0'><sup class='textsuperscript'>30</sup></a></span><a id='x1-14014f30'></a> 
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.4   </span> <a id='x1-150003.4'></a>Opium als Rauschmittel/Droge</h4>
+<!-- l. 216 --><p class='noindent'>Grammatikopoulos stellt in seinem Werk <span class='cmti-12'>Opium </span>drei römische Dichter vor, die als
+Opiumkonsumenten bekannt seien: <span class='cmti-12'>Horaz </span>(65 – 8 <a href='#vChr'>v. Chr.</a>), <span class='cmti-12'>Ovid </span>(43 <a href='#vChr'>v. Chr.</a> –
+17/18 <a href='#nChr'>n. Chr.</a>) und <span class='cmti-12'>Vergil </span>(70 – 19 <a href='#vChr'>v. Chr.</a>).<br class='newline' />Ersterer schien vor allem Opium in Form des
+Theriak<span class='footnote-mark'><a href='Hausarbeit-GdN-I32.html#fn31x0'><sup class='textsuperscript'>31</sup></a></span><a id='x1-15001f31'></a> 
+genossen zu haben und berichtete vom Wein Kleopatras, der mit Opium versetzt
+worden sei. Letzterer nannte den Mohn als „getränkt mit dem Schlummer des
+Vergessens“.<span class='footnote-mark'><a href='Hausarbeit-GdN-I33.html#fn32x0'><sup class='textsuperscript'>32</sup></a></span><a id='x1-15005f32'></a> 
+</p><!-- l. 220 --><p class='indent'>   Darüber hinaus nennt Grammatikopoulos einige römische Kaiser, die allesamt
+opiumsüchtig oder zumindest „Opium-User“ seien, darunter: Nero, Titus, Nerva,
+Trajan, Hadrian, Septimus Severus, Caracalla. Zurückzuführen sei dies weniger
+auf Opium als Rauschmittel und eher wegen der Einnahme als Schutz vor
+Giftanschlägen.<span class='footnote-mark'><a href='Hausarbeit-GdN-I34.html#fn33x0'><sup class='textsuperscript'>33</sup></a></span><a id='x1-15007f33'></a> 
+</p><!-- l. 222 --><p class='indent'>   Umstritten sei laut Grammatikopoulos, ob Alexander der Große süchtig
+nach Opium war. Abendländische Quellen und Historiker bezweifeln dies,
+islamische jedoch nicht. Überliefert ist, dass Alexanders Soldaten im einzigen
+                                                                          
+
+                                                                          
+großen Eroberungskrieg Opium als Stoff, der „sehr wohl jede Angst nimmt“
+bekamen.<span class='footnote-mark'><a href='Hausarbeit-GdN-I35.html#fn34x0'><sup class='textsuperscript'>34</sup></a></span><a id='x1-15009f34'></a> 
+</p>
+   <h4 class='subsectionHead'><span class='titlemark'>3.5   </span> <a id='x1-160003.5'></a>Weitere Anwendungen</h4>
+<!-- l. 225 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-17000'></a>Augensalbe mit Opium</h5>
+<!-- l. 226 --><p class='noindent'>
+      </p><blockquote class='quote'>
+      <!-- l. 227 --><p class='noindent'>„One is inclined to place Philotas’ multi-ingredient eye-salve (an
+      aphroditarion, ‚darling‘) in the contexts of Antony and Cleopatra’s
+      court. Here are 12 <span class='cmti-12'>drachmai </span>of the opium poppy latex, 24 <span class='cmti-12'>drachmai</span>
+      of zinc oxide (kadmeia, sometimes called calamine), 36 <span class='cmti-12'>drachmai</span>
+      of gum Arabic from <span class='cmti-12'>Acacia </span>spp., and a whopping 12 <span class='cmti-12'>drachmai</span>
+      of the saffron crocus, along with pure rainwater, to be spread
+      on  with  an  egg,  then  washed  off;  the  <span class='cmti-12'>kollyrion  </span>was  supposed
+      to engender a copious flowing of tears, and the inclusion of the
+      saffron crocus certainly made this ‚tear jerker‘ a phenomenally
+      expensive ointment, profligately flaunting the easily wasted wealth
+      at the ptolemaic court.“<span class='footnote-mark'><a href='Hausarbeit-GdN-I36.html#fn35x0'><sup class='textsuperscript'>35</sup></a></span><a id='x1-17001f35'></a> </p></blockquote>
+<!-- l. 229 --><p class='noindent'>Scarborough beschreibt eine Augensalbe mit einigen (genau angegebenen)
+Inhaltsstoffen nach Philotas’ Rezeptur. Die Anwendung oder eher die Funktion
+dieser Salbe ist nicht geklärt, man könne nur vermuten:
+</p><!-- l. 231 --><p class='indent'>
+                                                                          
+
+                                                                          
+      </p><blockquote class='quote'>
+      <!-- l. 232 --><p class='noindent'>„One can only guess what the <span class='cmti-12'>aphroditarion </span>had as a function:
+      perhaps the flowing of tears enhanced one’s sexual attractiveness
+      at  the  point  of  love-making,  or  such  a  copious  production  of
+      lacrimal fluids could underline one’s anger at the point of open
+      rage. Possibly the <span class='cmti-12'>aphroditarion </span>offers a glimpse into the stormy
+      years when Cleopatra seduced Antony into thinking he –not Octavian–
+      was destined to inherit command over the faltering Roman Republic
+      from an Egyptian base.“<span class='footnote-mark'><a href='Hausarbeit-GdN-I37.html#fn36x0'><sup class='textsuperscript'>36</sup></a></span><a id='x1-17004f36'></a> </p></blockquote>
+<!-- l. 234 --><p class='noindent'>Mögliche Erklärungen seien laut Scarborough, dass das Fließen der Tränen
+die sexuelle Attraktivität erhöhe oder den Ärger bis hin zu offener Wut
+steigere.
+</p><!-- l. 236 --><p class='noindent'>
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-18000'></a>Behandlung von bakteriellen Hautentzündungen</h5>
+<!-- l. 237 --><p class='noindent'>Nach einem Rezept von Dioscorides wurde gemahlene Schlafmohnkapsel
+in einem Tuch aus geschälter Gerste als „Pflaster“ gegen
+entzündete Phlegmone (oder Furunkel) oder Erysipel (Wundrose)
+eingesetzt.<span class='footnote-mark'><a href='Hausarbeit-GdN-I38.html#fn37x0'><sup class='textsuperscript'>37</sup></a></span><a id='x1-18001f37'></a> 
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-19000'></a>Mittel gegen Husten und Magen-Darm-Beschwerden</h5>
+<!-- l. 240 --><p class='noindent'>Dioscorides beschrieb: In Wasser gekochtes und mit Honig vermengtes Rohopium
+wurde bis zur Pastillenform reduziert und als Mittel gegen schmerzenden Husten
+und Auswurf eingesetzt und sollte auch bei Magen-Darm-Beschwerden Abhilfe
+schaffen. Mit gummi arabicum vermengt ergab es eine Arznei gegen Übelkeit und
+                                                                          
+
+                                                                          
+Diarrhoe.<span class='footnote-mark'><a href='Hausarbeit-GdN-I39.html#fn38x0'><sup class='textsuperscript'>38</sup></a></span><a id='x1-19001f38'></a> 
+</p>
+   <h5 class='likesubsubsectionHead'><a id='x1-20000'></a>Weitere Beispiele:<span class='footnote-mark'><a href='Hausarbeit-GdN-I40.html#fn39x0'><sup class='textsuperscript'>39</sup></a></span><a id='x1-20001f39'></a> </h5>
+      <ul class='itemize1'>
+      <li class='itemize'>Mit Rosenöl gegen Kopfschmerzen
+      </li>
+      <li class='itemize'>Mit Mandelöl, Safran und Myrrhe gegen Ohrenschmerzen
+      </li>
+      <li class='itemize'>Mit Muttermilch und Safran gegen schmerzende Füße
+      </li>
+      <li class='itemize'>Digital-rektal als Schlafmittel</li></ul>
+   <h4 class='subsectionHead'><span class='titlemark'>3.6   </span> <a id='x1-210003.6'></a>Zeittabelle</h4>
+   <div class='table'>
+                                                                          
+
+                                                                          
+<!-- l. 251 --><p class='indent'>   </p><figure class='float'>
+                                                                          
+
+                                                                          
+<a id='x1-21001r2'></a>
+<figcaption class='caption'><span class='id'>Tabelle 2: </span><span class='content'>Schlafmohn-/Opiumgebrauch über die Zeit
+</span></figcaption><!-- tex4ht:label?: x1-21001r2  -->
+ <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /><col id='TBL-2-2' /><col id='TBL-2-3' /><col id='TBL-2-4' /></colgroup><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-1-1' style='white-space:nowrap; text-align:right;'>                                            <span class='cmbx-12'>Person/Ort/Schrift </span></td><td class='td11' id='TBL-2-1-2' style='white-space:nowrap; text-align:center;'>                           <span class='cmbx-12'>Zeit </span>(um/<a href='#ca'>ca.</a>)                                          </td><td class='td11' id='TBL-2-1-3' style='white-space:nowrap; text-align:left;'> <span class='cmbx-12'>Nutzen/Information                                                             </span></td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-2-1' style='white-space:nowrap; text-align:right;'>                                                                </td><td class='td11' id='TBL-2-2-2' style='white-space:nowrap; text-align:center;'>                             <a href='#vChr'><span class='cmbx-12'>v. Chr.</span></a>                                        </td><td class='td11' id='TBL-2-2-3' style='white-space:nowrap; text-align:left;'>                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-3-1' style='white-space:nowrap; text-align:right;'>                                                   Mesopotamiem  </td><td class='td11' id='TBL-2-3-2' style='white-space:nowrap; text-align:center;'>                               3400                                                </td><td class='td11' id='TBL-2-3-3' style='white-space:nowrap; text-align:left;'> erste Hinweise*                                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-4-1' style='white-space:nowrap; text-align:right;'>                                                 sumerische Tafel  </td><td class='td11' id='TBL-2-4-2' style='white-space:nowrap; text-align:center;'>                               3000                                                </td><td class='td11' id='TBL-2-4-3' style='white-space:nowrap; text-align:left;'> Beschreibung Opium-Ernte*                                                                </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-5-1' style='white-space:nowrap; text-align:right;'>                                          mesopotamische Tontafel  </td><td class='td11' id='TBL-2-5-2' style='white-space:nowrap; text-align:center;'>                               2700                                                </td><td class='td11' id='TBL-2-5-3' style='white-space:nowrap; text-align:left;'> *                                                                                                    </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-6-1' style='white-space:nowrap; text-align:right;'>                                                   Papyrus Ebers  </td><td class='td11' id='TBL-2-6-2' style='white-space:nowrap; text-align:center;'>                               1550                                                </td><td class='td11' id='TBL-2-6-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel/Narkotikum*                                                                </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-7-1' style='white-space:nowrap; text-align:right;'>                                         Basrelief (Mesopotamiem)  </td><td class='td11' id='TBL-2-7-2' style='white-space:nowrap; text-align:center;'>                               900                                                 </td><td class='td11' id='TBL-2-7-3' style='white-space:nowrap; text-align:left;'> Schlafmittel                                                                                     </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-8-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-8-1' style='white-space:nowrap; text-align:right;'>                                                 Homers Odyssee  </td><td class='td11' id='TBL-2-8-2' style='white-space:nowrap; text-align:center;'>                               700                                                 </td><td class='td11' id='TBL-2-8-3' style='white-space:nowrap; text-align:left;'> Schmerzmittel/Narkotikum                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-9-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-9-1' style='white-space:nowrap; text-align:right;'>                                            Corpus Hippocraticum  </td><td class='td11' id='TBL-2-9-2' style='white-space:nowrap; text-align:center;'>                               400                                                 </td><td class='td11' id='TBL-2-9-3' style='white-space:nowrap; text-align:left;'> verschiedene Anwendungen                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-10-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-10-1' style='white-space:nowrap; text-align:right;'>                                                      Theophrast  </td><td class='td11' id='TBL-2-10-2' style='white-space:nowrap; text-align:center;'>                             371 – 287                                             </td><td class='td11' id='TBL-2-10-3' style='white-space:nowrap; text-align:left;'> verschiedene Anwendungen                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-11-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-11-1' style='white-space:nowrap; text-align:right;'>                                            Philotas von Amphissa  </td><td class='td11' id='TBL-2-11-2' style='white-space:nowrap; text-align:center;'>  <table class='tabular' id='TBL-3'><colgroup id='TBL-3-1g'><col id='TBL-3-1' /></colgroup><tr id='TBL-3-1-' style='vertical-align:baseline;'><td class='td00' id='TBL-3-1-1' style='white-space:nowrap; text-align:center;'> 55 <a href='#vChr'>v. Chr.</a>  </td> </tr><tr id='TBL-3-2-' style='vertical-align:baseline;'><td class='td00' id='TBL-3-2-1' style='white-space:nowrap; text-align:center;'>– 30 <a href='#nChr'>n. Chr.</a> <span class='footnote-mark'><sup class='textsuperscript'>40</sup></span></td> </tr></table>                                                                                     </td><td class='td00' id='TBL-2-11-3' style='white-space:nowrap; text-align:left;'> Augensalbe mit Opium                                                                       </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-12-' style='vertical-align:baseline;'><td class='td00' id='TBL-2-12-1' style='white-space:nowrap; text-align:right;'>                                                                </td><td class='td00' id='TBL-2-12-2' style='white-space:nowrap; text-align:center;'>                             <a href='#nChr'><span class='cmbx-12'>n. Chr.</span></a>                                        </td><td class='td00' id='TBL-2-12-3' style='white-space:nowrap; text-align:left;'>                                                                 </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-13-' style='vertical-align:baseline;'><td class='td00' id='TBL-2-13-1' style='white-space:nowrap; text-align:right;'> <table class='tabular' id='TBL-4'><colgroup id='TBL-4-1g'><col id='TBL-4-1' /></colgroup><tr id='TBL-4-1-' style='vertical-align:baseline;'><td class='td00' id='TBL-4-1-1' style='white-space:nowrap; text-align:right;'>      Dioscorides</td></tr><tr id='TBL-4-2-' style='vertical-align:baseline;'><td class='td00' id='TBL-4-2-1' style='white-space:nowrap; text-align:right;'><span class='cmti-12'>De materia medica</span></td></tr></table>                                                                    </td><td class='td00' id='TBL-2-13-2' style='white-space:nowrap; text-align:center;'>                             54 – 68<span class='footnote-mark'><sup class='textsuperscript'>41</sup></span>                                                </td><td class='td00' id='TBL-2-13-3' style='white-space:nowrap; text-align:left;'>  <table class='tabular' id='TBL-5'><colgroup id='TBL-5-1g'><col id='TBL-5-1' /></colgroup><tr id='TBL-5-1-' style='vertical-align:baseline;'><td class='td00' id='TBL-5-1-1' style='white-space:nowrap; text-align:left;'>Ernährung, verschiedene      </td>
+  </tr><tr id='TBL-5-2-' style='vertical-align:baseline;'><td class='td00' id='TBL-5-2-1' style='white-space:nowrap; text-align:left;'>Anwendungen <a href='#ua'>u.a.</a> gegen       </td>
+  </tr><tr id='TBL-5-3-' style='vertical-align:baseline;'><td class='td00' id='TBL-5-3-1' style='white-space:nowrap; text-align:left;'>Schlaflosigkeit, Entzündungen</td> </tr></table>                                                           </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-14-' style='vertical-align:baseline;'><td class='td00' id='TBL-2-14-1' style='white-space:nowrap; text-align:right;'>                                                          Galen  </td><td class='td00' id='TBL-2-14-2' style='white-space:nowrap; text-align:center;'>                            130 – 200<span class='footnote-mark'><a href='Hausarbeit-GdN-I41.html#fn42x0'><sup class='textsuperscript'>42</sup></a></span>                                               </td><td class='td00' id='TBL-2-14-3' style='white-space:nowrap; text-align:left;'>  <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td00' id='TBL-6-1-1' style='white-space:nowrap; text-align:left;'>griechischer Arzt                </td> </tr><tr id='TBL-6-2-' style='vertical-align:baseline;'><td class='td00' id='TBL-6-2-1' style='white-space:nowrap; text-align:left;'>beschrieb Dioscorides Rezepte</td> </tr></table>                                                           </td>
+</tr><tr class='hline'><td></td><td></td><td></td><td></td></tr></table>
+                                                                          
+
+                                                                          
+   </figure>
+   </div>
+<!-- l. 288 --><p class='indent'>   * umstritten <a id='x1-21002f42'></a> 
+<a id='x1-21005f42'></a><span class='footnote-mark'><a id='fn42x0'><a id='x1-21006x3.6'></a> <sup class='textsuperscript'>42</sup></a></span><a id='x1-21007'></a><a id='cite.0:cite37'></a><span class='cmr-10'>Porter u. a.: </span><a href='Hausarbeit-GdN-I3.html#cite.0:porter_opium_2010'><span class='cmr-10'>The opium poppy in Hellenistic and Roman medicine</span></a> <span class='cmr-10'>(wie Anm. </span><a href='Hausarbeit-GdN-I3.html#x3-2005x1'><span class='cmr-10'>2</span><!-- tex4ht:ref: cbx@2  --></a><span class='cmr-10'>),
+S. 5</span>
+<a id='x1-21008f42'></a><span class='footnote-mark'><a id='fn42x0'><a id='x1-21009x3.6'></a> <sup class='textsuperscript'>42</sup></a></span><a href='#vgl'><span class='cmr-10'>vgl.</span></a> <span class='cmr-10'>Prof. Dr. Stefan Kirschner, Vorlesung „Allgemeine Naturwissenschafts- und
+Technikgeschichte I (Frühe Hochkulturen und Antike)“, Universität Hamburg, SoSe 2024,
+Medizin und Pharmazie S. 29</span>
+</p>
+   <h3 class='sectionHead'><span class='titlemark'>4   </span> <a id='x1-220004'></a>Fazit</h3>
+<!-- l. 294 --><p class='noindent'>Opium, Opiate, Opioide haben eine lange Geschichte in der Heilkunde (wie auch
+im Rauschmittelkonsum). Es ist selten, dass ein Stoff, der schon in der Antike
+Verwendung in der Medizin fand, heute immer noch eingesetzt wird – natürlich
+wurde damals das Morphin nicht aus dem Opium extrahiert, da hierzu die
+technischen Mittel (und auch das Verständnis) fehlten. Und doch ist es
+faszinierend, dass Morphin aus der modernen Medizin kaum wegzudenken ist. Zu
+einem Einsatz mit Rettungswagen und Notärzt*in bei Patient mit Herzinfarkt
+gehört Morphin einfach dazu: 1. wegen der Schmerzlinderung, 2. wegen der
+Dämpfung/Beruhigung/Angstlösung und 3. besteht der Verdacht, Morphin senke
+auch noch den Sauerstoffbedarf des Körpers und wirke kardioprotektiv, was bei
+einer so kritischen Erkrankung wie einem Herzinfarkt durchaus indiziert
+ist. Auch bei Exacerbation (vereinfacht: akuten Verschlechterung) einer
+chronisch obstruktiven Lungenerkrankung (COPD = chronic obstructive
+pulmonary disease, im Volksmund auch „Raucherlunge“), wird Morphin
+eingesetzt. Und auch in der Palliativmedizin wird weiterhin auf Morphin
+gesetzt.
+</p><!-- l. 296 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead'><a id='x1-23000'></a>Danksagung</h3>
+<!-- l. 297 --><p class='noindent'>Für die Unterstützung in der Literaturrecherche und in allen Fragen rund ums
+                                                                          
+
+                                                                          
+wissenschaftliche Arbeiten, insbesondere in der naturwissenschaftshistorischen
+Arbeitsmethodik danke ich Prof. Dr. Stefan Kirschner.<br class='newline' />Für die Inspiration, Biologie zu studieren und mich mit der Ethnobotanik zu
+beschäftigen, danke ich Dipl.-Biologe und Brother Nature Boris Braun.<br class='newline' />Für die schönen Stunden im Lesesaal der Bibliothek des Fachbereichs Biologie
+danke ich meinen Kommiliton*innen Inken, Leo, Leona und Paula.
+</p><!-- l. 302 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead'><a id='x1-24000'></a>Abkürzungsverzeichnis</h3>
+<!-- l. 304 --><p class='noindent'>
+      </p><dl class='description'><dt class='description'>
+<a id='bzw'></a><span class='cmbx-12'>bzw.</span> </dt><dd class='description'>
+      <!-- l. 304 --><p class='noindent'>beziehungsweise
+      </p></dd><dt class='description'>
+<a id='ca'></a><span class='cmbx-12'>ca.</span> </dt><dd class='description'>
+      <!-- l. 305 --><p class='noindent'>circa = ungefähr
+      </p></dd><dt class='description'>
+<a id='engl'></a><span class='cmbx-12'>engl.</span> </dt><dd class='description'>
+      <!-- l. 306 --><p class='noindent'>englisch
+      </p></dd><dt class='description'>
+<a id='jhd'></a><span class='cmbx-12'>Jhd.</span> </dt><dd class='description'>
+      <!-- l. 307 --><p class='noindent'>Jahrhundert
+      </p></dd><dt class='description'>
+<a id='lindl'></a><span class='cmbx-12'>Lindl.</span> </dt><dd class='description'>
+      <!-- l. 308 --><p class='noindent'>John <span class='underline'>Lindley</span>
+      </p></dd><dt class='description'>
+<a id='l'></a><span class='cmbx-12'>L.</span> </dt><dd class='description'>
+      <!-- l. 309 --><p class='noindent'>Carl von <span class='underline'>Linné</span>
+                                                                          
+
+                                                                          
+      </p></dd><dt class='description'>
+<a id='nChr'></a><span class='cmbx-12'>n. Chr.</span> </dt><dd class='description'>
+      <!-- l. 310 --><p class='noindent'>nach Christus
+      </p></dd><dt class='description'>
+<a id='ua'></a><span class='cmbx-12'>u.a.</span> </dt><dd class='description'>
+      <!-- l. 311 --><p class='noindent'>unter anderem
+      </p></dd><dt class='description'>
+<a id='vChr'></a><span class='cmbx-12'>v. Chr.</span> </dt><dd class='description'>
+      <!-- l. 312 --><p class='noindent'>vor Christus
+      </p></dd><dt class='description'>
+<a id='vgl'></a><span class='cmbx-12'>vgl.</span> </dt><dd class='description'>
+      <!-- l. 313 --><p class='noindent'>vergleiche
+      </p></dd><dt class='description'>
+<a id='zB'></a><span class='cmbx-12'>z.B.</span> </dt><dd class='description'>
+      <!-- l. 314 --><p class='noindent'>zum Beispiel</p></dd></dl>
+<!-- l. 317 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead'><a id='x1-25000'></a>Literaturverzeichnis</h3>
+<!-- l. 317 --><p class='noindent'>
+   </p><dl class='thebibliography'><dt class='thebibliography' id='X0-doccheck_opioidrezeptor_2024'>
+</dt><dd class='thebibliography' id='bib-1'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@doccheck_opioidrezeptor_2024'></a>DocCheck,
+   Medizinexpert*innen bei: Opioidrezeptor. DocCheck Flexikon, 21. März
+   2024,    <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>:    <a class='url' href='https://flexikon.doccheck.com/de/Opioidrezeptor'><span class='cmtt-12'>https://flexikon.doccheck.com/de/Opioidrezeptor</span></a>
+   (besucht am 02. 08. 2024).
+   </p></dd><dt class='thebibliography' id='X0-doccheck_theriak_2024'>
+</dt><dd class='thebibliography' id='bib-2'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@doccheck_theriak_2024'></a>Ders.:          Theriak.          DocCheck          Flexikon,          21. März
+   2024, <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>: <a class='url' href='https://flexikon.doccheck.com/de/Theriak'><span class='cmtt-12'>https://flexikon.doccheck.com/de/Theriak</span></a> (besucht am
+   01. 08. 2024).
+                                                                          
+
+                                                                          
+   </p></dd><dt class='thebibliography' id='X0-faraone_magika_2010'>
+</dt><dd class='thebibliography' id='bib-3'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@faraone_magika_2010'></a>Faraone, C. A. u. a.: Magika Hiera: Ancient Greek Magic and Religion,
+   in: Scarborough (Hrsg.): Pharmacy and Drug Lore in Antiquity, 2010.
+   </p></dd><dt class='thebibliography' id='X0-grammatikopoulos_opium_2019'>
+</dt><dd class='thebibliography' id='bib-4'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@grammatikopoulos_opium_2019'></a>Grammatikopoulos, Herbert: Opium - Eine kleine Kulturgeschichte und
+   die literarische Avantgarde der Romantik, 1. Aufl., Stuttgart 2019.
+   </p></dd><dt class='thebibliography' id='X0-orth_schmerzbekampfung_1973'>
+</dt><dd class='thebibliography' id='bib-5'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@orth_schmerzbekampfung_1973'></a>Orth, H u. a.: Schmerzbekämpfung und Narkose, in: Friedrich Wilhelm
+   Gierhake (Hrsg.): Chirurgie historisch gesehen. Anfang – Entwicklung –
+   Differenzierung, Deisenhofen bei München 1973.
+   </p></dd><dt class='thebibliography' id='X0-pasternak_opiate_2011'>
+</dt><dd class='thebibliography' id='bib-6'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@pasternak_opiate_2011'></a>Pasternak,  Gavril  W.  (Hrsg.):  The  Opiate  Receptors,  Totowa,  NJ
+   2011, <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>: <a class='url' href='http://link.springer.com/10.1007/978-1-60761-993-2'><span class='cmtt-12'>http://link.springer.com/10.1007/978-1-60761-993-2</span></a>
+   (besucht am 02. 08. 2024).
+   </p></dd><dt class='thebibliography' id='X0-porter_opium_2010'>
+</dt><dd class='thebibliography' id='bib-7'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@porter_opium_2010'></a>Porter, R. u. a.: The opium poppy in Hellenistic and Roman medicine, in:
+   Scarborough (Hrsg.): Pharmacy and Drug Lore in Antiquity, 2010.
+   </p></dd><dt class='thebibliography' id='X0-santella_opium_2007'>
+</dt><dd class='thebibliography' id='bib-8'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@santella_opium_2007'></a>Santella,  Thomas  M.  u. a.:  Opium,  Google-Books-ID:  9BLfZSZHzgcC,
+   2007.
+   </p></dd><dt class='thebibliography' id='X0-scarborough_pharmacology_2012'>
+</dt><dd class='thebibliography' id='bib-9'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@scarborough_pharmacology_2012'></a>Scarborough: Pharmacology and Toxicology at the Court of Cleopatra
+   VII: Traces of Three Physicians, in: Graham Arsdall (Hrsg.): Herbs and
+   Healers from the ancient mediterranean through the medieval West, 2012.
+   </p></dd><dt class='thebibliography' id='X0-sinclair_artistic_2020'>
+</dt><dd class='thebibliography' id='bib-10'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@sinclair_artistic_2020'></a>Sinclair, Andrea: Artistic licence or why i trust no one: Hul Gil and the
+   opium poppy: A comedy of errors. Artistic licence or why i trust no one,
+   2020, <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>: <a class='url' href='http://artisticlicenseorwhyitrustnoone.blogspot.com/2020/12/hul-gil-and-opium-poppy-comedy-of-errors.html'><span class='cmtt-12'>http://artisticlicenseorwhyitrustnoone.blogspot.com/2020/12/hul-gil-and-opium-poppy-comedy-of-errors.html</span></a>
+   (besucht am 20. 08. 2024).
+                                                                          
+
+                                                                          
+   </p></dd><dt class='thebibliography' id='X0-weis_opium_2013'>
+</dt><dd class='thebibliography' id='bib-11'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@weis_opium_2013'></a>Weiß,         Dieter         u. a.:         Opium,         29. Aug.         2013,
+   <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>: <a class='url' href='https://roempp.thieme.de/lexicon/RD-15-00672'><span class='cmtt-12'>https://roempp.thieme.de/lexicon/RD-15-00672</span></a> (besucht am
+   30. 07. 2024).
+   </p></dd><dt class='thebibliography' id='X0-weis_thebain_2022'>
+</dt><dd class='thebibliography' id='bib-12'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@weis_thebain_2022'></a>Ders.:                   Thebain,                   18. Feb.                   2022,
+   <span class='cmcsc-10x-x-120'><span class='small-caps'>url</span></span>: <a class='url' href='https://roempp.thieme.de/lexicon/RD-20-01154'><span class='cmtt-12'>https://roempp.thieme.de/lexicon/RD-20-01154</span></a> (besucht am
+   01. 08. 2024).
+   </p></dd><dt class='thebibliography' id='X0-wohrle_biologie_1999'>
+</dt><dd class='thebibliography' id='bib-13'>
+   <!-- l. 317 --><p class='noindent'><a id='cite.0@wohrle_biologie_1999'></a>Wöhrle, Georg u. a. (Hrsg.): Biologie (Geschichte der Mathematik und
+   der Naturwissenschaften in der Antike Bd. 1), Stuttgart 1999.</p></dd></dl>
+<!-- l. 318 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead'><a id='x1-26000'></a>Abbildungsverzeichnis</h3>
+   <div class='tableofcontents'><span class='lofToc'>1 <a href='#x1-4001r1'>Samenkapsel von <span class='cmti-12'>Papaver somniferum</span> L., angeritzt mit austretendem
+Milchsaft, gemeinfrei, <span class='cmtt-12'>https://de.wikipedia.org/wiki/Datei:Opium_pod_cut_to_demonstrate_fluid_extraction1.jpg</span></a></span><br /><span class='lofToc'>2 <a href='#x1-5004r2'>Rohopium,
+gemeinfrei, <span class='cmtt-12'>https://commons.wikimedia.org/wiki/File:Raw_opium.jpg</span></a></span><br /><span class='lofToc'>3 <a href='#x1-6009r3'>Strukturformeln
+von (a) Morphin, dem Hauptalkaloid im Rohopium, (b) Codein, heute
+hauptsächlich verwendet in Hustensaft, als solcher auch in Verwendung als
+Szenedroge, (c) Thebain, einem Alkaloid aus dem in der pharmazeutischen
+Industrie Opiate (z.B. Naloxon, Oxycodon) hergestellt werden, (d)
+(-)-<span class='gartemisiarg6a-x-x-111'>a</span>-Narcotin (auch Noscapin), ein weiteres Hauptalkaloid des Opiums,
+heute Arzneistoff zur Hustenstillung und (e) Heroin, einer acetylierten Form
+von Morphin (zum Vergleich); eigene Werke</a></span><br /><span class='lofToc'>4 <a href='#x1-9003r4'>Toxidrome, eigenes Werk,
+Daten von <span class='cmtt-12'>https://foam-rd.health.blog/2020/05/27/toxidrome/</span>,
+Symbole von <span class='cmtt-12'>https://fontawesome.com/</span></a></span><br />
+   </div>
+   <h3 class='likesectionHead'><a id='x1-27000'></a>Tabellenverzeichnis</h3>
+                                                                          
+
+                                                                          
+   <div class='tableofcontents'><span class='lotToc'>1 <a href='#x1-8004r1'>Einige Opioide, kategorisiert nach Stärke und Agonist/Antagonist
+sowie primärer Nutzen</a></span><br /><span class='lotToc'>2 <a href='#x1-21001r2'>Schlafmohn-/Opiumgebrauch über die Zeit</a></span><br />
+   </div>
+<!-- l. 321 --><p class='indent'>
+                                                                          
+
+                                                                          
+</p>
+   <h3 class='likesectionHead'><a id='x1-28000'></a>Werkzeuge/Hilfsmittel</h3>
+<!-- l. 324 --><p class='noindent'>Diese Hausarbeit wurde erstellt mit LaTeX + MiKTeX.<br class='newline' />Editor: Microsoft Visual Studio Code + LaTeX Workshop von James Yu
+<br class='newline' />Literaturverwaltungsprogramm: Zotero + BibLaTeX<br class='newline' />Strukturformeln erstellt mit: ChemDraw Professional<br class='newline' />Versionskontrolle: GitHub + GitHub Desktop
+</p><!-- l. 330 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead'><a id='x1-29000'></a>Kontaktdaten</h3>
+<!-- l. 331 --><p class='noindent'><span class='cmbx-12'>Florian Mischke</span><br class='newline' />B.Sc. Biologie – 2. FS<br class='newline' /><br class='newline' />Universität Hamburg<br class='newline' />Fakultät: Mathematik, Informatik und Naturwissenschaften<br class='newline' />Geschichte der Naturwissenschaften<br class='newline' /><br class='newline' /><a href='mailto:florian.mischke@studium.uni-hamburg.de'>florian.mischke@studium.uni-hamburg.de</a><br class='newline' /><a href='mailto:biologie@florianmischke.de'>biologie@florianmischke.de</a><br class='newline' /><a href='http://www.florianmischke.de'>http://www.florianmischke.de</a>
+</p><!-- l. 342 --><p class='noindent'>
+</p>

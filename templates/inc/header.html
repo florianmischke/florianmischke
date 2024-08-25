@@ -29,36 +29,75 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" aria-current="page" href="#"><i class="bi bi-list"></i> Menu</a>
+                        <a class="nav-link text-uppercase" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="bi bi-list"></i> Menu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/wissenschaft"><i class="bi bi-eyeglasses"></i> Wissenschaft</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/erste-hilfe"><i class="bi bi-bandaid"></i> Erste Hilfe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/notfallmedizin"><i class="bi bi-heart-pulse"></i> Notfallmedizin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/netzwerk"><i class="bi bi-pc-horizontal"></i> Netzwerk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/webentwicklung"><i class="bi bi-filetype-html"></i> Webentwicklung</a>
-                    </li>
+                    {% if categories and categories|length > 0 %}
+                        {% for navCat in categories %}
+                            {% if navCat.child == false %}
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase{% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="{{ home_url }}/blog/">Blog</a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Kategorien
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                        <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
+                            <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg>
+                            <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+                                    Light
+                                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                                    <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+                                    Dark
+                                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+                                    Auto
+                                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                                </button>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 </header>
