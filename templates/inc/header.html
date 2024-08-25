@@ -3,7 +3,7 @@
         <div class="container-xl my-3">
             <div class="row w-100">
                 <div class="col-3">
-                    <a class="navbar-brand text-dark" href="#"><i class="bi bi-arrow-through-heart-fill"></i> Florian Mischke</a>
+                    <a class="navbar-brand text-dark" href="{{ home_url }}"><i class="bi bi-arrow-through-heart-fill"></i> Florian Mischke</a>
                 </div>
                 <div class="col-6">
                     <form class="" role="search">
@@ -14,8 +14,8 @@
                     </form>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-success" href="#" role="button"><i class="bi bi-activity"></i> Stuff</a>
-                    <a class="btn btn-success" href="#" role="button"><i class="bi bi-bag-heart"></i> Shop</a>
+                    <a class="btn btn-success" href="{{ home_url }}" role="button"><i class="bi bi-activity"></i> Stuff</a>
+                    <a class="btn btn-success" href="{{ home_url }}" role="button"><i class="bi bi-bag-heart"></i> Shop</a>
                 </div>
             </div>
         </div>
@@ -32,19 +32,19 @@
                         <a class="nav-link text-uppercase" aria-current="page" href="#"><i class="bi bi-list"></i> Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="blog/wissenschaft"><i class="bi bi-eyeglasses"></i> Wissenschaft</a>
+                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/wissenschaft"><i class="bi bi-eyeglasses"></i> Wissenschaft</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="blog/erste-hilfe"><i class="bi bi-bandaid"></i> Erste Hilfe</a>
+                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/erste-hilfe"><i class="bi bi-bandaid"></i> Erste Hilfe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="blog/notfallmedizin"><i class="bi bi-capsule"></i> Notfallmedizin</a>
+                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/notfallmedizin"><i class="bi bi-heart-pulse"></i> Notfallmedizin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="blog/netzwerk"><i class="bi bi-pc-horizontal"></i> Netzwerk</a>
+                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/netzwerk"><i class="bi bi-pc-horizontal"></i> Netzwerk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="blog/webentwicklung"><i class="bi bi-filetype-html"></i> Webentwicklung</a>
+                        <a class="nav-link text-uppercase" href="{{ home_url }}/blog/webentwicklung"><i class="bi bi-filetype-html"></i> Webentwicklung</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,12 +61,4 @@
             </div>
         </div>
     </nav>
-    <div class="container-xl">
-        <nav style="--bs-breadcrumb-divider: '>';" class="my-3" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="">florianmischke.de</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Home</li>
-            </ol>
-        </nav>
-    </div>
 </header>

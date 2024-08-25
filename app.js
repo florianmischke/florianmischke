@@ -36,7 +36,29 @@ app.get('/blog/*', function(req, res) {
             matches[groupIndex] = match;
         });
     }
-    res.render('blog.html',{ home_url : 'http://localhost:3000', requestedURL : matches });
+
+    const posts = require(path.join(__dirname, 'static/json/posts.json'))
+    const categories = require(path.join(__dirname, 'static/json/categories.json'))
+
+    function findObjectById(list, id) {
+        return list.find((obj) => obj.id === id);
+    }
+    function findPostByCategoryId(list, id) {
+        return list.filter((obj) => obj.categories.indexOf(id) != -1);
+    }
+    function get_child_categories(list, id) {
+        return list.filter((obj) => obj.parent === id);
+    }
+
+    var category = findObjectById(categories, matches[1])
+    console.log(category);
+    if(category !== undefined) {
+        var children = get_child_categories(categories, category.id)
+        console.log(children);
+        var myposts = findPostByCategoryId(posts, category.id)
+        console.log(myposts);
+    }
+    res.render('blog.html',{ home_url : 'http://localhost:3000', category : category, children : children, myposts : myposts, requestedURL : matches });
 });
 
 app.use((req, res) => {

@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "name":"Die Geschichte des Schlafmohns sowie des Gebrauchs von Opium als Beispiel pflanzenbasierter Medizin in der Antike",
+        "date":"2024-08-25 12:54:00",
+        "file":"Hausarbeit-GdN-I.pdf",
+        "categories":["wissenschaft","biologie"]
+    },
+    {
+        "id":2,
+        "name":"Heilpflanzen-/kräuter in Alexandria zur Zeit des Hellenismus (336 - 30 v. Chr.) und die besondere Stellung des Schlafmohns",
+        "date":"2024-08-25 12:54:00",
+        "file":"gdn-referat.pptx",
+        "categories":["wissenschaft","biologie"]
+    },
+    {
+        "id":3,
+        "name":"Mein Setup",
+        "date":"2024-08-25 13:41:00",
+        "file":"",
+        "categories":["netzwerk"]
+    }
+]

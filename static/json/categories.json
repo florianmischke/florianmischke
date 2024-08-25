@@ -1,0 +1,51 @@
+[
+    {
+        "id":"wissenschaft",
+        "name":"Wissenschaft",
+        "icon":"bi bi-eyeglasses",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"biologie",
+        "name":"Biologie",
+        "icon":"bi bi-eyedropper",
+        "child":true,
+        "parent":"wissenschaft"
+    },
+    {
+        "id":"chemie",
+        "name":"Chemie",
+        "icon":"bi bi-hexagon",
+        "child":true,
+        "parent":"wissenschaft"
+    },
+    {
+        "id":"erste-hilfe",
+        "name":"Erste Hilfe",
+        "icon":"bi bi-bandaid",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"notfallmedizin",
+        "name":"Notfallmedizin",
+        "icon":"bi bi-heart-pulse",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"netzwerk",
+        "name":"Netzwerk",
+        "icon":"bi bi-pc-horizontal",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"webentwicklung",
+        "name":"Webentwicklung",
+        "icon":"bi bi-filetype-html",
+        "child":false,
+        "parent":""
+    }
+]

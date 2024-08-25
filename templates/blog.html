@@ -1,5 +1,41 @@
 {% extends "index.html" %}
 
+{% block title %}
+<title>Blog > {{ category.name }} | FlorianMischke.de</title>
+{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+<li class="breadcrumb-item" aria-current="page">{{ category.name }}</li>
+{% endblock %}
+
 {% block content %}
-{{ requestedURL[1] }}
+<h1><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+{% if children and children|length > 0  %}
+<p class="h6 mb-0"><i class="bi bi-tags-fill"></i> Unterkategorien:</p>
+<ul>    
+    {% for child in children %}
+    <li><a href="{{ home_url }}/blog/{{ child.id }}"><i class="{{ child.icon }}"></i> {{ child.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if myposts and myposts|length > 0 %}
+<ul class="list-unstyled">
+    {% for mypost in myposts %}
+    <li class="">
+        <div class="card mb-3">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h2 class="h5 card-title">{{ mypost.name }}</h2>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">weiterlesen</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 {% endblock %}
