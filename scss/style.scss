@@ -48,3 +48,47 @@
 //     radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),
 //     radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
 // }
+
+#page-title.category-name{
+    font-weight:bold;
+}
+
+[data-bs-theme="dark"] {
+    body{
+        background-size:contain;
+        // background-size:cover;
+        background-position:top center;
+        // background-attachment: fixed;
+        background-repeat:no-repeat;
+        background-blend-mode: lighten;
+    }
+    body.wissenschaft,
+    body.biologie,
+    body.chemie,
+    body.geschichte-der-naturwissenschaft{
+        background-image:url('../img/bg_wissenschaft.jpeg');
+    }
+    body.notfallmedizin{
+        background-image:url('../img/bg_notfallmedizin.jpeg');
+    }
+    body.erste-hilfe{
+        background-image:url('../img/bg_erste-hilfe2.jpeg');
+        background-blend-mode: multiply;
+        #main-nav{
+            // background-color:rgba(0,0,0,0.5);
+        }
+    }
+    body.netzwerk,
+    body.webentwicklung{
+        background-image:url('../img/bg_it.jpeg');
+    }
+    body.musik{
+        background-image:url('../img/bg_musik2.jpeg');
+    }
+    #main-nav{
+        // background-color:rgba(0,0,0,0.5);
+        text-shadow:0 0 0.25rem #000;
+    }
+    #breadcrumb{text-shadow:0 0 0.25rem #000;}
+    h1{text-shadow:0 0 1rem #000;}
+}

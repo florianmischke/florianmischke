@@ -11889,4 +11889,44 @@ textarea.form-control-lg {
   display: block !important;
 }
 
+#page-title.category-name {
+  font-weight: bold;
+}
+
+[data-bs-theme=dark] body {
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+}
+[data-bs-theme=dark] body.wissenschaft,
+[data-bs-theme=dark] body.biologie,
+[data-bs-theme=dark] body.chemie,
+[data-bs-theme=dark] body.geschichte-der-naturwissenschaft {
+  background-image: url("../img/bg_wissenschaft.jpeg");
+}
+[data-bs-theme=dark] body.notfallmedizin {
+  background-image: url("../img/bg_notfallmedizin.jpeg");
+}
+[data-bs-theme=dark] body.erste-hilfe {
+  background-image: url("../img/bg_erste-hilfe2.jpeg");
+  background-blend-mode: multiply;
+}
+[data-bs-theme=dark] body.netzwerk,
+[data-bs-theme=dark] body.webentwicklung {
+  background-image: url("../img/bg_it.jpeg");
+}
+[data-bs-theme=dark] body.musik {
+  background-image: url("../img/bg_musik2.jpeg");
+}
+[data-bs-theme=dark] #main-nav {
+  text-shadow: 0 0 0.25rem #000;
+}
+[data-bs-theme=dark] #breadcrumb {
+  text-shadow: 0 0 0.25rem #000;
+}
+[data-bs-theme=dark] h1, [data-bs-theme=dark] .h1 {
+  text-shadow: 0 0 1rem #000;
+}
+
 /*# sourceMappingURL=style.css.map */

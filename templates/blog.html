@@ -11,6 +11,10 @@
 <title>Blog > {{ category.name }} | FlorianMischke.de</title>
 {% endblock %}
 
+{% block body_class %}
+category {{ category.id }}
+{% endblock %}
+
 {% block breadcrumb_items %}
 <li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
 <li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
@@ -21,24 +25,31 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="display-1"><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+
+<h1 id="page-title" class="display-1 category-name"><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+
 {% if children and children|length > 0  %}
-<p class="h6 mb-0"><i class="bi bi-tags-fill"></i> Unterkategorien:</p>
-<ul class="nav nav-underline">
-    {% for child in children %}
-    <li class="nav-item"><a class="nav-link" href="{{ home_url }}/blog/{{ child.id }}"><i class="{{ child.icon }}"></i> {{ child.name }}</a></li>
-    {% endfor %}
-</ul>
+<div class="alert alert-light pb-0" >
+    <p class="h6 mb-0"><i class="bi bi-tags-fill"></i> Unterkategorien:</p>
+    <ul class="nav nav-underline">
+        {% for child in children %}
+        <li class="nav-item"><a class="nav-link" href="{{ home_url }}/blog/{{ child.id }}"><i class="{{ child.icon }}"></i> {{ child.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 
 {% if myposts and myposts|length > 0 %}
 <ul class="list-unstyled">
     {% for mypost in myposts %}
     <li class="">
-        <div class="card mb-3">            
+        <div class="card shadow mb-3">            
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="https://placehold.co/400" class="img-fluid rounded-start" alt="https://placehold.co/" title="https://placehold.co/">
+                    <figure class="figure position-relative mb-0">
+                        <img src="{% if mypost.image and mypost.image != '' %}{{ home_url }}/{{ mypost.image }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="https://placehold.co/" title="https://placehold.co/">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 p-1 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
+                      </figure>
                 </div>
             
                 <div class="col-md-8">

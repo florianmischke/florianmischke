@@ -7,6 +7,8 @@
         "description":"Eine Hausarbeit, die ich für das Seminar in Allgemeine Naturwissenschafts- und Technikgeschichte I (Frühe Hochkulturen und Antike) geschrieben habe. Sie behandelt neben den Ursprüngen der Pflanzennutzung die heutigen Anwendungen und die Kontroverse um die Frage, ob Opium schon vor der Antike eingesetzt wurde.",
         "date":"2024-08-25 12:54:00",
         "file":"pdf/Hausarbeit-GdN-I.pdf",
+        "image":"img/schlafmohn-in-der-antike.jpeg",
+        "caption":"Bild: mit KI erstellt",
         "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft"]
     },
     {
@@ -17,6 +19,8 @@
         "description":"Meine Präsentation um das Referat im Seminar in Allgemeine Naturwissenschafts- und Technikgeschichte I (Frühe Hochkulturen und Antike). Hier geht es um verschiedene Pflanzen, speziell um Schlafmohn und das daraus gewonne Opium mit Bezug zur heutigen Nutzung von Opioiden.",
         "date":"2024-08-25 12:54:00",
         "file":"gdn-referat.pdf",
+        "image":"img/kleopatra.jpeg",
+        "caption":"Bild: mit KI erstellt",
         "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft"]
     },
     {
@@ -27,6 +31,8 @@
         "description":"Ich stelle mein Heimnetzwerk mit custom OpenWrt-Router, PiHole auf einem Raspberry Pi und Proxmox auf alten Office-PCs / Thin Clients vor.",
         "date":"2024-08-25 13:41:00",
         "file":"",
+        "image":"",
+        "caption":"",
         "categories":["netzwerk"]
     }
 ]
