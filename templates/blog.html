@@ -47,7 +47,7 @@ category {{ category.id }}
             <div class="row g-0">
                 <div class="col-md-4">
                     <figure class="figure position-relative mb-0">
-                        <img src="{% if mypost.img and mypost.img != '' %}{{ home_url }}/{{ mypost.img }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}" title="https://placehold.co/">
+                        <img src="{% if mypost.img and mypost.img != '' %}{{ home_url }}/{{ mypost.img }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}" title="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}">
                         <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
                       </figure>
                 </div>

@@ -11921,6 +11921,10 @@ textarea.form-control-lg {
 [data-bs-theme=dark] body.musik {
   background-image: url("../img/bg_musik2.jpeg");
 }
+[data-bs-theme=dark] body.metal {
+  background-image: url("../img/bg_metal.jpeg");
+  background-position: center center;
+}
 [data-bs-theme=dark] #main-nav {
   text-shadow: 0 0 0.25rem #000;
 }

@@ -49,6 +49,10 @@ app.get('/impressum', function(req, res) {
     res.render('impressum.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });
 
+app.get('/stuff', function(req, res) {
+    res.render('stuff.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+});
+
 app.get('/datenschutz', function(req, res) {
     res.render('datenschutz.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });

@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title>Stuff | FlorianMischke.de</title>
+{% endblock %}
+
+{% block body_class %}
+stuff
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1">Stuff</h1>
+
+<ul class="list-unstyled">
+    <li class="">
+        <div class="card shadow mb-3">            
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/pse.png" class="figure-img img-fluid rounded-start mb-0" alt="" title="">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
+                      </figure>
+                </div>
+            
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">Periodensystem der Elemente (PSE)</h2>
+                        <a href="http://periodic2.eu-central-1.elasticbeanstalk.com/" class="btn btn-lg btn-primary" title="" target="_blank"><i class="bi bi-box-arrow-up-right"></i> PSE öffnen</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </li>
+    <li class="">
+        <div class="card shadow mb-3">            
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/taschenkarte-dr_abcde-schema-vorderseite.jpg" class="figure-img img-fluid rounded-start mb-0" alt="" title="">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
+                      </figure>
+                </div>
+            
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">Das DRABCDE-Schema (internistisch und traumatologisch) im Taschenkarten-Format</h2>
+                        <a href="http://www.drabcde.de/" class="btn btn-lg btn-primary" title="" target="_blank"><i class="bi bi-box-arrow-up-right"></i> DRABCDE öffnen</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </li>
+</ul>
+
+{% endblock %}
