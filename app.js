@@ -1,9 +1,20 @@
+const helmet = require('helmet');
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
 
 const app = express();
+app.use(helmet());
 
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+});
+  
+app.use(limiter);
+
+// const { body, validationResult } = require('express-validator');
 
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font')))
@@ -69,7 +80,7 @@ app.get('/blog/*.html', function(req, res) {
         
         // The result can be accessed through the `m`-variable.
         m.forEach((match, groupIndex) => {
-            console.log(`Found match, group ${groupIndex}: ${match}`);
+            // console.log(`Found match, group ${groupIndex}: ${match}`);
             matches[groupIndex] = match;
         });
     }
@@ -95,18 +106,15 @@ app.get('/blog/*', function(req, res) {
         
         // The result can be accessed through the `m`-variable.
         m.forEach((match, groupIndex) => {
-            console.log(`Found match, group ${groupIndex}: ${match}`);
+            // console.log(`Found match, group ${groupIndex}: ${match}`);
             matches[groupIndex] = match;
         });
     }
 
     var category = findObjectById(categories, matches[1])
-    console.log(category);
     if(category !== undefined) {
         var children = get_child_categories(categories, category.id)
-        console.log(children);
         var myposts = findPostByCategoryId(posts, category.id)
-        console.log(myposts);
     }
     res.render('blog.html',{ home_url : 'http://localhost:3000', categories : categories, category : category, children : children, myposts : myposts, new_posts : new_posts });
 });
