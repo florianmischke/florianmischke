@@ -88,7 +88,6 @@ app.get('/blog/:category/:post', function(req, res) {
 
     var category = findObjectById(categories, categoryId)
     var singlepost = findPostBySlug(posts, postId)
-    console.log(singlepost)
     
     res.render('single.html',{ home_url : 'http://localhost:3000', singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
