@@ -4,14 +4,22 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 
 const app = express();
-app.use(helmet());
-
+// Configure the Content-Security-Policy header.
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                "script-src": ["'self'", "localhost:3000"],
+                "object-src": ["'self'", "localhost:3000"],
+            },
+        },
+    }),
+);
 const rateLimit = require('express-rate-limit');
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
 });
-  
 app.use(limiter);
 
 // const { body, validationResult } = require('express-validator');
