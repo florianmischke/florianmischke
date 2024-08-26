@@ -38,11 +38,19 @@ const new_posts = posts.slice(0, 5);
 const categories = require(path.join(__dirname, 'static/json/categories.json'))
 
 app.get('/', function(req, res) {
-    res.render('index.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('home.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });
 
 app.get('/cv', function(req, res) {
     res.render('cv.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+});
+
+app.get('/impressum', function(req, res) {
+    res.render('impressum.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+});
+
+app.get('/datenschutz', function(req, res) {
+    res.render('datenschutz.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });
 
 app.get('/blog/*.html', function(req, res) {

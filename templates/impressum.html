@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block canonical %}
+{% endblock %}
+
+{% block title %}
+<title>Impressum | FlorianMischke.de</title>
+{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+<li class="breadcrumb-item" aria-current="page">Impressum</li>
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1">Impressum</h1>
+
+<p class="h4">Florian Mischke</p>
+<p>Karolinenstraße 24<br />
+    20357 Hamburg</p>
+
+<h2>Kontakt</h2>
+<p>E-Mail: info@florianmischke.de</p>
+
+<h2>Redaktionell verantwortlich</h2>
+<p>Florian Mischke<br />
+    Karolinenstraße 24<br />
+    20357 Hamburg</p>
+
+<p>Quelle: <a href="https://www.e-recht24.de" target="_blank">eRecht24</a></p>
+ 
+{% endblock %}

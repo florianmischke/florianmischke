@@ -28,16 +28,16 @@
         "parent":"wissenschaft"
     },
     {
-        "id":"erste-hilfe",
-        "name":"Erste Hilfe",
-        "icon":"bi bi-bandaid",
+        "id":"notfallmedizin",
+        "name":"Notfallmedizin",
+        "icon":"bi bi-heart-pulse",
         "child":false,
         "parent":""
     },
     {
-        "id":"notfallmedizin",
-        "name":"Notfallmedizin",
-        "icon":"bi bi-heart-pulse",
+        "id":"erste-hilfe",
+        "name":"Erste Hilfe",
+        "icon":"bi bi-bandaid",
         "child":false,
         "parent":""
     },
@@ -54,5 +54,33 @@
         "icon":"bi bi-filetype-html",
         "child":false,
         "parent":""
+    },
+    {
+        "id":"musik",
+        "name":"Musik",
+        "icon":"bi bi-music-note",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"metal",
+        "name":"Metal",
+        "icon":"bi bi-hammer",
+        "child":true,
+        "parent":"musik"
+    },
+    {
+        "id":"hiphop",
+        "name":"HipHop",
+        "icon":"bi bi-boombox",
+        "child":true,
+        "parent":"musik"
+    },
+    {
+        "id":"electro",
+        "name":"Electro",
+        "icon":"bi bi-lightning",
+        "child":true,
+        "parent":"musik"
     }
 ]

@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+{% block content %}
+<hgroup class="text-center mb-5">
+    <h1 class="display-1">Florian Mischke</h1>
+    <p class="h2">FlorianMischke.de</p>
+</hgroup>
+
+<div class="row g-0 text-center">
+    <div class="col-md-6 order-1 order-md-2">
+        <div class="card text-bg-success mb-3">
+            <div class="card-header"><p class="h1"><i class="bi bi-eyedropper"></i> <i class="bi bi-hexagon"></i> <i class="bi bi-lightning-charge"></i></p></div>
+          <div class="card-body">
+            <h2 class="card-title">Biologie und andere Naturwissenschaften ...</h2>
+            <div class="card-text">
+                <p>... und vielleicht auch Geisteswissenschaften. Geschichte der Naturwissenschaften gehört jedenfalls auch zu letzteren und ich interessiere mich sehr für Ethnologie. Meine große Leidenschaft ist und bleibt aber die Naturwissenschaft - angefangen bei Chemie und mittlerweile angekommen bei Biologie. So ein abwechslungsreiches Studium, einfach perfekt für mich. Vielleicht verirrt sich auch das ein oder andere Mal die Physik hierher.</p>
+                <p class="h6"><i class="bi bi-bar-chart"></i></p>
+                <p>Vielleicht findet sich hier sogar was zu Statistik und Data Science.</p>
+            </div>
+            <a class="btn btn-lg btn-outline-light" href="{{ home_url }}/blog/wissenschaft" ><i class="bi bi-box-arrow-in-right"></i> Wissenschaft</a>
+          </div>
+          <div class="card-footer">
+            &mdash;
+          </div>  
+        </div>        
+    </div>
+    <div class="col-md-3 order-2 order-md-1">
+        <div class="card text-bg-danger mt-5 mb-3">
+            <div class="card-header"><p class="h1"><i class="bi bi-heart-pulse"></i> <i class="bi bi-capsule-pill"></i> <i class="bi bi-bandaid"></i></p></div>
+            <div class="card-body">
+              <h2 class="card-title">Notfallmedizin und Erste Hilfe</h2>
+              <p class="card-text">Als Rettungssanitäter und Fachausbilder für Erste Hilfe liegt hier eine große meiner Leidenschaften. Vielleicht landet hier auch mal ein humanbiologisches oder biochemisches Thema.</p>  
+              <a class="btn btn btn-outline-light" href="{{ home_url }}/blog/notfallmedizin" >Notfallmedizin</a>
+              <a class="btn btn btn-outline-light" href="{{ home_url }}/blog/erste-hilfe" >Erste Hilfe</a>
+            </div>
+            <div class="card-footer">
+              &mdash;
+            </div>  
+          </div>
+    </div>
+    <div class="col-md-3 order-3">
+        <div class="card text-bg-info mt-5 mb-3">
+          <div class="card-header"><p class="h1"><i class="bi bi-pc-horizontal"></i> <i class="bi bi-filetype-html"></i> <i class="bi bi-filetype-py"></i> <i class="bi bi-r-circle-fill"></i></p></div>
+          <div class="card-body">
+            <h2 class="card-title">IT im weitesten Sinne</h2>
+            <p class="card-text">Hier gehört vielleicht auch Data Science rein, wenn es nicht in den wissenschaftlichen Bereich gehört. Ansonsten findet man hier Inhalte zum Thema Netzwerkadministration und Webentwicklung.</p>
+            <a class="btn btn btn-outline-dark" href="{{ home_url }}/blog/netzwerk" >Netzwerk</a>
+            <a class="btn btn btn-outline-dark" href="{{ home_url }}/blog/webentwicklung" >Webentwicklung</a>
+          </div>
+          <div class="card-footer">
+            &mdash;
+          </div>        
+        </div>        
+    </div>
+    <div class="col-12 order-4">
+        <div class="card text-bg-warning mt-5 mb-3">
+          <div class="card-header"><p class="h1"><i class="bi bi-music-note"></i></p></div>
+          <div class="card-body">
+            <h2 class="card-title">Musik</h2>
+            <p class="card-text">Und hier sammel ich Musik, die ich mag. Vielleicht auch eigene Musik.</p>
+            <a class="btn btn btn-outline-dark" href="{{ home_url }}/blog/musik" >Musik</a>
+          </div>
+          <div class="card-footer">
+            &mdash;
+          </div>        
+        </div>        
+    </div>
+</div>
+
+<h2 class="mt-5">Über mich</h2>
+<figure class="figure">
+    <picture>
+        <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/florianmischke-1620x1080.jpg 1x, {{ home_url }}/img/florianmischke.jpg 2x">
+        <source media="(min-width: 680px) and (orientation:portrait)" srcset="{{ home_url }}/img/florianmischke-portrait-768x1000.jpg">
+        <source media="(min-width: 680px)" srcset="{{ home_url }}/img/florianmischke-1152x768.jpg">
+        <source media="(min-width: 300px) and (orientation:portrait)" srcset="{{ home_url }}/img/florianmischke-portrait-480x625.jpg">
+        <source media="(min-width: 300px)" srcset="{{ home_url }}/img/florianmischke-720x480.jpg">
+        <img src="{{ home_url }}/img/florianmischke-1152x768.jpg" class="figure-img img-fluid rounded" alt="">
+    </picture>
+    <figcaption class="figure-caption text-end">Foto: <a href="https://www.instagram.com/ko_photography.ch/" target="_blank">KO Photography // Oliver Rust</a></figcaption>
+    <!-- https://linktr.ee/ko_photography -->
+</figure>
+
+<p><strong>Hallo!</strong> Ich bin Florian Mischke, Biologiestudent, Rettungssanitäter, Fachausbilder für Erste Hilfe und Entwickler. <br>
+    Ich mag auch Filme und Serien, (Computer)spiele und Musik. Auch mal (Hör)bücher und Podcasts.<br>
+Um mehr über mich zu erfahren, besuch gerne mein <a href="{{ home_url }}/cv" title="Curriculum Vitae">CV</a> oder lies in meinem Blog. Oder nimm <a href="{{ home_url }}/impressum" title="Impressum">Kontakt</a> zu mir auf.</p>
+ 
+{% endblock %}
