@@ -78,9 +78,12 @@
             // background-color:rgba(0,0,0,0.5);
         }
     }
-    body.netzwerk,
-    body.webentwicklung{
+    body.netzwerk{
         background-image:url('../img/bg_it.jpeg');
+    }
+    body.webentwicklung{
+        background-image:url('../img/bg_webentwicklung.jpeg');
+        // background-image:url('../img/bg_webentwicklung2.jpeg');
     }
     body.musik{
         background-image:url('../img/bg_musik2.jpeg');

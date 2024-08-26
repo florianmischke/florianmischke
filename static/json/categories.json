@@ -44,7 +44,7 @@
     {
         "id":"netzwerk",
         "name":"Netzwerk",
-        "icon":"bi bi-pc-horizontal",
+        "icon":"bi bi-router",
         "child":false,
         "parent":""
     },
@@ -70,6 +70,13 @@
         "parent":"musik"
     },
     {
+        "id":"hardcore",
+        "name":"Hardcore",
+        "icon":"bi bi-person-raised-hand",
+        "child":true,
+        "parent":"musik"
+    },
+    {
         "id":"hiphop",
         "name":"HipHop",
         "icon":"bi bi-boombox",
@@ -77,8 +84,8 @@
         "parent":"musik"
     },
     {
-        "id":"electro",
-        "name":"Electro",
+        "id":"edm",
+        "name":"EDM",
         "icon":"bi bi-lightning",
         "child":true,
         "parent":"musik"

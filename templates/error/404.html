@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block body_class %}
+home
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1">Fehler: 404</h1>
+
+<div class="alert alert-danger mt-5" role="alert">
+    <h2 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> 404 Not Found. Das heißt: Inhalt nicht gefunden</h2>
+    <hr>
+    
+    <figure class="text-end">
+        <blockquote class="blockquote">
+          <p>HTTP 404 ist ein Statuscode des Hypertext Transfer Protocol (HTTP). Er wird von einem Webserver als Antwort zurückgegeben, wenn unter dem vom Webbrowser angeforderten Uniform Resource Locator (URL) kein Dokument vorhanden ist, das heißt die Webseite oder Datei ist nicht vorhanden. Der Fehlercode kann auch verwendet werden, wenn ein Server nicht bekannt geben will, ob er die angeforderten Informationen hat.</p>
+          <p>Der Webserver generiert in der Regel eine Webseite mit einer „404 Not Found“-Fehlermeldung, wenn ein Benutzer versucht, einem toten Link zu folgen; daher ist der 404-Fehler einer der bekanntesten Fehler, die im World Wide Web auftreten.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          <cite title="HTTP 404">HTTP 404</cite> in der deutschsprachigen Wikipedia, abgerufen am 26.08.2024, <a href="https://de.wikipedia.org/wiki/HTTP_404" target="_blank"><i class="bi bi-box-arrow-up-right"></i> https://de.wikipedia.org/wiki/HTTP_404</a>
+        </figcaption>
+      </figure>
+    <hr>
+    <p class="mb-0"><a class="btn btn-dark" href="{{ home_url }}"><i class="bi bi-house"></i> Zur Startseite</a></p>    
+</div>
+{% endblock %}

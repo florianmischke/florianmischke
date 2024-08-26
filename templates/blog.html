@@ -47,8 +47,8 @@ category {{ category.id }}
             <div class="row g-0">
                 <div class="col-md-4">
                     <figure class="figure position-relative mb-0">
-                        <img src="{% if mypost.image and mypost.image != '' %}{{ home_url }}/{{ mypost.image }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="https://placehold.co/" title="https://placehold.co/">
-                        <figcaption class="figure-caption position-absolute bottom-0 end-0 p-1 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
+                        <img src="{% if mypost.img and mypost.img != '' %}{{ home_url }}/{{ mypost.img }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}" title="https://placehold.co/">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
                       </figure>
                 </div>
             
@@ -65,7 +65,13 @@ category {{ category.id }}
     {% endfor %}
 </ul>
 {% else %}
-<p>Keine Beiträge.</p>
+<div class="alert alert-danger mt-5" role="alert">
+    <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Keine Beiträge.</h4>
+    <p>Hier gibt es aktuell keine Beiträge. Entweder haben wir ein technisches Problem oder es gibt einfach keine Beiträge.<br>
+    Schau doch mal in ein paar Stunden, Tagen oder Wochen vorbei. Vielleicht gibt's dann was :)</p>
+    <hr>
+    <p class="mb-0"><a class="btn btn-dark" href="{{ home_url }}"><i class="bi bi-house"></i> Zur Startseite</a></p>    
+</div>
 {% endif %}
 
 {% endblock %}

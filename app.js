@@ -109,7 +109,8 @@ app.get('/blog/*', function(req, res) {
 
 app.use((req, res) => {
     res.status(404);
-    res.send(`<h1>Error 404</h1>`);
+    // res.send(`<h1>Error 404</h1>`);
+    res.render('error/404.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });
 
 app.listen(3000, () => {

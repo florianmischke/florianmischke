@@ -53,7 +53,7 @@
                 <ul class="nav flex-column">
                     {% for mypost in new_posts %}
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ mypost.url }}" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ mypost.name }}" title="{{ mypost.name }}">{{ mypost.name.slice(0,40) }}{% if mypost.name.length > 40 %} ...{% endif %}</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ mypost.url }}" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ mypost.name }}" title="{{ mypost.name }}">{{ mypost.shortname }}{% if mypost.name.length > mypost.shortname.length %} [...]{% endif %}</a>
                     </li>
                     {% endfor %}
                 </ul>

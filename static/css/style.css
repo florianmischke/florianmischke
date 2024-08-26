@@ -11912,9 +11912,11 @@ textarea.form-control-lg {
   background-image: url("../img/bg_erste-hilfe2.jpeg");
   background-blend-mode: multiply;
 }
-[data-bs-theme=dark] body.netzwerk,
-[data-bs-theme=dark] body.webentwicklung {
+[data-bs-theme=dark] body.netzwerk {
   background-image: url("../img/bg_it.jpeg");
+}
+[data-bs-theme=dark] body.webentwicklung {
+  background-image: url("../img/bg_webentwicklung.jpeg");
 }
 [data-bs-theme=dark] body.musik {
   background-image: url("../img/bg_musik2.jpeg");
