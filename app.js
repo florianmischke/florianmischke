@@ -68,50 +68,30 @@ app.get('/datenschutz', function(req, res) {
     res.render('datenschutz.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
 });
 
-app.get('/blog/*.html', function(req, res) {
-    var requestedURL = req.originalUrl;
-    const regex = /\/blog\/(.*)\/(.*\.html)/gm;
-    const matches = [];
-    while ((m = regex.exec(requestedURL)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width matches
-        if (m.index === regex.lastIndex) {
-            regex.lastIndex++;
-        }
-        
-        // The result can be accessed through the `m`-variable.
-        m.forEach((match, groupIndex) => {
-            // console.log(`Found match, group ${groupIndex}: ${match}`);
-            matches[groupIndex] = match;
-        });
+app.get('/blog/:category/:post', function(req, res) {
+    const categoryId = req.params.category
+    if (!categories.find(x => x.id == categoryId)) {
+        return error_404(req, res)
     }
-    
-    const posts = require(path.join(__dirname, 'static/json/posts.json'))
-    const categories = require(path.join(__dirname, 'static/json/categories.json'))
+    const postId = req.params.post
+    if (!posts.find(x => x.slug == postId)) {
+        return error_404(req, res)
+    }
 
-    var category = findObjectById(categories, matches[1])
-    var singlepost = findPostBySlug(posts, matches[2])
+    var category = findObjectById(categories, categoryId)
+    var singlepost = findPostBySlug(posts, postId)
+    console.log(singlepost)
     
     res.render('single.html',{ home_url : 'http://localhost:3000', singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
 
-app.get('/blog/*', function(req, res) {
-    var requestedURL = req.originalUrl;
-    const regex = /\/blog\/(.*)/gm;
-    const matches = [];
-    while ((m = regex.exec(requestedURL)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width matches
-        if (m.index === regex.lastIndex) {
-            regex.lastIndex++;
-        }
-        
-        // The result can be accessed through the `m`-variable.
-        m.forEach((match, groupIndex) => {
-            // console.log(`Found match, group ${groupIndex}: ${match}`);
-            matches[groupIndex] = match;
-        });
+app.get('/blog/:category', function(req, res) {
+    const categoryId = req.params.category
+    if (!categories.find(x => x.id == categoryId)) {
+        return error_404(req, res)
     }
+    const category = findObjectById(categories, categoryId)
 
-    var category = findObjectById(categories, matches[1])
     if(category !== undefined) {
         var children = get_child_categories(categories, category.id)
         var myposts = findPostByCategoryId(posts, category.id)
@@ -119,10 +99,14 @@ app.get('/blog/*', function(req, res) {
     res.render('blog.html',{ home_url : 'http://localhost:3000', categories : categories, category : category, children : children, myposts : myposts, new_posts : new_posts });
 });
 
-app.use((req, res) => {
+function error_404(req, res) {
     res.status(404);
     // res.send(`<h1>Error 404</h1>`);
     res.render('error/404.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+}
+
+app.use((req, res) => {
+    error_404(req, res)
 });
 
 app.listen(3000, () => {
