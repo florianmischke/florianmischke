@@ -9,8 +9,8 @@ app.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
-                "script-src": ["'self'", "localhost:3000"],
-                "object-src": ["'self'", "localhost:3000"],
+                "script-src": ["'self'"],
+                // "object-src": ["'self'"]
             },
         },
     }),
@@ -56,24 +56,29 @@ const posts = require(path.join(__dirname, 'static/json/posts.json'))
 const new_posts = posts.slice(0, 5);
 const categories = require(path.join(__dirname, 'static/json/categories.json'))
 
+app.all("*", function (req, res, next) {  // runs on ALL requests
+    home_url = req.protocol + '://' + req.get('host')
+        next()
+})
+
 app.get('/', function(req, res) {
-    res.render('home.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('home.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
 app.get('/cv', function(req, res) {
-    res.render('cv.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('cv.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
 app.get('/impressum', function(req, res) {
-    res.render('impressum.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('impressum.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
 app.get('/stuff', function(req, res) {
-    res.render('stuff.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('stuff.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
 app.get('/datenschutz', function(req, res) {
-    res.render('datenschutz.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('datenschutz.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
 app.get('/blog/:category/:post', function(req, res) {
@@ -89,7 +94,7 @@ app.get('/blog/:category/:post', function(req, res) {
     var category = findObjectById(categories, categoryId)
     var singlepost = findPostBySlug(posts, postId)
     
-    res.render('single.html',{ home_url : 'http://localhost:3000', singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
+    res.render('single.html',{ home_url : home_url, singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
 
 app.get('/blog/:category', function(req, res) {
@@ -103,13 +108,13 @@ app.get('/blog/:category', function(req, res) {
         var children = get_child_categories(categories, category.id)
         var myposts = findPostByCategoryId(posts, category.id)
     }
-    res.render('blog.html',{ home_url : 'http://localhost:3000', categories : categories, category : category, children : children, myposts : myposts, new_posts : new_posts });
+    res.render('blog.html',{ home_url : home_url, categories : categories, category : category, children : children, myposts : myposts, new_posts : new_posts });
 });
 
 function error_404(req, res) {
     res.status(404);
     // res.send(`<h1>Error 404</h1>`);
-    res.render('error/404.html',{ home_url : 'http://localhost:3000', categories : categories, new_posts : new_posts });
+    res.render('error/404.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 }
 
 app.use((req, res) => {
