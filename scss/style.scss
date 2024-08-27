@@ -55,42 +55,62 @@
 
 [data-bs-theme="dark"] {
     body{
-        background-size:contain;
-        // background-size:cover;
-        background-position:top center;
-        // background-attachment: fixed;
+        background-size:cover;
+        background-position:center center;
         background-repeat:no-repeat;
         background-blend-mode: lighten;
+        @include media-breakpoint-up(md) { 
+            background-size:contain;
+            background-position:top center;
+            background-attachment: scroll;
+        }
     }
+
     body.wissenschaft,
     body.biologie,
     body.chemie,
     body.geschichte-der-naturwissenschaft{
+        background-size:100%;
+        @include media-breakpoint-up(md) { 
+            background-size:contain;
+        }
+        background-position:top center;
         background-image:url('../img/bg_wissenschaft.jpeg');
     }
     body.notfallmedizin{
+        background-size:200%;
+        @include media-breakpoint-up(md) { 
+            background-size:contain;
+        }
+        background-position:top center;
         background-image:url('../img/bg_notfallmedizin.jpeg');
     }
     body.erste-hilfe{
         background-image:url('../img/bg_erste-hilfe2.jpeg');
         background-blend-mode: multiply;
+        background-size:cover!important;
         #main-nav{
             // background-color:rgba(0,0,0,0.5);
         }
     }
     body.netzwerk{
         background-image:url('../img/bg_it.jpeg');
+        background-size:cover!important;
     }
     body.webentwicklung{
         background-image:url('../img/bg_webentwicklung.jpeg');
         // background-image:url('../img/bg_webentwicklung2.jpeg');
     }
     body.musik{
+        background-size:100%;
+        @include media-breakpoint-up(md) { 
+            background-size:contain;
+        }
         background-image:url('../img/bg_musik2.jpeg');
     }
     body.metal{
         background-image:url('../img/bg_metal.jpeg');
-        background-position:center center;
+        background-size:cover!important;
     }
     #main-nav{
         // background-color:rgba(0,0,0,0.5);
