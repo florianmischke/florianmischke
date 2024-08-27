@@ -35,4 +35,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the application.
-CMD node src/index.js
+CMD node app.js
