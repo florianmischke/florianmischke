@@ -3,7 +3,7 @@
 {% block canonical %}
 {% if singlepost and singlepost !== undefined %}
 {% else %}
-<link rel="canonical" href="https://www.florianmischke.de" />
+<link rel="canonical" href="https://www.{{ home_url }}" />
 {% endif %}
 {% endblock%}
 
@@ -16,7 +16,7 @@ category {{ category.id }}
 {% endblock %}
 
 {% block breadcrumb_items %}
-<li class="breadcrumb-item"><a href="{{ home_url }}">florianmischke.de</a></li>
+<li class="breadcrumb-item"><a href="{{ home_url }}">{{ home_url }}</a></li>
 <li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
 {% if category.child == true and category.parent != "" %}
 <li class="breadcrumb-item"><a href="{{ home_url }}/blog/{{ category.parent }}">{{ category.parent|capitalize }}</a></li>
