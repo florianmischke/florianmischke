@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title>Suche: {{ searchterm }} | FlorianMischke.de</title>
+{% endblock %}
+
+{% block body_class %}
+search
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1">Suche: <q>{{ searchterm }}</q></h1>
+
+{% for result in results %}
+
+    {% if loop.index == 1%}
+        <h2>Beiträge</h2>
+    {% elif loop.index == 2%}
+        <h2>Kategorien</h2>
+    {% endif %}
+
+    {% if result.length < 1%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Keine Ergebnisse.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% else %}
+        <ul class="list-unstyled">
+        {% for item in result %}
+            <li class="">
+                <div class="card shadow mb-3">            
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if item.img and item.img != '' %}
+                                <figure class="figure position-relative mb-0">
+                                    <img src="{{ home_url }}/{{ item.img }}" class="figure-img img-fluid rounded-start mb-0" alt="{% if item.img_alt and item.img_alt != '' %}{{ item.img_alt }}{% endif %}" title="{% if item.img_alt and item.img_alt != '' %}{{ item.img_alt }}{% endif %}">
+                                    <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ item.caption }}</figcaption>
+                                </figure>
+                            {% else %}
+                                <p class="h1 h-100 display-1 align-middle text-center"><i class="align-middle {{ item.icon }}"></i></p>
+                            {% endif %}
+                        </div>
+                    
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class=" card-title">{{ item.name }}</h2>
+                                <p class="card-text">{{ item.description }}</p>
+                                <a href="{{ home_url }}/blog/{{ item.url }}" class="btn btn-lg btn-primary" title="{{ item.name }}">Ergebnis anzeigen</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}

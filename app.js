@@ -23,6 +23,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // const { body, validationResult } = require('express-validator');
+const { query, validationResult } = require('express-validator');
 
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font')))
@@ -110,6 +111,25 @@ app.get('/blog/:category', function(req, res) {
     }
     res.render('blog.html',{ home_url : home_url, categories : categories, category : category, children : children, myposts : myposts, new_posts : new_posts });
 });
+
+app.get('/search', query('term').trim().notEmpty(), (req, res) => {
+    const result = validationResult(req);
+    if (!result.isEmpty()) {
+        // res.send({ errors: result.array() });
+        return error_404(req, res)
+    }
+
+    const searchterm = req.query.term
+    const searchterm_lowercase = searchterm.toLowerCase()
+    if (!searchterm) {
+        return error_404(req, res)
+    }
+    var results = []
+    results.push(posts.filter((obj) => obj.name.toLowerCase().indexOf(searchterm_lowercase) != -1 || obj.description.toLowerCase().indexOf(searchterm_lowercase) != -1));
+    results.push(categories.filter((obj) => obj.name.toLowerCase().indexOf(searchterm_lowercase) != -1));
+
+    res.render('search.html',{ home_url : home_url, searchterm : searchterm, results : results, myposts : results[0], mycats : results[1], categories : categories, new_posts : new_posts });
+})
 
 function error_404(req, res) {
     res.status(404);
