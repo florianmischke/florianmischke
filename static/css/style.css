@@ -11910,7 +11910,7 @@ textarea.form-control-lg {
 [data-bs-theme=dark] body.biologie,
 [data-bs-theme=dark] body.chemie,
 [data-bs-theme=dark] body.geschichte-der-naturwissenschaft {
-  background-size: 100%;
+  background-size: 200%;
   background-position: top center;
   background-image: url("../img/bg_wissenschaft.jpeg");
 }
@@ -11946,6 +11946,7 @@ textarea.form-control-lg {
 }
 [data-bs-theme=dark] body.musik {
   background-size: 100%;
+  background-position: top 15% center;
   background-image: url("../img/bg_musik2.jpeg");
 }
 @media (min-width: 768px) {
