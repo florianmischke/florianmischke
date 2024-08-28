@@ -137,6 +137,11 @@ function error_404(req, res) {
     res.render('error/404.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 }
 
+// serve single files
+app.use("/favicon.ico", express.static(__dirname + '/favicon.ico'));
+app.use("/browserconfig.xml", express.static(__dirname + '/browserconfig.xml'));
+app.use("/site.webmanifest", express.static(__dirname + '/site.webmanifest'));
+
 app.use((req, res) => {
     error_404(req, res)
 });
