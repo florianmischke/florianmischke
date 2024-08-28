@@ -84,14 +84,9 @@
     {% include "inc/footer.html" %}
     {% endblock %}
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
     <script language="javascript" src="{{ home_url }}/js/bootstrap.bundle.min.js"></script>
     <script language="javascript" src="{{ home_url }}/js/bs-color-mode-toggler.js"></script>
-
-    <script language="javascript" >
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
+    <script language="javascript" src="{{ home_url }}/js/bs-tooltip.js"></script>
 
   </body>
 </html>
