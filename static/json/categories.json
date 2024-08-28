@@ -89,5 +89,19 @@
         "icon":"bi bi-lightning",
         "child":true,
         "parent":"musik"
+    },
+    {
+        "id":"psnv",
+        "name":"PSNV",
+        "icon":"bi bi-person-hearts",
+        "child":false,
+        "parent":""
+    },
+    {
+        "id":"politik-und-soziales",
+        "name":"Politik und Soziales",
+        "icon":"bi bi-people-fill",
+        "child":false,
+        "parent":""
     }
 ]
