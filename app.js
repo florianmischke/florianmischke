@@ -139,6 +139,15 @@ function error_404(req, res) {
 
 // serve single files
 app.use("/favicon.ico", express.static(__dirname + '/favicon.ico'));
+app.use("/android-chrome-192x192.png", express.static(__dirname + '/android-chrome-192x192.png'));
+app.use("/android-chrome-384x384.png", express.static(__dirname + '/android-chrome-384x384.png'));
+app.use("/apple-touch-icon.png", express.static(__dirname + '/apple-touch-icon.png'));
+app.use("/favicon-16x16.png", express.static(__dirname + '/favicon-16x16.png'));
+app.use("/favicon-32x32.png", express.static(__dirname + '/favicon-32x32.png'));
+app.use("/favicon.png", express.static(__dirname + '/favicon.png'));
+app.use("/favicon.svg", express.static(__dirname + '/favicon.svg'));
+app.use("/mstile-150x150.png", express.static(__dirname + '/mstile-150x150.png'));
+app.use("/safari-pinned-tab.svg", express.static(__dirname + '/safari-pinned-tab.svg'));
 app.use("/browserconfig.xml", express.static(__dirname + '/browserconfig.xml'));
 app.use("/site.webmanifest", express.static(__dirname + '/site.webmanifest'));
 
