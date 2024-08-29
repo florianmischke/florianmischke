@@ -89,7 +89,7 @@
             <ul class="nav flex-column mb-5">
                 {% for navCat in categories %}
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis {% if navCat.child == false %}px-0 pt-3{% else %}py-1{% endif %} {% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                        <a class="nav-link link-body-emphasis {% if navCat.child == false %}px-0 pt-3{% else %}ps-4 py-1{% endif %} {% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
                     </li>
                 {% endfor %}
                 </ul>
