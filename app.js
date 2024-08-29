@@ -52,8 +52,8 @@ function findPostByCategoryId(list, id) {
 function findPostBySlug(list, id) {
     return list.find((obj) => obj.slug === id);
 }
-function findPostByTag(list, id) {
-    return list.filter((obj) => obj.tags.indexOf(id) != -1);
+function findPostsByTag(list, id) {
+    return list.filter((obj) => obj.tags.map(v => v.toLowerCase()).indexOf(id) != -1);
 }
     
 const posts = require(path.join(__dirname, 'static/json/posts.json'))
@@ -91,12 +91,14 @@ app.get('/blog', function(req, res) {
 
 app.get('/blog/tag/:tag', function(req, res) {
     const tag = req.params.tag
-    var myposts = findPostByTag(posts, tag)
+    var myposts = findPostsByTag(posts, tag)
     if (!myposts) {
         return error_404(req, res)
     }
+    var mytagindex = myposts[0].tags.map(v => v.toLowerCase()).indexOf(tag)
+    var mytag = myposts[0].tags[mytagindex]
 
-    res.render('blog.html',{ home_url : home_url, tag: tag, categories : categories, myposts : myposts, new_posts : new_posts });
+    res.render('blog.html',{ home_url : home_url, tag: mytag, categories : categories, myposts : myposts, new_posts : new_posts });
 });
 
 app.get('/blog/:category/:post', function(req, res) {

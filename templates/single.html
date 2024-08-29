@@ -37,7 +37,7 @@
 {% if singlepost.tags and singlepost.tags != "" %}
     <i class="bi bi-tag-fill"></i> 
     {% for tag in singlepost.tags %}
-        <a href="{{ home_url }}/blog/tag/{{ tag }}">#{{ tag }}</a>
+        <a href="{{ home_url }}/blog/tag/{{ tag|lower }}">#{{ tag }}</a>
     {% endfor %}
 {% endif %}
 
