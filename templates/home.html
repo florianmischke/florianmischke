@@ -4,6 +4,11 @@
 home
 {% endblock %}
 
+{% block breadcrumb_items %}
+{{ super() }}
+<li class="breadcrumb-item active" aria-current="page">Home</li>
+{% endblock %}
+
 {% block content %}
 <hgroup class="text-center mb-5">
     <h1 class="display-1">Florian Mischke</h1>

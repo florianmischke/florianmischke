@@ -8,6 +8,11 @@
 search
 {% endblock %}
 
+{% block breadcrumb_items %}
+{{ super() }}
+<li class="breadcrumb-item active" aria-current="page">Suchergebnisse</li>
+{% endblock %}
+
 {% block content %}
 <h1 class="display-1">Suche: <q>{{ searchterm }}</q></h1>
 

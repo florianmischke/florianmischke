@@ -8,6 +8,11 @@
 stuff
 {% endblock %}
 
+{% block breadcrumb_items %}
+{{ super() }}
+<li class="breadcrumb-item" aria-current="page">Stuff</li>
+{% endblock %}
+
 {% block content %}
 <h1 class="display-1">Stuff</h1>
 

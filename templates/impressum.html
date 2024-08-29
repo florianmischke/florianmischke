@@ -8,8 +8,7 @@
 {% endblock %}
 
 {% block breadcrumb_items %}
-<li class="breadcrumb-item"><a href="{{ home_url }}">{{ home_url }}</a></li>
-<li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
+{{ super() }}
 <li class="breadcrumb-item" aria-current="page">Impressum</li>
 {% endblock %}
 

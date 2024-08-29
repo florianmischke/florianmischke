@@ -8,6 +8,11 @@
 404
 {% endblock %}
 
+{% block breadcrumb_items %}
+{{ super() }}
+<li class="breadcrumb-item" aria-current="page">404</li>
+{% endblock %}
+
 {% block content %}
 <h1 class="display-1">Fehler: 404</h1>
 
