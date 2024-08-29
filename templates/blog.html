@@ -8,20 +8,29 @@
 {% endblock%}
 
 {% block title %}
+{% if category.name %}
 <title>Blog > {{ category.name }} | Florian Mischke</title>
+{% elif tag %}
+<title>Blog > Tag: {{ tag }} | Florian Mischke</title>
+{% else %}
+<title>Blog | Florian Mischke</title>
+{% endif %}
 {% endblock %}
 
-{% block body_class %}
-category {{ category.id }}
-{% endblock %}
+{% block body_class %}blog {% if category.id %}category {{ category.id }}{% endif %}{% if tag %}tag {{ tag|lower }}{% endif %}{% endblock %}
 
 {% block breadcrumb_items %}
 <li class="breadcrumb-item"><a href="{{ home_url }}">{{ home_url }}</a></li>
 <li class="breadcrumb-item"><a href="{{ home_url }}/blog">Blog</a></li>
-{% if category.child == true and category.parent != "" %}
-<li class="breadcrumb-item"><a href="{{ home_url }}/blog/{{ category.parent }}">{{ category.parent|capitalize }}</a></li>
+{% if category and category != "" %}
+    {% if category.child == true and category.parent != "" %}
+    <li class="breadcrumb-item"><a href="{{ home_url }}/blog/{{ category.parent }}">{{ category.parent|capitalize }}</a></li>
+    {% endif %}
+    <li class="breadcrumb-item" aria-current="page">{{ category.name }}</li>
 {% endif %}
-<li class="breadcrumb-item" aria-current="page">{{ category.name }}</li>
+{% if tag and tag != "" %}
+    <li class="breadcrumb-item" aria-current="page"><i class="bi bi-tag"></i> Tag: #{{ tag }}</li>
+{% endif %}
 {% endblock %}
 
 {% block content %}

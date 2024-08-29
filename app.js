@@ -52,6 +52,9 @@ function findPostByCategoryId(list, id) {
 function findPostBySlug(list, id) {
     return list.find((obj) => obj.slug === id);
 }
+function findPostByTag(list, id) {
+    return list.filter((obj) => obj.tags.indexOf(id) != -1);
+}
     
 const posts = require(path.join(__dirname, 'static/json/posts.json'))
 const new_posts = posts.slice(0, 5);
@@ -80,6 +83,16 @@ app.get('/stuff', function(req, res) {
 
 app.get('/datenschutz', function(req, res) {
     res.render('datenschutz.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
+});
+
+app.get('/blog/tag/:tag', function(req, res) {
+    const tag = req.params.tag
+    var myposts = findPostByTag(posts, tag)
+    if (!myposts) {
+        return error_404(req, res)
+    }
+
+    res.render('blog.html',{ home_url : home_url, tag: tag, categories : categories, myposts : myposts, new_posts : new_posts });
 });
 
 app.get('/blog/:category/:post', function(req, res) {
