@@ -85,6 +85,10 @@ app.get('/datenschutz', function(req, res) {
     res.render('datenschutz.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
 });
 
+app.get('/blog', function(req, res) {
+    res.render('blog.html',{ home_url : home_url, categories : categories, new_posts : new_posts });
+});
+
 app.get('/blog/tag/:tag', function(req, res) {
     const tag = req.params.tag
     var myposts = findPostByTag(posts, tag)

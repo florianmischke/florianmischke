@@ -74,13 +74,35 @@
     {% endfor %}
 </ul>
 {% else %}
-<div class="alert alert-danger mt-5" role="alert">
-    <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Keine Beiträge.</h4>
-    <p>Hier gibt es aktuell keine Beiträge. Entweder haben wir ein technisches Problem oder es gibt einfach keine Beiträge.<br>
-    Schau doch mal in ein paar Stunden, Tagen oder Wochen vorbei. Vielleicht gibt's dann was :)</p>
-    <hr>
-    <p class="mb-0"><a class="btn btn-dark" href="{{ home_url }}"><i class="bi bi-house"></i> Zur Startseite</a></p>    
-</div>
+
+    {% if category %}
+        <div class="alert alert-danger mt-5" role="alert">
+            <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Keine Beiträge.</h4>
+            <p>Hier gibt es aktuell keine Beiträge. Entweder haben wir ein technisches Problem oder es gibt einfach keine Beiträge.<br>
+            Schau doch mal in ein paar Stunden, Tagen oder Wochen vorbei. Vielleicht gibt's dann was :)</p>
+            <hr>
+            <p class="mb-0"><a class="btn btn-dark" href="{{ home_url }}"><i class="bi bi-house"></i> Zur Startseite</a></p>    
+        </div>
+    {% else %}
+        <h1 id="page-title" class="display-1">Blog</h1>
+        <div class="row">
+            {% for cat in categories %}
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="h1 text-center"><i class="{{ cat.icon }}"></i></p>
+                    </div>    
+                    <div class="card-body">
+                    <h2 class="h5 card-title text-center">{{ cat.name }}</h2>
+                    <p class="card-text"></p>
+                    <a href="{{ home_url }}/blog/{{ cat.id }}" class="btn btn-primary">Kategorie aufrufen</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
 {% endif %}
 
 {% endblock %}
