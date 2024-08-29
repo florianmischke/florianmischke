@@ -86,15 +86,15 @@
         background-image:url('../img/bg_notfallmedizin.jpeg');
     }
     body.erste-hilfe{
+        background-color: rgb(57, 57, 57);
         background-image:url('../img/bg_erste-hilfe2.jpeg');
         background-blend-mode: multiply;
         background-size:cover!important;
-        #main-nav{
-            // background-color:rgba(0,0,0,0.5);
-        }
     }
     body.netzwerk{
+        background-color: rgb(74, 74, 74);
         background-image:url('../img/bg_it.jpeg');
+        background-blend-mode: multiply;
         background-size:cover!important;
     }
     body.webentwicklung{
