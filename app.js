@@ -178,6 +178,7 @@ app.get('/search', query('term').trim().notEmpty(), (req, res) => {
         return {
             id: cat.id,
             name: highlighted,
+            url: cat.id,
             icon: cat.icon
         };
     });
