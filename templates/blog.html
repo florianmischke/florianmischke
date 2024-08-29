@@ -29,13 +29,17 @@
     <li class="breadcrumb-item" aria-current="page">{{ category.name }}</li>
 {% endif %}
 {% if tag and tag != "" %}
-    <li class="breadcrumb-item" aria-current="page"><i class="bi bi-tag"></i> Tag: #{{ tag }}</li>
+    <li class="breadcrumb-item" aria-current="page">#{{ tag }}</li>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-
+{% if category and category != "" %}
 <h1 id="page-title" class="display-1 category-name"><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+{% endif %}
+{% if tag and tag != "" %}
+<h1 id="page-title" class=""><i class="bi bi-tag"></i> Tag: #{{ tag }}</h1>
+{% endif %}
 {% if category.desc %}
 <h2>{{ category.desc }}</h2>
 {% endif %}
