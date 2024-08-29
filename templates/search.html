@@ -17,6 +17,8 @@ search
         <h2>Beiträge</h2>
     {% elif loop.index == 2%}
         <h2>Kategorien</h2>
+    {% elif loop.index == 3%}
+        <h2>Tags</h2>
     {% endif %}
 
     {% if result.length < 1%}
@@ -24,7 +26,7 @@ search
             Keine Ergebnisse.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    {% else %}
+    {% elif loop.index != 3 %}
         <ul class="list-unstyled">
         {% for item in result %}
             <li class="">
@@ -43,8 +45,8 @@ search
                     
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h2 class=" card-title">{{ item.name }}</h2>
-                                <p class="card-text">{{ item.description }}</p>
+                                <h2 class=" card-title">{{ item.name|safe }}</h2>
+                                <p class="card-text">{{ item.description|safe }}</p>
                                 <a href="{{ home_url }}/blog/{{ item.url }}" class="btn btn-lg btn-primary" title="{{ item.name }}">Ergebnis anzeigen</a>
                             </div>
                         </div>
@@ -53,6 +55,11 @@ search
             </li>
         {% endfor %}
         </ul>
+    {% else %}
+        <i class="bi bi-tag-fill"></i> 
+        {% for tag in result %}
+            <a href="{{ home_url }}/blog/tag/{{ tag.original|lower }}">#{{ tag.highlighted|safe }}</a>
+        {% endfor %}
     {% endif %}
 
 {% endfor %}

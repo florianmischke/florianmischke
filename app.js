@@ -47,18 +47,19 @@ function get_child_categories(list, id) {
     return list.filter((obj) => obj.parent === id);
 }
 function findPostByCategoryId(list, id) {
-    return list.filter((obj) => obj.categories.indexOf(id) != -1);
+    return list.filter((obj) => obj.categories.includes(id));
 }
 function findPostBySlug(list, id) {
     return list.find((obj) => obj.slug === id);
 }
 function findPostsByTag(list, id) {
-    return list.filter((obj) => obj.tags.map(v => v.toLowerCase()).indexOf(id) != -1);
+    return list.filter((obj) => obj.tags.map(v => v.toLowerCase()).includes(id));
 }
     
 const posts = require(path.join(__dirname, 'static/json/posts.json'))
 const new_posts = posts.slice(0, 5);
 const categories = require(path.join(__dirname, 'static/json/categories.json'))
+const tags = [...new Set(posts.flatMap(item => item.tags))];
 
 app.all("*", function (req, res, next) {  // runs on ALL requests
     home_url = req.protocol + '://' + req.get('host')
@@ -144,8 +145,57 @@ app.get('/search', query('term').trim().notEmpty(), (req, res) => {
         return error_404(req, res)
     }
     var results = []
-    results.push(posts.filter((obj) => obj.name.toLowerCase().indexOf(searchterm_lowercase) != -1 || obj.description.toLowerCase().indexOf(searchterm_lowercase) != -1));
-    results.push(categories.filter((obj) => obj.name.toLowerCase().indexOf(searchterm_lowercase) != -1));
+
+    // push Posts
+    const filtered_posts = posts.filter((obj) => obj.name.toLowerCase().includes(searchterm_lowercase) || obj.description.toLowerCase().includes(searchterm_lowercase));
+    const myposts = filtered_posts.map(post => {
+        const highlighted_name = post.name.toLowerCase().includes(searchterm_lowercase) 
+            ? post.name.replace(new RegExp('('+searchterm+')', 'gi'), `<span class="bg-warning text-dark">$1</span>`)
+            : post.name;
+        const highlighted_desc = post.description.toLowerCase().includes(searchterm_lowercase) 
+            ? post.description.replace(new RegExp('('+searchterm+')', 'gi'), `<span class="bg-warning text-dark">$1</span>`)
+            : post.description;
+        
+        return {
+            id: post.id,
+            name: highlighted_name,
+            description: highlighted_desc,
+            img: post.img,
+            img_alt: post.img_alt,
+            caption: post.caption,
+            url: post.url
+        };
+    });
+    results.push(myposts);
+
+    // push Categories
+    const filtered_cats = categories.filter((obj) => obj.name.toLowerCase().includes(searchterm_lowercase));
+    const mycats = filtered_cats.map(cat => {
+        const highlighted = cat.name.toLowerCase().includes(searchterm_lowercase) 
+            ? cat.name.replace(new RegExp('('+searchterm+')', 'gi'), `<span class="bg-warning text-dark">$1</span>`)
+            : cat.name;
+        
+        return {
+            id: cat.id,
+            name: highlighted,
+            icon: cat.icon
+        };
+    });
+    results.push(mycats);
+    
+    // push Tags
+    const filtered_tags = tags.filter(tag => tag.toLowerCase().includes(searchterm_lowercase));
+    const mytags = filtered_tags.map(tag => {
+        const highlighted = tag.toLowerCase().includes(searchterm_lowercase) 
+            ? tag.replace(new RegExp('('+searchterm+')', 'gi'), `<span class="bg-warning text-dark">$1</span>`)
+            : tag;
+        
+        return {
+            original: tag,
+            highlighted: highlighted
+        };
+    });
+    results.push(mytags)
 
     res.render('search.html',{ home_url : home_url, searchterm : searchterm, results : results, myposts : results[0], mycats : results[1], categories : categories, new_posts : new_posts });
 })
