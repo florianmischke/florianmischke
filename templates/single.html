@@ -22,13 +22,14 @@
 {% block content %}
 <h1>{{ singlepost.name }}</h1>
 <p class="">{{ singlepost.description }}</p>
-{% if singlepost.file and singlepost.file != "" %}
-<p class="mb-3">
-    <a class="btn btn-success" href="{{ home_url }}/{{ singlepost.file }}" download><i class="bi bi-filetype-pdf"></i> {{ home_url }}/{{ singlepost.file }}</a>
-</p>
 
-<div class="ratio ratio-4x3">
-    <embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
-</div>
+{% if singlepost.file and singlepost.file != "" %}
+    <p class="mb-3">
+        <a class="btn btn-success" href="{{ home_url }}/{{ singlepost.file }}" download><i class="bi bi-filetype-pdf"></i> {{ home_url }}/{{ singlepost.file }}</a>
+    </p>
+
+    <div class="ratio ratio-4x3">
+        <embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
+    </div>
 {% endif %}
 {% endblock %}
