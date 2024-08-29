@@ -21,9 +21,9 @@
         </div>
     </nav>
         
-    <nav id="main-nav" class="navbar navbar-expand-md m-0 p-0 border-bottom">
+    <nav id="main-nav" class="navbar navbar-expand m-0 p-0 border-bottom">
         <div class="container-xl">
-            <div class="" id="navbarSupportedContent">
+            <div class="w-100" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-nowrap flex-wrap">
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="bi bi-list"></i> Menu</a>
@@ -31,7 +31,7 @@
                     {% if categories and categories|length > 0 %}
                         {% for navCat in categories %}
                             {% if navCat.child == false %}
-                            <li class="nav-item">
+                            <li class="nav-item d-none d-md-inline">
                                 <a class="nav-link text-uppercase{% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
                             </li>
                             {% endif %}
@@ -41,7 +41,7 @@
                             <a class="nav-link text-uppercase" href="{{ home_url }}/blog/">Blog</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item dropdown">
+                    <li class="nav-item ms-auto dropdown">
                         <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
                             <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg>
                             <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
@@ -84,6 +84,17 @@
         <div>
             <a class="btn btn-warning mb-5" href="{{ home_url }}"><i class="bi bi-house"></i> zur Startseite</a>
             
+            {% if categories and categories|length > 0 %}
+            <h4>Kategorien</h4>
+            <ul class="nav flex-column mb-5">
+                {% for navCat in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link link-body-emphasis {% if navCat.child == false %}px-0 pt-3{% else %}py-1{% endif %} {% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
             <h4>Seiten</h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
