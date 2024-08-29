@@ -36,6 +36,9 @@
 {% block content %}
 
 <h1 id="page-title" class="display-1 category-name"><i class="{{ category.icon }}"></i> {{ category.name }}</h1>
+{% if category.desc %}
+<h2>{{ category.desc }}</h2>
+{% endif %}
 
 {% if children and children|length > 0  %}
 <div class="alert alert-light pb-0" >
@@ -87,15 +90,17 @@
         <h1 id="page-title" class="display-1">Blog</h1>
         <div class="row">
             {% for cat in categories %}
-            <div class="col mb-4">
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-header">
                         <p class="h1 text-center"><i class="{{ cat.icon }}"></i></p>
                     </div>    
                     <div class="card-body">
                     <h2 class="h5 card-title text-center">{{ cat.name }}</h2>
-                    <p class="card-text"></p>
-                    <a href="{{ home_url }}/blog/{{ cat.id }}" class="btn btn-primary">Kategorie aufrufen</a>
+                    {% if cat.desc %}<p class="card-text text-center">{{ cat.desc }}</p>{% endif %}
+                    <div class="d-grid gap-2">
+                        <a href="{{ home_url }}/blog/{{ cat.id }}" class="btn btn-primary">Kategorie aufrufen</a>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
     {
         "id":"wissenschaft",
         "name":"Wissenschaft",
+        "desc":"Biologie und andere Naturwissenschaften ... und Geisteswissenschaften.",
         "icon":"bi bi-eyeglasses",
         "child":false,
         "parent":""
@@ -9,6 +10,7 @@
     {
         "id":"biologie",
         "name":"Biologie",
+        "desc":"Die Wissenschaft des Lebens",
         "icon":"bi bi-eyedropper",
         "child":true,
         "parent":"wissenschaft"
@@ -16,6 +18,7 @@
     {
         "id":"chemie",
         "name":"Chemie",
+        "desc":"",
         "icon":"bi bi-hexagon",
         "child":true,
         "parent":"wissenschaft"
@@ -23,13 +26,23 @@
     {
         "id":"geschichte-der-naturwissenschaft",
         "name":"Geschichte der Naturwissenschaft",
+        "desc":"",
         "icon":"bi bi-hourglass-split",
+        "child":true,
+        "parent":"wissenschaft"
+    },
+    {
+        "id":"ethnologie",
+        "name":"Ethnologie",
+        "desc":"",
+        "icon":"bi bi-people",
         "child":true,
         "parent":"wissenschaft"
     },
     {
         "id":"notfallmedizin",
         "name":"Notfallmedizin",
+        "desc":"Rettungsdienst, Gefahrenabwehr, Pharmakologische Themen",
         "icon":"bi bi-heart-pulse",
         "child":false,
         "parent":""
@@ -37,6 +50,7 @@
     {
         "id":"erste-hilfe",
         "name":"Erste Hilfe",
+        "desc":"Notfälle erkennen, Wunden versorgen, psychische Betreuung verstehen",
         "icon":"bi bi-bandaid",
         "child":false,
         "parent":""
@@ -44,6 +58,7 @@
     {
         "id":"netzwerk",
         "name":"Netzwerk",
+        "desc":"",
         "icon":"bi bi-router",
         "child":false,
         "parent":""
@@ -51,6 +66,7 @@
     {
         "id":"webentwicklung",
         "name":"Webentwicklung",
+        "desc":"",
         "icon":"bi bi-filetype-html",
         "child":false,
         "parent":""
@@ -58,6 +74,7 @@
     {
         "id":"musik",
         "name":"Musik",
+        "desc":"",
         "icon":"bi bi-music-note",
         "child":false,
         "parent":""
@@ -65,6 +82,7 @@
     {
         "id":"metal",
         "name":"Metal",
+        "desc":"Metall ist härter als Stein. Angeblich.",
         "icon":"bi bi-hammer",
         "child":true,
         "parent":"musik"
@@ -72,6 +90,7 @@
     {
         "id":"hardcore",
         "name":"Hardcore",
+        "desc":"Die Sorte Hardcore, die aus dem Punk entstand",
         "icon":"bi bi-person-raised-hand",
         "child":true,
         "parent":"musik"
@@ -79,6 +98,7 @@
     {
         "id":"hiphop",
         "name":"HipHop",
+        "desc":"und Rap-Musik",
         "icon":"bi bi-boombox",
         "child":true,
         "parent":"musik"
@@ -86,6 +106,7 @@
     {
         "id":"edm",
         "name":"EDM",
+        "desc":"Electronic Dance Music - Elektronische Tanzmusik",
         "icon":"bi bi-lightning",
         "child":true,
         "parent":"musik"
@@ -93,6 +114,7 @@
     {
         "id":"psnv",
         "name":"PSNV",
+        "desc":"Psychosoziale Notfallversorgung",
         "icon":"bi bi-person-hearts",
         "child":false,
         "parent":""
@@ -100,8 +122,17 @@
     {
         "id":"politik-und-soziales",
         "name":"Politik und Soziales",
+        "desc":"Politische und gesellschaftliche Themen, vor allem Antifaschismus und Gleichberechtigung",
         "icon":"bi bi-people-fill",
         "child":false,
         "parent":""
+    },
+    {
+        "id":"feminismus-und-maennerarbeit",
+        "name":"Feminismus und Männerarbeit",
+        "desc":"... schließen sich NICHT gegenseitig aus, im Gegenteil!",
+        "icon":"bi bi-gender-trans",
+        "child":true,
+        "parent":"politik-und-soziales"
     }
 ]
