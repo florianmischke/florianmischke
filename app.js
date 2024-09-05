@@ -29,6 +29,7 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font')))
 app.use('/css', express.static(path.join(__dirname, 'static/css')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist/')))
 app.use('/js', express.static(path.join(__dirname, 'static/js')))
 app.use('/html', express.static(path.join(__dirname, 'static/html')))
 app.use('/img', express.static(path.join(__dirname, 'static/images')))
