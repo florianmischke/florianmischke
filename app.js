@@ -116,7 +116,6 @@ app.get('/blog/:category/:post', function(req, res) {
     var category = findObjectById(categories, categoryId)
     var singlepost = findPostBySlug(posts, postId)
 
-    console.log(path.join(__dirname, 'templates/', singlepost.template))
     const fs = require('fs');
     if (singlepost.template && singlepost.template != "" && fs.existsSync(path.join(__dirname, 'templates/', singlepost.template))) {
         var templateFile = singlepost.template
