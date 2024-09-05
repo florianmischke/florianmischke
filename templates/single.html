@@ -9,7 +9,7 @@
 {% endblock%}
 
 {% block title %}
-<title>Blog > {{ category.name }} | Florian Mischke</title>
+<title>{{ singlepost.name }} | Blog > {{ category.name }} | Florian Mischke</title>
 {% endblock %}
 
 {% block breadcrumb_items %}
@@ -35,10 +35,12 @@
 {% endif %}
 
 {% if singlepost.tags and singlepost.tags != "" %}
+<p>
     <i class="bi bi-tag-fill"></i> 
     {% for tag in singlepost.tags %}
         <a href="{{ home_url }}/blog/tag/{{ tag|lower }}">#{{ tag }}</a>
     {% endfor %}
+</p>
 {% endif %}
 
 {% endblock %}

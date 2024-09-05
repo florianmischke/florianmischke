@@ -1,0 +1,154 @@
+{% extends "single.html" %}
+
+{% block content %}
+<h1>&bdquo;{{ singlepost.name }}&ldquo;</h1>
+<p class="">{{ singlepost.description }}</p>
+
+
+{% if singlepost.file and singlepost.file != "" %}
+    <p class="mb-3">
+        <a class="btn btn-success" href="{{ home_url }}/{{ singlepost.file }}" download><i class="bi bi-filetype-pdf"></i> {{ singlepost.file }}</a>
+    </p>
+    {#
+    <div class="ratio ratio-4x3">
+        <embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
+    </div>
+    #}
+{% endif %}
+
+<h2>Gesamteindruck</h2>
+<p>Ich hatte eine wirklich gute Zeit mit unserem Dozierenden-Team und meinen Kommiliton*innen sowie den wirklich interessanten Themen. Die Ausflüge mit dem Fahrrad, das Arbeiten im Feld, das gemeinsame Kochen, Essen und Schnacken mit Peers (wissenschaftlich Interessierten) sind für mich besonders hervorzuheben. Die Arbeit im Labor, die Arbeit mit den Bestimmungsschlüsseln und das Gestarre durch&apos;s <abbr title="Binokular, Stereolupe">Bino</abbr> waren echt anstrengend, das Erfolgserlebnis bei Bestimmen einer Art dafür umso höher.</p>
+<p>Als ich mich für das Biologiestudium entschieden habe, waren es hauptsächlich Botanik und Ethnobotanik, die mich überhaupt erst auf die Idee gebracht haben. Im ersten Semester hat mich dann eher die Biochemie interessiert. Zoologie war eher so ein notwendiges Übel.
+Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische Modul startete, war es doch überraschend interessant. Die Vorlesung war nett, das Praktikum netter und in der Klausurvorbereitung habe ich erst gemerkt, wie cool ich das eigentlich finde. Und dann diese Exkursion &hellip; ich bin hin und weg und mein Bild vom Biologiestudium hat sich gewandelt. Vielleicht werd ich ja doch Zoologe oder Ökologe, wir werden sehen.</p>
+<p>Und zum Titel &hellip; &bdquo;Nächstes Mal ohne Florian&ldquo; ist ein Verbesserungsvorschlag für die nächste Exkursion bzw. die nächsten Gruppen von Studierenden im kommenden Jahr. Wer mehr darüber erfahren will, klickt auf diesen <a href="https://de.wikipedia.org/wiki/Ironie">Link</a>. Dank an dich Lea, dass ich dich hier zitieren darf. Die Stimmung und das Miteinander waren echt toll, der Gruppenzusammenhalt ohnegleichen. Um hier nur eine Sache zu nennen: die Absprache zu Beginn war, dass vegetarisch gekocht wird mit veganer Option für die zwei Studierenden, die sich vegan ernähren zu denen ich gehöre. Und alle 5 Kochgruppen haben vegan gekocht! Danke dafür.</p>
+
+<h2>Erster Tag: NABU-Wiese Pevestorf</h2>
+<p>Anreise: lustige Busfahrt mit tollen Kommiliton*innen.</p>
+<p>Nach Ankunft, Bezug der Zimmer und erstem Briefing haben wir gleich am ersten Tag haben wir auf der NABU-Wiese von Höhbeck-Pevestorf eine <b>Wespenspinne</b> (welche nicht die einzige bleiben sollte), wissenschaftlicher Name: <i>Argiope bruennichi</i>, gefunden.</p>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Ventralansicht, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+        </figure>
+    </div>
+    <div class="col-12 col-md-6">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Dorsalansicht, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+        </figure>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: <b>Kleiner Feuerfalter</b> (<i>Lycaena phlaeas</i>), im Glas, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+        </figure>
+    </div>
+    <div class="col-12 col-md-6">
+        <p>Gefangen habe ich einen <b>kleinen Feuerfalter</b> (<i>Lycaena phlaeas</i>), den ich mithilfe von Luisa vom NABU bestimmen konnte und in Pevestorf wieder frei gelassen habe.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <p>Ich habe außerdem eine Schwebfliege gefangen, die ich zur Bestimmung mit ins Labor gebracht habe. Leider müssen Insekten für die Bestimmung genadelt, also mit einer dünnen Nadel durchbohrt, und zuvor mit Essigsäureethylester (auch Ethylacetat) getötet werden, was sich für mich einfach komisch anfühlt.</p>
+        <p>Wir wurden im Vorfeld in &bdquo;Expertengruppen&ldquo; eingeteilt. Als solche sollten wir uns auf jeweils eine oder mehrere Tiergruppen, z.B. Hymenoptera oder Orthoptera, vorbereiten. Mit einer Kommilitonin war ich für Diptera (Zweiflügler) zuständig, wobei ich mich auf Fliegen (Brachycera) konzentriert habe. Zu meinen anderen Expertisen gehörten Schnabelfliegen (Mecoptera), Fächerflügler (Strepsiptera) und Flöhe (Siphonaptera).<sup id="referenz-1"><a href="#fussnote-1" title="zur Fußnote 1">[1]</a></sup></p>
+        <p>Ich habe diese Schwebfliege zunächst als <b>Gewöhnliche Stiftschwebfliege</b> (<i>Sphaerophoria scripta</i>, auch Gemeine Langbauchschwebfliege) identifiziert, musste aber feststellen, dass dies nicht korrekt ist. Ich bin mit den Bestimmungsschlüsseln aus dem Müller/Bährmann<sup id="referenz-2"><a href="#fussnote-2" title="zur Fußnote 2">[2]</a></sup> und Stresemann<sup id="referenz-3"><a href="#fussnote-3" title="zur Fußnote 3">[3]</a></sup> vorgegangen, habe dann am nächsten Tag im Vergleich festgestellt, dass die Augen anders aussehen: Während die <i>Sphaerophoria scripta</i> keine Lücke zwischen den Komplexaugen hat, sieht man bei meinem Exemplar einen deutlichen Abstand bzw. eine durchgehende Stirn. Ich musste sie dann neu beschriften und konnte sie einfach nur als &bdquo;Schwebfliege&ldquo; notieren.</p>
+        <p>Spannend und/oder schön finde ich die Nahaufnahmen durch&apos;s Bino von Flügel und Kopf, die man auf den nachfolgenden Bildern sehen kann.</p>
+    </div>
+    <div class="col-12 col-md-6">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: <b>Schwebfliege</b> (Syrphidae indef.), genadelt, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+        </figure>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: Kopf einer <b>Schwebfliege</b> (Syrphidae indef.) mit sichtbaren Augen und Mundwerkzeug, eigenes Werk</figcaption>
+        </figure>
+    </div>
+    <div class="col-12 col-md-4">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: Nahaufnahme von Augen und Fühlern einer <b>Schwebfliege</b> (Syrphidae indef.), eigenes Werk</figcaption>
+        </figure>
+    </div>
+    <div class="col-12 col-md-4">
+        <figure class="figure">
+            <picture>
+                <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat.jpg 2x">
+                <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-768x768.jpg">
+                <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-480x480.jpg">
+                <img src="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="">
+            </picture>
+            <figcaption class="figure-caption text-end">Foto: Flügel einer <b>Schwebfliege</b> (Syrphidae indef.), eigenes Werk</figcaption>
+        </figure>
+    </div>
+</div>
+
+<h2>Zweiter Tag: Laasche Trockenrasen und Abbruchkante</h2>
+<p>Folgt &hellip;</p>
+
+<h2>Dritter Tag: Höhbeck Nordhang (Wald)</h2>
+<p>Folgt &hellip;</p>
+
+<h2>Vierter Tag: Brünkendorfer Heide</h2>
+<p>Folgt &hellip;</p>
+
+<h2>Fünfter Tag: Schaugraben, Restorf (Tümpel)</h2>
+<p>Folgt &hellip;</p>
+
+<h2>Fußnoten</h2>
+<ol>
+    <li id="fussnote-1"><a href="#referenz-1"><i class="bi bi-arrow-90deg-up"></i></a> Ich habe hier jeweils die geläufigeren Namen vor die Klammer und die weniger geläufigen in Klammern gesetzt. So sind nicht immer und auch nicht nie die wissenschaftlichen Bezeichnungen in Klammern.</li>
+    <li id="fussnote-2"><a href="#referenz-2"><i class="bi bi-arrow-90deg-up"></i></a>    Müller, Hans Joachim, und Rudolf Bährmann. Bestimmung wirbelloser Tiere: Bildtafeln für zoologische Bestimmungsübungen und Exkursionen: 380 Tafelseiten mit zahlreichen Einzelfiguren. Herausgegeben von Günter Köhler. 8., Überarbeitete und Erweiterte Auflage. Berlin [Heidelberg]: Springer Spektrum, 2022. https://doi.org/10.1007/978-3-662-61717-5.</li>
+    <li id="fussnote-3"><a href="#referenz-3"><i class="bi bi-arrow-90deg-up"></i></a>Klausnitzer, Bernhard, Erwin Stresemann, und Hans-Joachim Hannemann, Hrsg. Wirbellose: Insekten. 11., neu Bearb. und erw. Aufl. Heidelberg: Spektrum Akad. Verl, 2011.</li>
+</ol>
+
+
+{% if singlepost.tags and singlepost.tags != "" %}
+<p>
+    <i class="bi bi-tag-fill"></i> 
+    {% for tag in singlepost.tags %}
+        <a href="{{ home_url }}/blog/tag/{{ tag|lower }}">#{{ tag }}</a>
+    {% endfor %}
+</p>
+{% endif %}
+
+{% endblock %}

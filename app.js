@@ -56,7 +56,7 @@ function findPostsByTag(list, id) {
     return list.filter((obj) => obj.tags.map(v => v.toLowerCase()).includes(id));
 }
     
-const posts = require(path.join(__dirname, 'static/json/posts.json'))
+const posts = require(path.join(__dirname, 'static/json/posts.json')).sort((a, b) => parseFloat(b.id) - parseFloat(a.id));
 const new_posts = posts.slice(0, 5);
 const categories = require(path.join(__dirname, 'static/json/categories.json'))
 const tags = [...new Set(posts.flatMap(item => item.tags))];
@@ -114,8 +114,16 @@ app.get('/blog/:category/:post', function(req, res) {
 
     var category = findObjectById(categories, categoryId)
     var singlepost = findPostBySlug(posts, postId)
+
+    console.log(path.join(__dirname, 'templates/', singlepost.template))
+    const fs = require('fs');
+    if (singlepost.template && singlepost.template != "" && fs.existsSync(path.join(__dirname, 'templates/', singlepost.template))) {
+        var templateFile = singlepost.template
+    } else {        
+        var templateFile = 'single.html'
+    }
     
-    res.render('single.html',{ home_url : home_url, singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
+    res.render(templateFile,{ home_url : home_url, singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
 
 app.get('/blog/:category', function(req, res) {
