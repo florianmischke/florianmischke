@@ -2,6 +2,15 @@
 
 {% block content %}
 <h1>&bdquo;{{ singlepost.name }}&ldquo;</h1>
+
+<ul class="list-group float-end fw-light">
+    <li class="list-group-item"><i class="bi bi-calendar-check"></i> Erstellt: {{ singlepost.date_formatted }}</li>
+    {% if singlepost.updated_formatted %}
+    <li class="list-group-item"><i class="bi bi-clock-history"></i> Bearbeitet:  {{ singlepost.updated_formatted }}</li>
+    {% endif %}
+    <li class="list-group-item"><i class="bi bi-person-circle"></i> Autor: Florian Mischke</li>
+</ul>
+
 <p class="">{{ singlepost.description }}</p>
 
 

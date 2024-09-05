@@ -2,6 +2,7 @@ const helmet = require('helmet');
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
+const { DateTime } = require("luxon");
 
 const app = express();
 // Configure the Content-Security-Policy header.
@@ -122,6 +123,17 @@ app.get('/blog/:category/:post', function(req, res) {
     } else {        
         var templateFile = 'single.html'
     }
+    var date = DateTime.fromISO(singlepost.date)
+    var updated = DateTime.fromISO(singlepost.updated)
+    var date_formatted = date.setLocale('de-DE').toFormat("dd.MM.yyyy HH:mm")
+    if(+date !== +updated) {
+        var updated_formatted = updated.setLocale('de-DE').toFormat("dd.MM.yyyy HH:mm")
+    } else {
+        var updated_formatted = false
+    }
+
+    singlepost.date_formatted = date_formatted
+    singlepost.updated_formatted = updated_formatted
     
     res.render(templateFile,{ home_url : home_url, singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
