@@ -10,13 +10,13 @@
                 <h4>Seiten</h4>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/cv" >CV</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/cv" title="CV">CV</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/impressum" >Impressum</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/impressum" title="Impressum">Impressum</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/datenschutz" >Datenschutzerklärung</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/datenschutz" title="Datenschutzerklärung">Datenschutzerklärung</a>
                     </li>
                 </ul>
             </div>
@@ -24,13 +24,13 @@
                 <h4>Links</h4>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="" ><i class="bi bi-mastodon"></i> Mastodon</a>
+                        <a class="nav-link link-body-emphasis px-0" href="" title="Mastodon"><i class="bi bi-mastodon"></i> Mastodon</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="" ><i class="bi bi-instagram"></i> Instagram</a>
+                        <a class="nav-link link-body-emphasis px-0" href="" title="Instagram"><i class="bi bi-instagram"></i> Instagram</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="" ><i class="bi bi-github"></i> GitHub</a>
+                        <a class="nav-link link-body-emphasis px-0" href="" title="GitHub"><i class="bi bi-github"></i> GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,13 @@
                 {% for navCat in categories %}
                     {% if navCat.child == false %}
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ navCat.id }}" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Kategorie: {{ navCat.name }}" title="{{ navCat.name }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ navCat.id }}" data-bs-toggle="tooltip" data-bs-placement="left" 
+                        {% if navCat.desc %}
+                        data-bs-title="{{ navCat.desc }}" title="{{ navCat.desc }}"
+                        {% else %}
+                        data-bs-title="Kategorie: {{ navCat.name }}" title="Kategorie: {{ navCat.name }}"
+                        {% endif %}
+                        ><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
                     </li>
                     {% endif %}
                 {% endfor %}
@@ -54,7 +60,7 @@
                 <ul class="nav flex-column">
                     {% for mypost in new_posts %}
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ mypost.url }}" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ mypost.name }}" title="{{ mypost.name }}">{{ mypost.shortname }}{% if mypost.name.length > mypost.shortname.length %} [...]{% endif %}</a>
+                        <a class="nav-link link-body-emphasis px-0" href="{{ home_url }}/blog/{{ mypost.url }}" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ mypost.description }}" title="{{ mypost.description }}">{{ mypost.shortname }}{% if mypost.name.length > mypost.shortname.length %} [...]{% endif %}</a>
                     </li>
                     {% endfor %}
                 </ul>

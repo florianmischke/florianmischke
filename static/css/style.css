@@ -11976,21 +11976,17 @@ textarea.form-control-lg {
   --carousel-text: #fff;
 }
 
-body {
-  margin: 1.5rem 0 3.5rem;
-}
-
 .gallery-item {
   display: block;
 }
 
 .gallery-item img {
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.075);
   transition: box-shadow 0.2s;
 }
 
 .gallery-item:hover img {
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .lightbox-modal .modal-content {
@@ -12023,7 +12019,9 @@ body {
 .lightbox-modal .carousel-indicators [data-bs-target] {
   background-color: var(--carousel-text) !important;
   width: 50px;
-  height: 30px;
+  height: 50px;
+  border-top: 0;
+  border-bottom: 0;
   padding: 0;
   background: center center no-repeat;
   background-size: cover;
@@ -12031,17 +12029,30 @@ body {
 
 .lightbox-modal .carousel-indicators [data-bs-target].active {
   width: 70px;
-  height: 50px;
+  height: 70px;
   position: relative;
   top: -10px;
 }
 
-.lightbox-modal .carousel-inner {
-  width: 75%;
+@media (min-width: 768px) {
+  .lightbox-modal .carousel-inner {
+    width: 90%;
+  }
 }
-
-.lightbox-modal .carousel-inner img {
-  animation: zoomin 10s linear infinite;
+@media (min-width: 992px) {
+  .lightbox-modal .carousel-inner {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .lightbox-modal .carousel-inner {
+    max-width: 70%;
+  }
+}
+@media (min-width: 1400px) {
+  .lightbox-modal .carousel-inner {
+    max-width: 60%;
+  }
 }
 
 .lightbox-modal .carousel-item .carousel-caption {
@@ -12067,11 +12078,6 @@ body {
   right: 1.25rem;
 }
 
-@media (min-width: 1400px) {
-  .lightbox-modal .carousel-inner {
-    max-width: 60%;
-  }
-}
 [data-bs-theme=dark] .lightbox-modal .carousel-control-next-icon,
 [data-bs-theme=dark] .lightbox-modal .carousel-control-prev-icon {
   filter: none;

@@ -22,12 +22,19 @@
 {% block content %}
 <h1>{{ singlepost.name }}</h1>
 
-<ul class="list-group float-end fw-light">
+<ul class="list-group float-end fw-light ms-1 mb-2">
     <li class="list-group-item"><i class="bi bi-calendar-check"></i> Erstellt: {{ singlepost.date_formatted }}</li>
     {% if singlepost.updated_formatted %}
     <li class="list-group-item"><i class="bi bi-clock-history"></i> Bearbeitet:  {{ singlepost.updated_formatted }}</li>
     {% endif %}
     <li class="list-group-item"><i class="bi bi-person-circle"></i> Autor: Florian Mischke</li>
+    <li class="list-group-item"><i class="bi bi-tag"></i> Kategorien:
+        <ul>
+            {% for cat in singlepost.categories2 %}
+                <li><a href="{{ home_url }}/blog/{{ cat.id }}" title="{{ cat.desc }}">{{ cat.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
 </ul>
 
 <p class="">{{ singlepost.description }}</p>

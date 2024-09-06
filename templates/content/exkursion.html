@@ -3,12 +3,19 @@
 {% block content %}
 <h1>&bdquo;{{ singlepost.name }}&ldquo;</h1>
 
-<ul class="list-group float-end fw-light">
+<ul class="list-group float-end fw-light ms-1 mb-2">
     <li class="list-group-item"><i class="bi bi-calendar-check"></i> Erstellt: {{ singlepost.date_formatted }}</li>
     {% if singlepost.updated_formatted %}
     <li class="list-group-item"><i class="bi bi-clock-history"></i> Bearbeitet:  {{ singlepost.updated_formatted }}</li>
     {% endif %}
     <li class="list-group-item"><i class="bi bi-person-circle"></i> Autor: Florian Mischke</li>
+    <li class="list-group-item"><i class="bi bi-tag"></i> Kategorien:
+        <ul>
+            {% for cat in singlepost.categories2 %}
+                <li><a href="{{ home_url }}/blog/{{ cat.id }}" title="{{ cat.desc }}">{{ cat.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
 </ul>
 
 <p class="">{{ singlepost.description }}</p>
@@ -37,7 +44,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
 <div class="row">
     <div class="col-12 col-md-6">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-768x768.jpg">
@@ -50,7 +57,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
     <div class="col-12 col-md-6">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-768x768.jpg">
@@ -66,7 +73,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
 <div class="row">
     <div class="col-12 col-md-6">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-768x768.jpg">
@@ -91,7 +98,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
     <div class="col-12 col-md-6">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-768x768.jpg">
@@ -106,7 +113,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
 <div class="row">
     <div class="col-12 col-md-4">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-kopf--quadrat-768x768.jpg">
@@ -119,7 +126,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
     <div class="col-12 col-md-4">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-augen-und-fuehler--quadrat-768x768.jpg">
@@ -132,7 +139,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
     <div class="col-12 col-md-4">
         <figure class="figure">
-            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-768x768.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+            <a href="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-1080x1080.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                 <picture>
                     <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-1080x1080.jpg 1x, {{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat.jpg 2x">
                     <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae-fluegel--quadrat-768x768.jpg">

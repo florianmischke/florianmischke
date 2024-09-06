@@ -135,10 +135,6 @@
     --carousel-text: #fff;
   }
   
-  body {
-    margin: 1.5rem 0 3.5rem;
-  }
-  
 //   @keyframes zoomin {
 //     0% {
 //       transform: scale(1);
@@ -156,12 +152,12 @@
   }
   
   .gallery-item img {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.075);
     transition: box-shadow 0.2s;
   }
   
   .gallery-item:hover img {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.20);
   }
   
   .lightbox-modal .modal-content {
@@ -194,7 +190,9 @@
   .lightbox-modal .carousel-indicators [data-bs-target] {
     background-color: var(--carousel-text) !important;
     width:50px;
-    height:30px;
+    height:50px;
+    border-top:0;
+    border-bottom:0;
     padding:0;
     background:center center no-repeat;
     background-size:cover;
@@ -202,18 +200,29 @@
   
   .lightbox-modal .carousel-indicators [data-bs-target].active {
     width:70px;
-    height:50px;
+    height:70px;
     position: relative;
     top:-10px;
   }
   
   .lightbox-modal .carousel-inner {
-    width: 75%;
+    @include media-breakpoint-up(md) { 
+        width: 90%;
+    }
+    @include media-breakpoint-up(lg) { 
+        width: 80%;
+    }
+    @include media-breakpoint-up(xl) { 
+        max-width: 70%;
+    }
+    @include media-breakpoint-up(xxl) { 
+        max-width: 60%;
+    }
   }
   
-  .lightbox-modal .carousel-inner img {
-    animation: zoomin 10s linear infinite;
-  }
+//   .lightbox-modal .carousel-inner img {
+//     animation: zoomin 10s linear infinite;
+//   }
   
   .lightbox-modal .carousel-item .carousel-caption {
     right: 0;
@@ -236,12 +245,6 @@
   
   .lightbox-modal .carousel-control-next {
     right: 1.25rem;
-  }
-  
-  @media (min-width: 1400px) {
-    .lightbox-modal .carousel-inner {
-      max-width: 60%;
-    }
   }
   
   [data-bs-theme = "dark"] .lightbox-modal .carousel-control-next-icon,

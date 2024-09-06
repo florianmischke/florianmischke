@@ -134,6 +134,10 @@ app.get('/blog/:category/:post', function(req, res) {
 
     singlepost.date_formatted = date_formatted
     singlepost.updated_formatted = updated_formatted
+
+    var post_categories = singlepost.categories
+
+    singlepost.categories2 = categories.filter(obj => post_categories.includes(obj.id));
     
     res.render(templateFile,{ home_url : home_url, singlepost : singlepost, categories : categories, category : category, new_posts : new_posts });
 });
