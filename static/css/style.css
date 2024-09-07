@@ -12012,6 +12012,15 @@ h3:hover .backtotop,
   display: inline !important;
 }
 
+.custom-tooltip.show {
+  opacity: 1;
+}
+
+.custom-tooltip > .tooltip-inner {
+  padding: 10px;
+  max-width: 450px;
+}
+
 :root {
   --lightbox: rgb(0 0 0 / 0.75);
   --carousel-text: #fff;
