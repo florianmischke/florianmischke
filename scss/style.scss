@@ -313,6 +313,7 @@ h3:hover .backtotop{
     vertical-align: -0.035em;
     fill: currentcolor;
   }
+  
   .carousel-item img {  
     object-fit: contain;
     object-position: center;
@@ -320,13 +321,14 @@ h3:hover .backtotop{
     height:100vh;
     cursor: zoom-in;
     cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgZmlsbD0nI2ZmZmZmZicgY2xhc3M9J2JpIGJpLXpvb20taW4nIHZpZXdCb3g9JzAgMCAxNiAxNic+PHN0eWxlPnN2ZyB7IGZpbHRlcjogZHJvcC1zaGFkb3coMXB4IDFweCAwIHJnYigwIDAgMCAvIDAuOCkpOwp9PC9zdHlsZT48cGF0aCBmaWxsLXJ1bGU9J2V2ZW5vZGQnIGQ9J002LjUgMTJhNS41IDUuNSAwIDEgMCAwLTExIDUuNSA1LjUgMCAwIDAgMCAxMU0xMyA2LjVhNi41IDYuNSAwIDEgMS0xMyAwIDYuNSA2LjUgMCAwIDEgMTMgMCcvPjxwYXRoIGQ9J00xMC4zNDQgMTEuNzQycS4wNDQuMDYuMDk4LjExNWwzLjg1IDMuODVhMSAxIDAgMCAwIDEuNDE1LTEuNDE0bC0zLjg1LTMuODVhMSAxIDAgMCAwLS4xMTUtLjEgNi41IDYuNSAwIDAgMS0xLjM5OCAxLjR6Jy8+PHBhdGggZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNNi41IDNhLjUuNSAwIDAgMSAuNS41VjZoMi41YS41LjUgMCAwIDEgMCAxSDd2Mi41YS41LjUgMCAwIDEtMSAwVjdIMy41YS41LjUgMCAwIDEgMC0xSDZWMy41YS41LjUgMCAwIDEgLjUtLjUnLz48L3N2Zz4="), zoom-in;
-    
+    @media (orientation: portrait) {
+      width:100%;
+      height: auto !important;
+    }
   }
   .carousel-item img.zoomed{
     height: auto !important;
     width:100%;
     cursor: zoom-out;
     cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgZmlsbD0nI2ZmZmZmZicgY2xhc3M9J2JpIGJpLXpvb20tb3V0JyB2aWV3Qm94PScwIDAgMTYgMTYnPjxzdHlsZT5zdmcgeyBmaWx0ZXI6IGRyb3Atc2hhZG93KDFweCAxcHggMCByZ2IoMCAwIDAgLyAwLjgpKTsgfTwvc3R5bGU+PHBhdGggZmlsbC1ydWxlPSdldmVub2RkJyBkPSdNNi41IDEyYTUuNSA1LjUgMCAxIDAgMC0xMSA1LjUgNS41IDAgMCAwIDAgMTFNMTMgNi41YTYuNSA2LjUgMCAxIDEtMTMgMCA2LjUgNi41IDAgMCAxIDEzIDAnLz48cGF0aCBkPSdNMTAuMzQ0IDExLjc0MnEuMDQ0LjA2LjA5OC4xMTVsMy44NSAzLjg1YTEgMSAwIDAgMCAxLjQxNS0xLjQxNGwtMy44NS0zLjg1YTEgMSAwIDAgMC0uMTE1LS4xIDYuNSA2LjUgMCAwIDEtMS4zOTggMS40eicvPjxwYXRoIGZpbGwtcnVsZT0nZXZlbm9kZCcgZD0nTTMgNi41YS41LjUgMCAwIDEgLjUtLjVoNmEuNS41IDAgMCAxIDAgMWgtNmEuNS41IDAgMCAxLS41LS41Jy8+PC9zdmc+"), zoom-out;
-
-    
   }
