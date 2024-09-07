@@ -83,7 +83,7 @@ jQuery(function($) {
 
             markup += `
                 <div class="carousel-item${i === 0 ? " active" : ""}">
-                    <img class="d-block  w-100" src=${imgSrc} alt="${imgAlt}">
+                    <img class="d-block mx-auto" src=${imgSrc} alt="${imgAlt}">
                     ${imgAlt ? createCaption(imgAlt) : ""}
                 </div>`;
 
@@ -154,10 +154,26 @@ jQuery(function($) {
         const bsModal = new bootstrap.Modal(modalId);
 
         $(modalId).on('click', function(event) {
-            if (!$(event.target).closest('.carousel-item, button').length) {
+            if (!$(event.target).closest('.carousel-item img, button').length) {
                 bsModal.hide();
             }
         });
+
+        $(modalId).find('.carousel-item img').on("click", function() {
+            var self = $(this);
+            self.toggleClass('zoomed');
+        })
+
+        document.getElementById(modalId.substring(1)).addEventListener('hidden.bs.modal', event => {
+            $('.carousel-item img').removeClass('zoomed');
+        })
+
+        const myCarousel = document.getElementById('lightboxCarousel')
+        myCarousel.addEventListener('slide.bs.carousel', event => {
+            $('.carousel-item img').removeClass('zoomed');
+        })
+
+          
 
         // --- Support Fullscreen
         const fsEnlarge = $(".btn-fullscreen-enlarge");
