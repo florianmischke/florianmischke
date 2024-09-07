@@ -20,36 +20,143 @@ stuff
     <li class="">
         <div class="card shadow mb-3">            
             <div class="row g-0">
-                <div class="col-md-4">
-                    <figure class="figure position-relative mb-0">
-                        <img src="{{ home_url }}/img/pse.png" class="figure-img img-fluid rounded-start mb-0" alt="" title="">
-                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
-                      </figure>
-                </div>
-            
-                <div class="col-md-8">
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <!-- <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/stuff/malengemalt2015.jpg" class="figure-img img-fluid rounded mb-0" alt="" title="">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Foto: malengemalt2015 / Steffen Mischke</figcaption>
+                    </figure> -->
+                    <!-- <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/stuff/Auto-Reverse.Skarvberg.2013-600x400.jpg" class="figure-img img-fluid rounded mb-0" alt="" title="">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Foto: Auto Reverse Skarvberg 2013 / Steffen Mischke</figcaption>
+                    </figure> -->
+                    <div id="carousel-steffen-mischke" class="carousel slide  rounded" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded">
+                          <div class="carousel-item active">
+                            <figure class="figure position-relative mb-0">
+                                <img src="{{ home_url }}/img/stuff/Auto-Reverse.Skarvberg.2013-600x400.jpg" class="figure-img img-fluid mb-0" alt="Foto: Auto Reverse Skarvberg 2013 / Steffen Mischke" title="Foto: Auto Reverse Skarvberg 2013 / Steffen Mischke">
+                                <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Foto: Auto Reverse Skarvberg 2013 / Steffen Mischke</figcaption>
+                            </figure>
+                          </div>
+                          <div class="carousel-item">
+                            <figure class="figure position-relative mb-0">
+                                <img src="{{ home_url }}/img/stuff/malengemalt2015.jpg" class="figure-img img-fluid mb-0" alt="Foto: malengemalt2015 / Steffen Mischke" title="Foto: malengemalt2015 / Steffen Mischke">
+                                <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Foto: malengemalt2015 / Steffen Mischke</figcaption>
+                            </figure>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-steffen-mischke" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-steffen-mischke" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>            
+                <div class="col-md-6 col-lg-7 col-xl-8">
                     <div class="card-body">
-                        <h2 class="card-title">Periodensystem der Elemente (PSE)</h2>
-                        <a href="http://periodic2.eu-central-1.elasticbeanstalk.com/" class="btn btn-lg btn-primary" title="" target="_blank"><i class="bi bi-box-arrow-up-right"></i> PSE öffnen</a>
+                        <h2 class="card-title text-uppercase">Steffen Mischke</h2>
+                        <p>Die Website meines Bruders Steffen, Künstler. Hab ich entwickelt mit seinen Designvorgaben.</p>
+                        <a href="https://www.steffenmischke.de/" class="btn  btn-outline-success" title="zu www.steffenmischke.de wechseln" target="_blank"><i class="bi bi-box-arrow-up-right"></i> zu www.steffenmischke.de wechseln</a>
                     </div>
                 </div>
             </div>  
         </div>  
     </li>
+
     <li class="">
         <div class="card shadow mb-3">            
             <div class="row g-0">
-                <div class="col-md-4">
-                    <figure class="figure position-relative mb-0">
-                        <img src="{{ home_url }}/img/taschenkarte-dr_abcde-schema-vorderseite.jpg" class="figure-img img-fluid rounded-start mb-0" alt="" title="">
-                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
-                      </figure>
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <!-- <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/stuff/pse.png" class="figure-img img-fluid rounded mb-0" alt="Screenshot: PSE / Florian Mischke" title="Screenshot: PSE / Florian Mischke">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Screenshot: PSE / Florian Mischke</figcaption>
+                    </figure> -->
+                    <figure class="figure d-block position-relative mb-0">
+                        <video class="figure-img img-fluid d-block rounded mb-0" autoplay loop muted data-toggle="zoom">
+                            <source src="{{ home_url }}/video/pse.mp4" type="video/mp4" />
+                            <img src="{{ home_url }}/img/stuff/pse.png" class="figure-img img-fluid rounded mb-0" alt="Screenshot: PSE / Florian Mischke" title="Screenshot: PSE / Florian Mischke">
+                        </video>                            
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Video: PSE / Florian Mischke</figcaption>
+                    </figure>
                 </div>
-            
-                <div class="col-md-8">
+                <div class="col-md-6 col-lg-7 col-xl-8">
+                    <div class="card-body">
+                        <h2 class="card-title">Periodensystem der Elemente (PSE)</h2>
+                        <p>Ein interaktives PSE (alpha-Version oder so), dass ich gebaut habe, nachdem ich auf CSS Grid aufmerksam wurde. Musste ich gleich ausprobieren. Dann wurde aus einer statischen html-Webpage eine Python/Flask-WebApp, mit der ich rumprobiert hab.</p>
+                        <a href="http://periodic2.eu-central-1.elasticbeanstalk.com/" class="btn  btn-outline-success" title="PSE öffnen" target="_blank"><i class="bi bi-box-arrow-up-right"></i> PSE öffnen</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </li>
+
+    <li class="">
+        <div class="card shadow mb-3">            
+            <div class="row g-0">
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <!-- <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/stuff/2kant.png" class="figure-img img-fluid rounded mb-0" alt="Screenshot: 2Kant / Florian Mischke" title="Screenshot: 2Kant / Florian Mischke">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Screenshot: 2Kant / Florian Mischke</figcaption>
+                    </figure> -->
+                    <figure class="figure d-block position-relative mb-0">
+                        <video class="figure-img img-fluid d-block rounded p-0 m-0" autoplay loop muted data-toggle="zoom">
+                            <source src="{{ home_url }}/video/diskurspop.mp4" type="video/mp4" />
+                            <img src="{{ home_url }}/img/stuff/2kant.png" class="figure-img img-fluid rounded mb-0" alt="Screenshot: 2Kant / Florian Mischke" title="Screenshot: 2Kant / Florian Mischke">
+                        </video>                            
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Video: 2Kant / Florian Mischke</figcaption>
+                    </figure>
+                </div>            
+                <div class="col-md-6 col-lg-7 col-xl-8">
+                    <div class="card-body">
+                        <h2 class="card-title">2Kant &ndash; Waldarbeiterdiskurspop</h2>
+                        <p>Eine höchst obskure Kleinwebsite.</p>
+                        <a href="http://diskurspop.de/" class="btn  btn-outline-success" title="zu diskurspop.de wechseln" target="_blank"><i class="bi bi-box-arrow-up-right"></i> zu diskurspop.de wechseln</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </li>
+
+    <li class="">
+        <div class="card shadow mb-3">            
+            <div class="row g-0">
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <!-- <figure class="figure position-relative mb-0">
+                        <img src="{{ home_url }}/img/stuff/taschenkarte-dr_abcde-schema-vorderseite.jpg" class="figure-img img-fluid rounded mb-0" alt="" title="">
+                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Bild: Taschenkarte / Florian Mischke</figcaption>
+                    </figure> -->
+                    <div id="carousel-drabcde" class="carousel slide rounded" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded">
+                          <div class="carousel-item active">
+                            <figure class="figure position-relative mb-0">
+                                <img src="{{ home_url }}/img/stuff/taschenkarte-dr_abcde-schema-vorderseite.jpg" class="figure-img img-fluid mb-0" alt="Bild: Taschenkarte Vorderseite / Florian Mischke" title="Bild: Taschenkarte Vorderseite / Florian Mischke">
+                                <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Bild: Taschenkarte Vorderseite / Florian Mischke</figcaption>
+                            </figure>
+                          </div>
+                          <div class="carousel-item">
+                            <figure class="figure position-relative mb-0">
+                                <img src="{{ home_url }}/img/stuff/taschenkarte-dr_abcde-schema-rueckseite.jpg" class="figure-img img-fluid mb-0" alt="Bild: Taschenkarte Rückseite / Florian Mischke" title="Bild: Taschenkarte Rückseite / Florian Mischke">
+                                <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">Bild: Taschenkarte Rückseite / Florian Mischke</figcaption>
+                            </figure>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-drabcde" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-drabcde" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+                <div class="col-md-6 col-lg-7 col-xl-8">
                     <div class="card-body">
                         <h2 class="card-title">Das DRABCDE-Schema (internistisch und traumatologisch) im Taschenkarten-Format</h2>
-                        <a href="http://www.drabcde.de/" class="btn btn-lg btn-primary" title="" target="_blank"><i class="bi bi-box-arrow-up-right"></i> DRABCDE öffnen</a>
+                        <p>Das DRABCDE-Schema aus meiner Rettungssanitäterausbildung auf einer Taschenkarte. Das <i>DR</i> ist quasi das <i>x</i>, <i>X</i>, <i>(x)</i> oder <i>c</i> oder <i>(c)</i> oder <i>critical-c</i> in anderen Versionen des ABCDE-Schemas.</p>
+                        <a href="http://www.drabcde.de/" class="btn  btn-outline-success" title="DRABCDE öffnen" target="_blank"><i class="bi bi-box-arrow-up-right"></i> DRABCDE öffnen</a>
                     </div>
                 </div>
             </div>  

@@ -324,7 +324,7 @@ h3:hover .backtotop{
     fill: currentcolor;
   }
 
-  .carousel-item img {  
+  .lightbox-modal .carousel-item img {  
     object-fit: contain;
     object-position: center;
     overflow: hidden;
@@ -335,7 +335,7 @@ h3:hover .backtotop{
       width:100%;
     }
   }
-  .carousel-item img.zoomed{
+  .lightbox-modal .carousel-item img.zoomed{
     height: auto !important;
     width:100%;
     cursor: zoom-out;

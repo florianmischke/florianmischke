@@ -36,6 +36,7 @@ app.use('/html', express.static(path.join(__dirname, 'static/html')))
 app.use('/img', express.static(path.join(__dirname, 'static/images')))
 app.use('/img', express.static(path.join(__dirname, 'static/html/images')))
 app.use('/pdf', express.static(path.join(__dirname, 'static/pdf')))
+app.use('/video', express.static(path.join(__dirname, 'static/videos')))
 
 nunjucks.configure('templates', {
     autoescape: true,
