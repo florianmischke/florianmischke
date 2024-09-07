@@ -154,6 +154,16 @@ ol.nested ol > li::marker {
     content: counter(mainCounter) "." counter(subCounter) "  ";
 }
 
+@media (hover: none) {
+  .backtotop{  
+    display: inline!important;
+  }
+}
+h2:hover .backtotop,
+h3:hover .backtotop{
+  display: inline!important;
+}
+
 :root {
     --lightbox: rgb(0 0 0 / 0.75);
     --carousel-text: #fff;
