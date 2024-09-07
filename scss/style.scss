@@ -247,20 +247,20 @@ h3:hover .backtotop{
     }
   }
   
-  .lightbox-modal .carousel-inner {
-    @include media-breakpoint-up(md) { 
-        width: 90%;
-    }
-    @include media-breakpoint-up(lg) { 
-        width: 80%;
-    }
-    @include media-breakpoint-up(xl) { 
-        max-width: 70%;
-    }
-    @include media-breakpoint-up(xxl) { 
-        max-width: 60%;
-    }
-  }
+  // .lightbox-modal .carousel-inner {
+  //   @include media-breakpoint-up(md) { 
+  //       width: 90%;
+  //   }
+  //   @include media-breakpoint-up(lg) { 
+  //       width: 80%;
+  //   }
+  //   @include media-breakpoint-up(xl) { 
+  //       max-width: 70%;
+  //   }
+  //   @include media-breakpoint-up(xxl) { 
+  //       max-width: 60%;
+  //   }
+  // }
   
 //   .lightbox-modal .carousel-inner img {
 //     animation: zoomin 10s linear infinite;

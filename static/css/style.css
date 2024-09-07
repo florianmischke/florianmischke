@@ -12080,27 +12080,6 @@ h3:hover .backtotop,
     top: -10px;
   }
 }
-@media (min-width: 768px) {
-  .lightbox-modal .carousel-inner {
-    width: 90%;
-  }
-}
-@media (min-width: 992px) {
-  .lightbox-modal .carousel-inner {
-    width: 80%;
-  }
-}
-@media (min-width: 1200px) {
-  .lightbox-modal .carousel-inner {
-    max-width: 70%;
-  }
-}
-@media (min-width: 1400px) {
-  .lightbox-modal .carousel-inner {
-    max-width: 60%;
-  }
-}
-
 .lightbox-modal .carousel-item .carousel-caption {
   right: 0;
   bottom: 0;
