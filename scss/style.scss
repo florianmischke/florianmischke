@@ -226,7 +226,7 @@ h3:hover .backtotop{
       background-image:none!important;
     }
   }
-  
+
   @include media-breakpoint-up(md) { 
     .lightbox-modal .carousel-indicators [data-bs-target] {
       background-color: var(--carousel-text) !important;
@@ -313,4 +313,10 @@ h3:hover .backtotop{
     vertical-align: -0.035em;
     fill: currentcolor;
   }
-  
+  .carousel-item img {  
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    height:100vh;
+    width:100vh;
+  }
