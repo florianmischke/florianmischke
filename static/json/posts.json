@@ -13,7 +13,7 @@
         "img":"img/kleopatra.jpeg",
         "img_alt":"Ein mit KI erstelltes Bild mit einer ägyptischen Königin inmitten von Pflanzen, Kräutern, Gewürzen und einer Hafenstadt im Hintergrund.",
         "caption":"Bild: mit KI erstellt",
-        "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft"],
+        "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft","ethnologie"],
         "tags":["Medizin", "Geschichte", "Naturwissenschaft"]
     },
     {
@@ -30,7 +30,7 @@
         "img":"img/schlafmohn-in-der-antike.jpeg",
         "img_alt":"Ein mit KI erstelltes Bild mit einem Kreis von Menschen in antiker Kleidung und mit Mohnkapseln und Mohnblüten im Hintergrund.",
         "caption":"Bild: mit KI erstellt",
-        "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft"],
+        "categories":["wissenschaft","biologie","geschichte-der-naturwissenschaft","ethnologie"],
         "tags":["Medizin", "Geschichte", "Naturwissenschaft"]
     },
     {
