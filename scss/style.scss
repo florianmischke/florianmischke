@@ -130,27 +130,27 @@
 }
 
 /* Zähler für die Hauptliste erstellen */
-ol {
+ol.nested {
     counter-reset: mainCounter;
 }
 /* Zähler für jedes Listenelement erhöhen */
-ol > li {
+ol.nested > li {
     counter-increment: mainCounter;
 }
 /* Vor jedem Listenelement den Hauptzähler anzeigen */
-ol > li::marker {
+ol.nested > li::marker {
     content: counter(mainCounter) "  ";
 }
 /* Zähler für verschachtelte Liste erstellen */
-ol ol {
+ol.nested ol {
     counter-reset: subCounter;
 }
 /* Sub-Zähler für jedes Element in der verschachtelten Liste erhöhen */
-ol ol > li {
+ol.nested ol > li {
     counter-increment: subCounter;
 }
 /* Vor jedem Listenelement in der verschachtelten Liste die Nummerierung dynamisch anzeigen */
-ol ol > li::marker {
+ol.nested ol > li::marker {
     content: counter(mainCounter) "." counter(subCounter) "  ";
 }
 
