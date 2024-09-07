@@ -95,7 +95,7 @@ jQuery(function($) {
     function createCarousel (galleryLinks) {
         const markup = `
             <!-- Lightbox Carousel -->
-            <div id="lightboxCarousel" class="carousel slide" data-bs-ride="false">
+            <div id="lightboxCarousel" class="carousel slide" data-bs-touch="false" data-bs-ride="false">
             <!-- Indicators/dots -->
             <div class="carousel-indicators">
                 ${createIndicators(galleryLinks)}
