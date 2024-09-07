@@ -12,7 +12,13 @@ jQuery(function($) {
     } );
     focustrigger()
 
-
+    $('[data-toggle]').on("click", function(e) {
+        const toggler = $(this);
+        const element = $(toggler.data('toggle'));
+        element.toggleClass('d-none')
+        var togglerText = element.is('.d-none') ? toggler.data('text-show') : toggler.data('text-hide')
+        toggler.text(togglerText)
+    });
 
     function createModal(modalId) {
         const markup = `

@@ -16,6 +16,24 @@
             {% endfor %}
         </ul>
     </li>
+    <li class="list-group-item">
+        <i class="bi bi-list-ol"></i> Inhalt: 
+        <button class="btn btn-sm py-0 btn-secondary text-dark float-end" type="button" data-toggle="#content" data-text-hide="verbergen" data-text-show="anzeigen">verbergen</button>
+        <ol id="content">
+            <li><a href="#gesamteindruck">Gesamteindruck</a></li>
+            <li><a href="#erster-tag">Erster Tag: NABU-Wiese Pevestorf</a></li>
+            <li><a href="#zweiter-tag">Zweiter Tag: Laasche Trockenrasen und Abbruchkante</a></li>
+            <li><a href="#dritter-tag">Dritter Tag: Höhbeck Nordhang (Wald)</a></li>
+            <li><a href="#vierter-tag">Vierter Tag: Brünkendorfer Heide</a>
+                <ol>
+                    <li><a href="#abendgestaltung">Abendgestaltung</a></li>
+                </ol>
+            </li>
+            <li><a href="#fünfter-tag">Fünfter Tag: Schaugraben, Restorf (Tümpel)</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+            <li><a href="#fussnoten">Fußnoten</a></li>
+        </ol>
+    </li>
 </ul>
 
 <p class="">{{ singlepost.description }}</p>
@@ -32,13 +50,13 @@
     #}
 {% endif %}
 
-<h2>Gesamteindruck</h2>
+<h2 id="gesamteindruck">Gesamteindruck</h2>
 <p>Ich hatte eine wirklich gute Zeit mit unserem Dozierenden-Team und meinen Kommiliton*innen sowie den wirklich interessanten Themen. Die Ausflüge mit dem Fahrrad, das Arbeiten im Feld, das gemeinsame Kochen, Essen und Schnacken mit Peers (wissenschaftlich Interessierten) sind für mich besonders hervorzuheben. Die Arbeit im Labor, die Arbeit mit den Bestimmungsschlüsseln und das Gestarre durch&apos;s <abbr title="Binokular, Stereolupe">Bino</abbr> waren echt anstrengend, das Erfolgserlebnis bei Bestimmen einer Art dafür umso höher.</p>
 <p>Als ich mich für das Biologiestudium entschieden habe, waren es hauptsächlich Botanik und Ethnobotanik, die mich überhaupt erst auf die Idee gebracht haben. Im ersten Semester hat mich dann eher die Biochemie interessiert. Zoologie war eher so ein notwendiges Übel.
 Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische Modul startete, war es doch überraschend interessant. Die Vorlesung war nett, das Praktikum netter und in der Klausurvorbereitung habe ich erst gemerkt, wie cool ich das eigentlich finde. Und dann diese Exkursion &hellip; ich bin hin und weg und mein Bild vom Biologiestudium hat sich gewandelt. Vielleicht werd ich ja doch Zoologe oder Ökologe, wir werden sehen.</p>
 <p>Und zum Titel &hellip; &bdquo;Nächstes Mal ohne Florian&ldquo; ist ein Verbesserungsvorschlag für die nächste Exkursion bzw. die nächsten Gruppen von Studierenden im kommenden Jahr. Wer mehr darüber erfahren will, klickt auf diesen <a href="https://de.wikipedia.org/wiki/Ironie">Link</a>. Dank an dich Lea, dass ich dich hier zitieren darf. Die Stimmung und das Miteinander waren echt toll, der Gruppenzusammenhalt ohnegleichen. Um hier nur eine Sache zu nennen: die Absprache zu Beginn war, dass vegetarisch gekocht wird mit veganer Option für die zwei Studierenden, die sich vegan ernähren zu denen ich gehöre. Und alle 5 Kochgruppen haben vegan gekocht! Danke dafür.</p>
 
-<h2>Erster Tag: NABU-Wiese Pevestorf</h2>
+<h2 id="erster-tag">Erster Tag: NABU-Wiese Pevestorf</h2>
 <p>Anreise: lustige Busfahrt mit tollen Kommiliton*innen.</p>
 <p>Nach Ankunft, Bezug der Zimmer und erstem Briefing haben wir gleich am ersten Tag haben wir auf der NABU-Wiese von Höhbeck-Pevestorf eine <b>Wespenspinne</b> (welche nicht die einzige bleiben sollte), wissenschaftlicher Name: <i>Argiope bruennichi</i>, gefunden.</p>
 <div class="row">
@@ -52,7 +70,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
                     <img src="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-ventral--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="Wespenspinne (Argiope bruennichi), Ventralansicht" loading="lazy">
                 </picture>
             </a>
-            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Ventralansicht, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Ventralansicht, NABU-Wiese in Pevestorf (53&deg;03&prime;42.0&Prime;N 11&deg;28&prime;21.0&Prime;E), eigenes Werk</figcaption>
         </figure>
     </div>
     <div class="col-12 col-md-6">
@@ -65,7 +83,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
                     <img src="{{ home_url }}/img/exkursion-pevestorf-2024/wespenspinne-dorsal--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="Wespenspinne (Argiope bruennichi), Dorsalansicht" loading="lazy">
                 </picture>
             </a>
-            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Dorsalansicht, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+            <figcaption class="figure-caption text-end">Foto: <b>Wespenspinne</b> (<i>Argiope bruennichi</i>), Dorsalansicht, NABU-Wiese in Pevestorf (53&deg;03&prime;42.0&Prime;N 11&deg;28&prime;21.0&Prime;E), eigenes Werk</figcaption>
         </figure>
     </div>
 </div>
@@ -81,7 +99,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
                     <img src="{{ home_url }}/img/exkursion-pevestorf-2024/kleiner-feuerfalter--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="Kleiner Feuerfalter (Lycaena phlaeas) im Glas" loading="lazy">
                 </picture>
             </a>
-            <figcaption class="figure-caption text-end">Foto: <b>Kleiner Feuerfalter</b> (<i>Lycaena phlaeas</i>) im Glas, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+            <figcaption class="figure-caption text-end">Foto: <b>Kleiner Feuerfalter</b> (<i>Lycaena phlaeas</i>) im Glas, NABU-Wiese in Pevestorf (53&deg;03&prime;42.0&Prime;N 11&deg;28&prime;21.0&Prime;E), eigenes Werk</figcaption>
         </figure>
     </div>
     <div class="col-12 col-md-6">
@@ -106,7 +124,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
                     <img src="{{ home_url }}/img/exkursion-pevestorf-2024/syrphidae--quadrat-768x768.jpg" class="figure-img img-fluid rounded" alt="Schwebfliege (Syrphidae indef.), genadelt" loading="lazy">
                 </picture>
             </a>
-            <figcaption class="figure-caption text-end">Foto: <b>Schwebfliege</b> (Syrphidae indef.), genadelt, NABU-Wiese in Pevestorf (53°03'42.0"N 11°28'21.0"E), eigenes Werk</figcaption>
+            <figcaption class="figure-caption text-end">Foto: <b>Schwebfliege</b> (Syrphidae indef.), genadelt, NABU-Wiese in Pevestorf (53&deg;03&prime;42.0&Prime;N 11&deg;28&prime;21.0&Prime;E), eigenes Werk</figcaption>
         </figure>
     </div>
 </div>
@@ -152,7 +170,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
 </div>
 
-<h2>Zweiter Tag: Laasche Trockenrasen und Abbruchkante</h2>
+<h2 id="zweiter-tag">Zweiter Tag: Laasche Trockenrasen und Abbruchkante</h2>
 <div class="row">
     <div class="col-12 col-md-4">
         <p>Am Morgen des zweiten Tages ging es nach dem Frühstück mit dem Rad nach Laasche, auf eine Trockenwiese und an eine Abbruchkante (siehe Bild).<br>
@@ -192,7 +210,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
 </div>
 
-<h2>Dritter Tag: Höhbeck Nordhang (Wald)</h2>
+<h2 id="dritter-tag">Dritter Tag: Höhbeck Nordhang (Wald)</h2>
 <div class="row">
     <div class="col-12 col-md-4">
         <p>Nach einer &ndash; für mich viel zu anstrengender &ndash; Fahrradfahrt den Höhbeck hoch, erklommen wir noch den Aussichtsturm und durften eine fantastische Aussicht bei bestem Wetter genießen, siehe Bild.</p>
@@ -215,7 +233,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
 </div>
 
-<h2>Vierter Tag: Brünkendorfer Heide</h2>
+<h2 id="vierter-tag">Vierter Tag: Brünkendorfer Heide</h2>
 <div class="row">
     <div class="col-12 col-md-8">
         <figure class="figure">
@@ -236,9 +254,29 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
         <p>Dafür hab ich Ameisenarbeiterinnen bei der Arbeit und -soldatinnen bei der Nestabwehr zugeschaut.</p>
         <p>Und ich habe etwas entdeckt, das ich für Überreste eines Fisches halte (siehe Bild). Könnte bei Hochwasser aufs Land gespült worden oder auch händisch auf diese Erhöhung gebracht worden sein.</p>
     </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3 id="abendgestaltung">Abendgestaltung</h3>
+            <p>Nach einem interessanten Vortrag eines NABU-Mitarbeiters gab&apos;s dann noch ein Lagerfeuer und natürlich hab ich mich drum gekümmert. Ich brenne (haha) so für&apos;s Feuermachen und dann werde ich auch noch vom Dozenten gefragt, ob ich das organisieren könnte. Und: ein in Ethanol getränktes Stück Zellstoff ist ein fantastischer Grillanzünder! <i class="bi bi-fire text-warning"></i></p>
+            <p>Dazu Marshmallows, Ukulele und Liederbuch. Da geht man mal nur mit Biologie-Menschen auf Exkursion und auch da wird gemeinsam am Lagerfeuer gesungen. <i class="bi bi-heart-fill text-danger"></i> Danke dafür!</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <figure class="figure">
+                <a href="{{ home_url }}/img/exkursion-pevestorf-2024/lagerfeuer-1080x1440.jpg" class="gallery-item" data-gallery="exkursion" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
+                    <picture>
+                        <source media="(min-width: 1440px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/lagerfeuer-1080x1440.jpg">
+                        <source media="(min-width: 680px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/lagerfeuer-768x1024.jpg">
+                        <source media="(min-width: 300px)" srcset="{{ home_url }}/img/exkursion-pevestorf-2024/lagerfeuer-480x640.jpg">
+                        <img src="{{ home_url }}/img/exkursion-pevestorf-2024/lagerfeuer-768x1024.jpg" class="figure-img img-fluid rounded" alt="Biologe (naja, noch nicht) Florian in Wathose" loading="lazy">
+                    </picture>
+                </a>
+                <figcaption class="figure-caption text-end">Foto: Lagerfeuer, eigenes Werk (von Lea)</figcaption>
+            </figure>
+        </div>
+    </div>
 </div>
 
-<h2>Fünfter Tag: Schaugraben, Restorf (Tümpel)</h2>
+<h2 id="fünfter-tag">Fünfter Tag: Schaugraben, Restorf (Tümpel)</h2>
 <div class="row">
     <div class="col-12 col-md-6">
         <figure class="figure">
@@ -254,7 +292,7 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
         </figure>
     </div>
     <div class="col-12 col-md-6">
-        <p>Und am fünften Tag, dem letzten Tag der Exkursion, ging es an einen Tümpel: einen Schaugraben in Restorf. Hier wateten wir in Wathosen durch das stehende Gewässer, schöne Abkühlung bei ca. 30 °C. ohne dabei nass zu werden. Hier fanden wir Wasserkäfer, Wasserskorpione, Fische, Libellenlarven und weitere Tiere. Mit einem Planktonzug nahmen wir eine Wasserprobe, in der ich im Labor Wasserflöhe entdecken und bestimmen konnte: <i>Scapholeberis mucronata</i> und <i>Simocephalus</i> sp. Dies handelte mir eine vegane Tafel Ritter Sport ein, da der Wasserfloh eines der Tiere des Tages war. Eine andere Gruppe konnte gleich zwei Frösche finden und fangen: eine Rotbauchunke und einen grünen Wasserfrosch, vermutlich <i>Pelophylax „esculentus“</i>. Letztere sind genetisch oder genomisch äußerst spannende Tiere, über die ich hier vielleicht noch mal was schreibe. Bis dahin finden Besuchende dieses Blogs hier mehr: <a href="https://de.wikipedia.org/wiki/Teichfrosch" class="icon-link" style="align-items: baseline;" title="Teichfrosch auf Wikipedia" target="_blank"><i class="bi bi-box-arrow-up-right"></i> https://de.wikipedia.org/wiki/Teichfrosch</a></p>
+        <p>Und am fünften Tag, dem letzten Tag der Exkursion, ging es an einen Tümpel: einen Schaugraben in Restorf. Hier wateten wir in Wathosen durch das stehende Gewässer, schöne Abkühlung bei ca. 30 &deg;C. ohne dabei nass zu werden. Hier fanden wir Wasserkäfer, Wasserskorpione, Fische, Libellenlarven und weitere Tiere. Mit einem Planktonzug nahmen wir eine Wasserprobe, in der ich im Labor Wasserflöhe entdecken und bestimmen konnte: <i>Scapholeberis mucronata</i> und <i>Simocephalus</i> sp. Dies handelte mir eine vegane Tafel Ritter Sport ein, da der Wasserfloh eines der Tiere des Tages war. Eine andere Gruppe konnte gleich zwei Frösche finden und fangen: eine Rotbauchunke und einen grünen Wasserfrosch, vermutlich <i>Pelophylax „esculentus“</i>. Letztere sind genetisch oder genomisch äußerst spannende Tiere, über die ich hier vielleicht noch mal was schreibe. Bis dahin finden Besuchende dieses Blogs hier mehr: <a href="https://de.wikipedia.org/wiki/Teichfrosch" class="icon-link" style="align-items: baseline;" title="Teichfrosch auf Wikipedia" target="_blank"><i class="bi bi-box-arrow-up-right"></i> https://de.wikipedia.org/wiki/Teichfrosch</a></p>
         
         <div class="row">
             <div class="col">
@@ -283,10 +321,10 @@ Im zweiten Semester dann, als mit Biodiversität der Tiere das erste zoologische
     </div>
 </div>
 
-<h2>Fazit</h2>
+<h2 id="fazit">Fazit</h2>
 <p>Hier kommt bestimmt noch mal ein Fazit.</p>
 
-<h2>Fußnoten</h2>
+<h2 id="fussnoten">Fußnoten</h2>
 <ol class="footnotes">
     <li tabindex="1" class="footnote focus-ring my-1 py-1 px-2 text-decoration-none rounded-2" id="fussnote-1"><a href="#referenz-1"><i class="bi bi-arrow-90deg-up"></i></a> Ich habe hier jeweils die geläufigeren Namen vor die Klammer und die weniger geläufigen in Klammern gesetzt. So sind nicht immer und auch nicht nie die wissenschaftlichen Bezeichnungen in Klammern.</li>
     <li tabindex="2" class="footnote focus-ring my-1 py-1 px-2 text-decoration-none rounded-2" id="fussnote-2"><a href="#referenz-2"><i class="bi bi-arrow-90deg-up"></i></a>    Müller, Hans Joachim, und Rudolf Bährmann. Bestimmung wirbelloser Tiere: Bildtafeln für zoologische Bestimmungsübungen und Exkursionen: 380 Tafelseiten mit zahlreichen Einzelfiguren. Herausgegeben von Günter Köhler. 8., Überarbeitete und Erweiterte Auflage. Berlin [Heidelberg]: Springer Spektrum, 2022. https://doi.org/10.1007/978-3-662-61717-5.</li>

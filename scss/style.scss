@@ -129,6 +129,30 @@
     h1{text-shadow:0 0 1rem #000;}
 }
 
+/* Zähler für die Hauptliste erstellen */
+ol {
+    counter-reset: mainCounter;
+}
+/* Zähler für jedes Listenelement erhöhen */
+ol > li {
+    counter-increment: mainCounter;
+}
+/* Vor jedem Listenelement den Hauptzähler anzeigen */
+ol > li::marker {
+    content: counter(mainCounter) "  ";
+}
+/* Zähler für verschachtelte Liste erstellen */
+ol ol {
+    counter-reset: subCounter;
+}
+/* Sub-Zähler für jedes Element in der verschachtelten Liste erhöhen */
+ol ol > li {
+    counter-increment: subCounter;
+}
+/* Vor jedem Listenelement in der verschachtelten Liste die Nummerierung dynamisch anzeigen */
+ol ol > li::marker {
+    content: counter(mainCounter) "." counter(subCounter) "  ";
+}
 
 :root {
     --lightbox: rgb(0 0 0 / 0.75);
