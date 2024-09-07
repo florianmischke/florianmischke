@@ -3,7 +3,7 @@
         <div class="container-xl my-3">
             <div class="row vw-100">
                 <div class="col-md-3 col-4 order-1 order-md-1">
-                    <a class="navbar-brand" href="{{ home_url }}"><span class="d-none d-md-inline">Florian Mischke</span> <abbr class="d-md-none" title="Florian Mischke" data-bs-toggle="tooltip" data-bs-placement="right">FM</abbr></a>
+                    <a class="navbar-brand" href="{{ home_url }}" title="zur Startseite"><span class="d-none d-md-inline">Florian Mischke</span> <abbr class="d-md-none" title="Florian Mischke" data-bs-toggle="tooltip" data-bs-placement="right">FM</abbr></a>
                 </div>
                 <div class="col-md-6 col-12 mt-3 mt-md-0 order-3 order-md-2">
                     <form class="" action="{{ home_url }}/search" role="search">
@@ -32,7 +32,7 @@
                         {% for navCat in categories %}
                             {% if navCat.child == false %}
                             <li class="nav-item d-none d-md-inline">
-                                <a class="nav-link text-uppercase{% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}" title="{{ navCat.desc }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                                <a class="nav-link text-uppercase{% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}" title="{% if navCat.desc %}{{ navCat.desc }}{% else %}{{ navCat.name }}{% endif %}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
                             </li>
                             {% endif %}
                         {% endfor %}
@@ -89,7 +89,7 @@
             <ul class="nav flex-column mb-5">
                 {% for navCat in categories %}
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis {% if navCat.child == false %}px-0 pt-3{% else %}ps-4 py-1{% endif %} {% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
+                        <a class="nav-link link-body-emphasis {% if navCat.child == false %}px-0 pt-3{% else %}ps-4 py-1{% endif %} {% if navCat.id == category.id %} active{% endif %}" href="{{ home_url }}/blog/{{ navCat.id }}" title="{% if navCat.desc %}{{ navCat.desc }}{% else %}{{ navCat.name }}{% endif %}"><i class="{{ navCat.icon }}"></i> {{ navCat.name }}</a>
                     </li>
                 {% endfor %}
                 </ul>
