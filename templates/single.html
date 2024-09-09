@@ -1,5 +1,28 @@
 {% extends "index.html" %}
 
+{% block meta %}
+
+{{ super() }}
+
+<meta name="description" content="{{ singlepost.description }}">
+{% if singlepost.tags and singlepost.tags != "" %}
+<meta name="keywords" content="{% for tag in singlepost.tags %}{{ tag }}, {% endfor %}">
+{% endif %}
+<meta name="author" content="Florian Mischke">
+
+<meta property="og:title" content="{{ singlepost.name }} | Blog > {{ category.name }} | Florian Mischke" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ home_url }}/{{ singlepost.img }}" />
+<meta property="og:url" content="{{ home_url }}/blog/{{ singlepost.url }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@florianmischke" />
+<meta name="twitter:title" content="{{ singlepost.name }} | Blog > {{ category.name }} | Florian Mischke" />
+<meta name="twitter:description" content="{{ singlepost.description }}" />
+<meta name="twitter:image" content="{{ home_url }}/{{ singlepost.img }}" />
+
+{% endblock %}
+
 {% block canonical %}
 {% if singlepost %}
 <link rel="canonical" href="{{ home_url }}/blog/{{ singlepost.url }}" />
