@@ -1,5 +1,24 @@
 {% extends "index.html" %}
 
+{% block meta %}
+
+{{ super() }}
+
+<meta name="description" content="Biologiestudent, Rettungssanitäter, Fachausbilder für Erste Hilfe und Entwickler">
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Florian Mischke" />
+<meta property="og:image" content="{{ home_url }}/img/florianmischke.jpg" />
+<meta property="og:url" content="{{ home_url }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@florianmischke" />
+<meta name="twitter:title" content="Florian Mischke" />
+<meta name="twitter:description" content="Biologiestudent, Rettungssanitäter, Fachausbilder für Erste Hilfe und Entwickler" />
+<meta name="twitter:image" content="{{ home_url }}/img/florianmischke.jpg" />
+
+{% endblock %}
+
 {% block body_class %}
 home
 {% endblock %}

@@ -6,12 +6,16 @@
 
 <meta name="description" content="{{ singlepost.description }}">
 {% if singlepost.tags and singlepost.tags != "" %}
-<meta name="keywords" content="{% for tag in singlepost.tags %}{{ tag }}, {% endfor %}">
+<meta name="keywords" content="{{ singlepost.tags.join(', ') }}">
+<meta property="article:tag" content="{{ singlepost.tags.join(', ') }}" />
 {% endif %}
 <meta name="author" content="Florian Mischke">
 
+<meta property="article:published_time" content="{{ singlepost.date }}" />
+<meta property="article:modified_time" content="{{ singlepost.updated }}" />   
+
+<meta property="og:type" content="article" />
 <meta property="og:title" content="{{ singlepost.name }} | Blog > {{ category.name }} | Florian Mischke" />
-<meta property="og:type" content="website" />
 <meta property="og:image" content="{{ home_url }}/{{ singlepost.img }}" />
 <meta property="og:url" content="{{ home_url }}/blog/{{ singlepost.url }}" />
 
