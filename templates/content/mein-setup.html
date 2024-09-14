@@ -1,0 +1,95 @@
+{% extends "single.html" %}
+
+{% block content %}
+<h1 id="title">&bdquo;{{ singlepost.name }}&ldquo;</h1>
+
+<ul class="list-group float-end fw-light ms-1 mb-2">
+    <li class="list-group-item"><i class="bi bi-calendar-check"></i> Erstellt: {{ singlepost.date_formatted }}</li>
+    {% if singlepost.updated_formatted %}
+    <li class="list-group-item"><i class="bi bi-clock-history"></i> Bearbeitet:  {{ singlepost.updated_formatted }}</li>
+    {% endif %}
+    <li class="list-group-item"><i class="bi bi-person-circle"></i> Autor: Florian Mischke</li>
+    <li class="list-group-item"><i class="bi bi-tag"></i> Kategorien:
+        <ul>
+            {% for cat in singlepost.categories2 %}
+                <li><a href="{{ home_url }}/blog/{{ cat.id }}" title="{{ cat.desc }}">{{ cat.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="list-group-item">
+        <i class="bi bi-list-ol"></i> Inhalt: 
+        <button class="btn btn-sm py-0 btn-secondary text-dark float-end" type="button" data-toggle="#content" data-text-hide="verbergen" data-text-show="anzeigen">verbergen</button>
+        <ol id="content" class="nested">
+            <li><a href="#einleitung">Einleitung</a></li>
+            <li><a href="#dns">DNS</a>
+                <ol>
+                    <li><a href="#pi-hole">Pi-hole</a></li>
+                    <li><a href="#problem">Problem</a></li>
+                </ol>
+            </li>
+            <li><a href="#router">Der neue Router</a>
+                <ol>
+                    <li><a href="#router2">Der neue neue Router</a></li>
+                </ol>
+            </li>
+            <li><a href="#was-nun">Was mach ich jetzt mit zwei <br> Thinclients von Lenovo?</a></li>
+        </ol>
+    </li>
+</ul>
+
+<p class="">{{ singlepost.description }}</p>
+
+<h2 id="#einleitung">Einleitung <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h2>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, rerum qui, voluptatibus autem quod nemo placeat deserunt dolor enim obcaecati repellat magni quae sequi odio ipsum. Fuga, dolor laudantium! Molestias.</p>
+
+<h2 id="#dns">DNS <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h2>
+<p>Werbung nervt. Und Adblocker im Browser sind eine einfache Lösung, helfen aber nicht auf dem Smartphone, Fernseher oder der Spielekonsole. Da bringt's dann nur, Werbung netzwerkweit zu blockieren und was bietet sich hier mehr an, als <span class="font-monospace">0.0.0.0</span> zurückzuspielen, wenn der <a href="https://de.wikipedia.org/wiki/Domain_Name_System" class="icon-link" target="_blank"><i class="bi bi-wikipedia"></i> DNS</a>-Provider nach der IP-Adresse einer für Werbung bekannten Domain gefragt wird?</p>
+<p>Ergänzung: Ich finde es grundsätzlich eine schöne Idee, wenn Betreiber*innen einer Website sich über Werbung finanzieren können und ich hatte selbst schon vor, so ein Projekt zu haben. Wer weiß? Vielleicht schalte ich sogar Werbung hier oder woanders. Was gar nicht geht: eine Website, die so viel Werbung geschaltet hat, dass sie kaum noch zu benutzen ist. Und dann noch &apos;n Cookie-Hinweis (mmhh.. lecker) und "darf ich Benachrichtigungen senden?" und dann noch "gib E-Mail-Adresse für Newsletter!!1" und "oh willst du schon gehen?". Ich hab&apos;s jedenfalls aufgegeben, die Werbung ignorieren zu wollen.</p>
+<h3 id="#pi-hole">Pi-hole <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h3>
+<p>Also galt es, <a href="https://pi-hole.net/" target="_blank" class="icon-link">Pi-hole <i class="bi bi-box-arrow-up-right"></i></a> als DNS-Server zu installieren. Dafür musste ein Raspberry Pi her (offensichtlich). Ich habe, als sie bezahlbar waren, einen Raspberry Pi 4 Model B mit 2 GB RAM bestellt. Auf diesem lief zunächst Pi-hole in einem Docker-Container, bis ich festgestellt hab, dass eine Installation direkt auf dem <abbr title="operating system = Betriebssystem">OS</abbr> die Updates leichter gestaltet, da sie direkt über die Web-Oberfläche ausgelöst werden können. Also noch mal neu. Und da das noch nicht genug war und Jeff (mein spirit animal) von Craft Computing ein fantastisches Video hat, hab ich einen eigenen rekursiven DNS-Server mit Pi-hole und unbound.</p>
+<p>
+    <a href="https://youtu.be/FnFtWsZ8IP0?si=NsGu9G_aPWNCruzV" class="btn btn-success btn-lg" title="YouTube: You're running Pi-Hole wrong! Setting up your own Recursive DNS Server!" target="_blank"><i class="bi bi-youtube"></i> Hier das Video ansehen*</a>
+    <br>
+    * als Link, weil Datenschutz und cross-origin und so.
+</p>
+<h3 id="problem">Problem <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h3>
+<p>Stellt sich nur die Frage: was ist, wenn ich im Router meiner WG das neue Pi-hole als DNS hinterlege, das Ding ausfällt und ich nicht zuhause bin. Kurze Antwort: dann hat meine Mitbewohnerin kein Internet mehr. Schlecht ne? <br> Also musste eine andere Lösung her: ein eigenes Netzwerk, quasi ein Subnetzwerk für mich. Also brauchte ich einen Router.</p>
+
+<h2 id="router">Der neue Router <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h2>
+<p>Ich habe dann gelernt, dass man auf alten Büro-Thinclients <a href="https://www.proxmox.com/de/" target="_blank" class="icon-link">Proxmox VE <i class="bi bi-box-arrow-up-right"></i></a> installieren und damit Router- oder Firewall-Software virtualisieren kann. Gesagt, getan:<br>
+Ich habe ein Lenovo ThinkCentre M910q Tiny mit Intel Quad Core bestellt und Proxmox installiert, in einer VM dann <a href="https://opnsense.org/" class="icon-link" target="_blank">OPNsense <i class="bi bi-box-arrow-up-right"></i></a>.<br>
+Hier habe ich festgestellt, dass meine Fähigkeiten nicht unbedingt ausreichen, um einen Router in einer virtuellen Maschine zu haben, der dann dem Metall, auf dem die Maschine läuft, eine IP-Adresse zuweist und ja. Ähm. Kleines bis mittelgroßes Chaos und mittelschwere Hürden in der Administration.</p>
+<h3 id="router2">Der neue neue Router</h3>
+<p>Dann kam <a href="https://www.youtube.com/@WolfgangsChannel" class="icon-link" target="_blank">@WolfgangsChannel <i class="bi bi-box-arrow-up-right"></i></a>. Und sein Video <a href="https://youtu.be/uAxe2pAUY50?si=Sg_8-8HmYeS2u1Ld" class="icon-link" title="Cheap & Capable pfSense/OpenWRT Machine! Fujitsu S920 Router Review" target="_blank"><i class="bi bi-youtube"></i> Cheap & Capable pfSense/OpenWRT Machine! Fujitsu S920 Router Review</a>. Also PC und Zubehör bestellt, <a href="https://openwrt.org/" class="icon-link" target="_blank">OpenWrt <i class="bi bi-box-arrow-up-right"></i></a> installiert und den Lenovo für andere Dinge benutzt. Und naja... noch einen zweiten Lenovo bestellt, aber dazu später mehr. Dann fehlte natürlich noch WLAN, sonst bringt das ganze ja auf&apos;m Handy nichts. Also TP-Link Mini-Router bestellt, mit OpenWrt geflasht und Wi-fi eingerichtet. Läuft! Schon, nach weit über 100 &euro; und viel Zeit hatte ich keine Werbung mehr bei 9gag auf meinem Handy. Oder Anzeigen in Spielen. Yay! Das Internet war wieder benutzbar, ohne Brechdurchfall zu bekommen.</p>
+<h2 id="was-nun">Was mach ich jetzt mit zwei Thinclients von Lenovo?</h2>
+<p>Natürlich zwei mal Proxmox VE. Was denn sonst? Alles Spielerei, ich brauche das nicht. Aber: ich kann meine Homeassistant-Installation von einem PC über LAN auf den anderen schieben, den ersten PC updaten, neustarten, wasauchimmer und danach die VM zurückschieben, dann den zweiten PC neustarten, waschen, mit ins Bett nehmen&hellip; oder so.</p>
+<p>In Homeassistant eingebunden sind meine IKEA-Lampen, die ich über eine Zigbee-Bridge ansteuern kann.</p>
+<p>Und ich glaube, das reicht erst mal. Ich werde hier später noch mehr schreiben, das ausschmücken und ergänzen. Danke für&apos;s Lesen!</p>
+
+{% if singlepost.file and singlepost.file != "" %}
+    <p class="mb-3">
+        <a class="btn btn-success" href="{{ home_url }}/{{ singlepost.file }}" download><i class="bi bi-filetype-pdf"></i> {{ singlepost.file }}</a>
+    </p>
+    {#
+    <div class="ratio ratio-4x3">
+        <embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
+    </div>
+    #}
+{% endif %}
+
+
+<h2 id="fussnoten">Fußnoten <a href="#title" class="backtotop link-body-emphasis text-secondary d-none" title="nach oben" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></a></h2>
+<ol class="footnotes">
+    <li tabindex="1" class="footnote focus-ring my-1 py-1 px-2 text-decoration-none rounded-2" id="fussnote-1"><a href="#referenz-1"><i class="bi bi-arrow-90deg-up"></i></a> </li>
+</ol>
+
+{% if singlepost.tags and singlepost.tags != "" %}
+<p>
+    <i class="bi bi-tag-fill"></i> 
+    {% for tag in singlepost.tags %}
+        <a href="{{ home_url }}/blog/tag/{{ tag|lower }}">#{{ tag }}</a>
+    {% endfor %}
+</p>
+{% endif %}
+
+{% endblock %}
