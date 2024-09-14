@@ -11889,6 +11889,10 @@ textarea.form-control-lg {
   display: block !important;
 }
 
+.icon-link {
+  align-items: baseline;
+}
+
 #page-title.category-name {
   font-weight: bold;
 }
