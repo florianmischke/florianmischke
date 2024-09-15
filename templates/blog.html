@@ -61,11 +61,29 @@
     <li class="">
         <div class="card shadow mb-3">            
             <div class="row g-0">
-                <div class="col-md-4">
-                    <figure class="figure position-relative mb-0">
-                        <img src="{% if mypost.img and mypost.img != '' %}{{ home_url }}/{{ mypost.img }}{% else %}https://placehold.co/400{% endif %}" class="figure-img img-fluid rounded-start mb-0" alt="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}" title="{% if mypost.img_alt and mypost.img_alt != '' %}{{ mypost.img_alt }}{% endif %}">
-                        <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
-                      </figure>
+                <div class="col-md-4">                    
+                    <a href="{{ home_url }}/blog/{{ mypost.url }}" class="" title="{{ mypost.name }}">
+                        <figure class="figure position-relative mb-0">
+                            {% if mypost.img and mypost.img != '' %}
+                                {% if mypost.img.substr(0,4) == 'http' %}
+                                    {% set img_url = mypost.img %}
+                                {% else %}
+                                    {% set img_url = [home_url,'/',mypost.img] | join %}
+                                {% endif %}
+                            {% else %}
+                                {% set img_url = 'https://placehold.co/400' %}                            
+                            {% endif %}
+                            
+                            {% if mypost.img_alt and mypost.img_alt != '' %}
+                                {% set img_alt = mypost.img_alt %}
+                            {% else %}
+                                {% set img_alt = "" %}
+                            {% endif %}
+
+                            <img src="{{ img_url }}" class="figure-img img-fluid rounded-start mb-0" alt="{{ img_alt }}" title="{{ img_alt }}">
+                            <figcaption class="figure-caption position-absolute bottom-0 end-0 py-1 px-2 text-end text-bg-dark opacity-75">{{ mypost.caption }}</figcaption>
+                        </figure>
+                      </a>
                 </div>
             
                 <div class="col-md-8">

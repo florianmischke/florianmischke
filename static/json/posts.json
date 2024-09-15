@@ -66,6 +66,23 @@
         "caption":"Bild: Elbe vom Höhbeck, eigenes Werk",
         "categories":["wissenschaft","biologie"],
         "tags":["Naturwissenschaft", "Zoologie", "Biodiversität", "Exkursion"]
+    },
+    {
+        "id":5,
+        "name":"Sleep Token - Take Me Back To Eden",
+        "shortname":"Sleep Token - Take Me Back To Eden",
+        "slug":"sleep-token--take-me-back-to-eden.html",
+        "url":"musik/sleep-token--take-me-back-to-eden.html",
+        "description":"Sleep Token - Take Me Back To Eden",
+        "date":"2024-09-15T16:26:00+02:00",
+        "updated":"2024-09-15T16:26:00+02:00",
+        "template":"",
+        "file":"https://youtu.be/vFHBOKa_ZG0?si=YTNfdzHL8htpPpul",
+        "img":"https://i3.ytimg.com/vi/vFHBOKa_ZG0/maxresdefault.jpg",
+        "img_alt":"Thumbnail von Sleep Token - Take Me Back To Eden",
+        "caption":"Thumbnail: YouTube/Sleep Token",
+        "categories":["musik","metal"],
+        "tags":["Rock","Metal","progressive","uk"]
     }
     
 ]

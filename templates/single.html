@@ -67,12 +67,27 @@
 <p class="">{{ singlepost.description }}</p>
 
 {% if singlepost.file and singlepost.file != "" %}
+    {% if singlepost.img.substr(0,4) == 'http' %}
+        {% set file_url = singlepost.file %}
+        {% set addition = 'target="_blank"' %}
+    {% else %}
+        {% set file_url = [home_url,'/',singlepost.file] | join %}
+        {% set addition = 'download' %}
+    {% endif %}
+
+    {% if 'youtube' in file_url or 'youtu.be' in file_url %}
+        {% set icon = 'bi-youtube' %}
+    {% elif '.pdf' in file_url %}
+        {% set icon = 'bi-filetype-pdf' %}
+    {% else %}
+        {% set icon = 'bi-file-earmark-arrow-down' %}
+    {% endif %}
     <p class="mb-3">
-        <a class="btn btn-success" href="{{ home_url }}/{{ singlepost.file }}" download><i class="bi bi-filetype-pdf"></i> {{ singlepost.file }}</a>
+        <a class="btn btn-success" href="{{ file_url }}" {{ addition }}><i class="bi {{ icon }}"></i> {{ singlepost.file }}</a>
     </p>
     {#
     <div class="ratio ratio-4x3">
-        <embed src="{{ home_url }}/{{ singlepost.file }}" type="application/pdf">
+        <embed src="{{ file_url }}" type="application/pdf">
     </div>
     #}
 {% endif %}

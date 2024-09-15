@@ -11,6 +11,7 @@ app.use(
         contentSecurityPolicy: {
             directives: {
                 "script-src": ["'self'"],
+                "img-src": ["'self'","i3.ytimg.com","data: 'unsafe-eval'"]
                 // "object-src": ["'self'"]
             },
         },
