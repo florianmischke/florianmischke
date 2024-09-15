@@ -7,6 +7,35 @@
 
 // Then add additional custom code here
 
+.callout{
+  @extend .p-4;
+  @extend .border-start;
+  @extend .border-5;
+}
+.callout > p:last-child{
+  margin-bottom:0;
+}
+
+.callout-secondary {
+  @extend .bg-secondary-subtle;
+  @extend .border-secondary-subtle;
+}
+.callout-tertiary {
+  @extend .bg-body-tertiary;
+}
+.callout-info {
+  @extend .bg-info-subtle;
+  @extend .border-info-subtle;
+}
+.callout-warning {
+  @extend .bg-warning-subtle;
+  @extend .border-warning-subtle;
+}
+.callout-danger {
+  @extend .bg-danger-subtle;
+  @extend .border-danger-subtle;
+}
+
 
 @import "icon-list";
 
