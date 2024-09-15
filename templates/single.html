@@ -66,6 +66,10 @@
 
 <p class="">{{ singlepost.description }}</p>
 
+{% if singlepost.text and singlepost.text != "" %}
+<p class="">{{ singlepost.text }}</p>
+{% endif %}
+
 {% if singlepost.file and singlepost.file != "" %}
     {% if singlepost.img.substr(0,4) == 'http' %}
         {% set file_url = singlepost.file %}
